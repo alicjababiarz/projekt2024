@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.element_details'|trans({'%id%': element.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.element_details'|trans({'%id%': element.id|default('')}) }}</h1>
+    {% if element is defined and element|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label.id'|trans }}</dt>
+            <dd>{{ element.id }}</dd>
+            <dt>{{ 'label.created_at'|trans }}</dt>
+            <dd>{{ element.createdAt|format_date('long') }}</dd>
+            <dt>{{ 'label.updated_at'|trans }}</dt>
+            <dd>{{ element.updatedAt|format_date('long') }}</dd>
+            <dt>{{ 'label.title'|trans }}</dt>
+            <dd>{{  element.title }}</dd>
+            <dt>{{ 'label.category'|trans }}</dt>
+            <dd>{{  element.category.title }}</dd>
+        </dl>
+        <p>
+            <a href="{{ url('element_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                {{ 'action.back_to_list'|trans }}
+            </a>
+            <a href="{{ url('element_edit', {id: element.id}) }}" title="{{ 'action.edit'|trans }}">
+                {{ 'action.edit'|trans }}
+            </a>
+            <a href="{{ url('element_delete', {id: element.id}) }}" title="{{ 'action.delete'|trans }}">
+                {{ 'action.delete'|trans }}
+            </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}
