@@ -6,8 +6,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
-use App\Entity\Enum\ElementStatus;
-use App\Entity\Tag;
 use App\Entity\Element;
 use App\Entity\User;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -30,7 +28,7 @@ class ElementFixtures extends AbstractBaseFixtures implements DependentFixtureIn
             return;
         }
 
-        $this->createMany(100, 'elements', function (int $i) {
+        $this->createMany(50, 'elements', function (int $i) {
             $element = new Element();
             $element->setTitle($this->faker->sentence);
             $element->setCreatedAt(

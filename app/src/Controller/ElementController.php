@@ -80,7 +80,7 @@ class ElementController extends AbstractController
     {
         $element = new Element();
         $element->setCreatedAt(
-            new \DateTimeImmutable //usunac jak bede robic slugi
+            new \DateTimeImmutable
         );
         $element->setUpdatedAt(
             new \DateTimeImmutable

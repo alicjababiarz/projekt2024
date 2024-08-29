@@ -19,7 +19,9 @@
             <dt>{{ 'label.category'|trans }}</dt>
             <dd>{{  element.category.title }}</dd>
         </dl>
-        <p>
+
+
+
             <a href="{{ url('element_index') }}" title="{{ 'action.back_to_list'|trans }}">
                 {{ 'action.back_to_list'|trans }}
             </a>
@@ -29,7 +31,8 @@
             <a href="{{ url('element_delete', {id: element.id}) }}" title="{{ 'action.delete'|trans }}">
                 {{ 'action.delete'|trans }}
             </a>
-        </p>
+
+        <a href="{{ url('element_create') }}" title="{{ 'action.create'|trans }}">{{ 'action.create'|trans }}</a>
     {% else %}
         <p>
             {{ 'message.record_not_found'|trans }}

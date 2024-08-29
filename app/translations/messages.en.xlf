@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="label.actions">
         <source>label.actions</source>
-        <target>Opcje</target>
+        <target>Szczegóły</target>
       </trans-unit>
       <trans-unit id="label.id">
         <source>label.id</source>
@@ -52,11 +52,11 @@
       </trans-unit>
       <trans-unit id="title.element_list">
             <source>title.element_list</source>
-            <target>Internetowy katalog</target>
+            <target>Katalog płyt CD</target>
       </trans-unit>
       <trans-unit id="action.show">
              <source>action.show</source>
-             <target>Opcja</target>
+             <target>Szczegóły</target>
       </trans-unit>
       <trans-unit id="title.element_details">
              <source>title.element_details</source>

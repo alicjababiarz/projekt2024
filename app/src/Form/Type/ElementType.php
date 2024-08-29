@@ -5,7 +5,9 @@
 
 namespace App\Form\Type;
 
+use App\Entity\Category;
 use App\Entity\Element;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -36,7 +38,22 @@ class ElementType extends AbstractType
                 'label' => 'label.title',
                 'required' => true,
                 'attr' => ['max_length' => 64],
-            ]);
+            ])
+
+            ->add(
+                'category',
+                EntityType::class,
+                [
+                    'class' => Category::class,
+                    'choice_label' => function ($category): string {
+                        return $category->getTitle();
+                    },
+                    'label' => 'label.category',
+                    'placeholder' => 'label.none',
+                    'required' => true,
+                ]
+            );
+
     }
 
     /**
