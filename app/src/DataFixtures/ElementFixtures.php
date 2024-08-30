@@ -28,7 +28,7 @@ class ElementFixtures extends AbstractBaseFixtures implements DependentFixtureIn
             return;
         }
 
-        $this->createMany(50, 'elements', function (int $i) {
+        $this->createMany(20, 'elements', function (int $i) {
             $element = new Element();
             $element->setTitle($this->faker->sentence);
             $element->setCreatedAt(
