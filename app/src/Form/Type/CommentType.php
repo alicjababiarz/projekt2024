@@ -1,11 +1,11 @@
 <?php
 /**
- * Element type.
+ * Comment type.
  */
 
 namespace App\Form\Type;
 
-use App\Entity\Category;
+use App\Entity\Comment;
 use App\Entity\Element;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -16,7 +16,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * Class ElementType.
  */
-class ElementType extends AbstractType
+class CommentType extends AbstractType
 {
     /**
      * Builds the form.
@@ -32,27 +32,43 @@ class ElementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add(
-            'title',
+            'email',
             TextType::class,
             [
-                'label' => 'label.title',
+                'label' => 'label.email',
                 'required' => true,
                 'attr' => ['max_length' => 64],])
-
             ->add(
-                'category',
+                'nick',
                 EntityType::class,
                 [
-                    'class' => Category::class,
-                    'choice_label' => function ($category): string {
-                        return $category->getTitle();
+                    'label' => 'label.nick',
+                    'required' => true,
+                    'attr' => ['max_length' => 64],
+                ])
+
+            ->add(
+                'content',
+                EntityType::class,
+                [
+                    'label' => 'label.content',
+                    'required' => true,
+                    'attr' => ['max_length' => 255],
+                ])
+
+            ->add(
+                'element',
+                EntityType::class,
+                [
+                    'class' => Element::class,
+                    'choice_label' => function ($element): string {
+                        return $element->getTitle();
                     },
-                    'label' => 'label.category',
-                    'placeholder' => 'label.none',
+                    'label' => 'label.element',
+                    'placeholder' => 'label.select_element',
                     'required' => true,
                 ]
             );
-
     }
 
     /**
@@ -62,7 +78,7 @@ class ElementType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['data_class' => Element::class]);
+        $resolver->setDefaults(['data_class' => Comment::class]);
     }
 
     /**
@@ -75,6 +91,6 @@ class ElementType extends AbstractType
      */
     public function getBlockPrefix(): string
     {
-        return 'element';
+        return 'comment';
     }
 }
