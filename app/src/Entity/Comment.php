@@ -13,17 +13,21 @@ class Comment
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
-    #[ORM\Column(length: 64)]
+    #[ORM\Column(type: 'string',length: 64)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 64)]
+    #[ORM\Column(type: 'string',length: 64)]
     private ?string $nick = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: 'string',length: 255)]
     private ?string $content = null;
+
+    #[ORM\ManyToOne(targetEntity: Element::class, fetch:'EXTRA_LAZY')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Element $element = null;
 
     /**
      * @return int|null
@@ -86,6 +90,25 @@ class Comment
     public function setContent(string $content): static
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * @return Element|null
+     */
+    public function getElement(): ?Element
+    {
+        return $this->element;
+    }
+
+    /**
+     * @param Element|null $element
+     * @return $this
+     */
+    public function setElement(?Element $element): static
+    {
+        $this->element = $element;
 
         return $this;
     }

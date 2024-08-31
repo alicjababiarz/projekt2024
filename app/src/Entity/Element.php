@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Eleements entity.
+ * Elements entity.
  */
 
 namespace App\Entity;
@@ -65,6 +65,7 @@ class Element
     #[ORM\ManyToOne(targetEntity: Category::class, fetch:'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
+
 
     /**
      * Getter for Id.
@@ -136,15 +137,23 @@ class Element
         $this->title = $title;
     }
 
+    /**
+     * @return Category|null
+     */
     public function getCategory(): ?Category
     {
         return $this->category;
     }
 
+    /**
+     * @param Category|null $category
+     * @return $this
+     */
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
 
         return $this;
     }
+
 }
