@@ -7,6 +7,7 @@ namespace App\Controller;
 
 use App\Entity\Element;
 use App\Form\Type\ElementType;
+use App\Service\CommentServiceInterface;
 use App\Service\ElementServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,13 +22,14 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 #[Route('/element')]
 class ElementController extends AbstractController
 {
+
     /**
      * Constructor.
      *
      * @param ElementServiceInterface $elementService Element service
      * @param TranslatorInterface $translator Translator
      */
-    public function __construct(private readonly ElementServiceInterface $elementService, private readonly TranslatorInterface $translator)
+    public function __construct(private readonly ElementServiceInterface $elementService, private readonly TranslatorInterface $translator, private readonly CommentServiceInterface $commentService)
     {
     }
 
@@ -59,10 +61,13 @@ class ElementController extends AbstractController
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET'
     )]
-    public function show(Element $element): Response
+
+    public function show(Element $element, #[MapQueryParameter] int $page = 1): Response
     {
-        return $this->render('element/show.html.twig', ['element' => $element]);
+        $pagination = $this->commentService->getPaginatedList($page, $element);
+        return $this->render('element/show.html.twig', ['element' => $element, 'pagination' => $pagination]);
     }
+
 
     /**
      * Create action.

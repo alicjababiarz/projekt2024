@@ -53,9 +53,11 @@ class ElementRepository extends ServiceEntityRepository
         return $this->getOrCreateQueryBuilder()
             ->select(
                 'partial element.{id, createdAt, updatedAt, title}',
-                'partial category.{id, title}'
+                'partial category.{id, title}',
+                'partial comment.{id, email, nick, content}',
             )
             ->join('element.category', 'category')
+            ->join('element.comment', 'comment')
             ->orderBy('element.updatedAt', 'DESC');
     }
 
@@ -75,6 +77,7 @@ class ElementRepository extends ServiceEntityRepository
      * Save entity.
      *
      * @param Element $element Element entity
+     * @throws ORMException
      */
     public function save(Element $element): void
     {

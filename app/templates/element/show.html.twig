@@ -1,9 +1,4 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}
-    {{ 'title.element_details'|trans({'%id%': element.id|default('')}) }}
-{% endblock %}
-
 {% block body %}
     <h1>{{ 'title.element_details'|trans({'%id%': element.id|default('')}) }}</h1>
     {% if element is defined and element|length %}
@@ -18,13 +13,41 @@
             <dd>{{  element.title }}</dd>
             <dt>{{ 'label.category'|trans }}</dt>
             <dd>{{  element.category.title }}</dd>
-            <dt>{{ 'label.comment'|trans }}</dt>
-            <dd>{{  element.comment.email }}</dd>
-            <dt>{{ 'label.comment'|trans }}</dt>
-            <dd>{{  element.comment.nick }}</dd>
-            <dt>{{ 'label.comment'|trans }}</dt>
-            <dd>{{  element.comment.content }}</dd>
         </dl>
+
+        {% if pagination is defined and pagination.items|length %}
+            <div class="navigation text-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'comment.id') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'label.element_id'|trans, 'comment.element_id') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'label.email'|trans, 'comment.email') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'label.content'|trans, 'comment.content') }}</th>
+                    <th>{{ 'label.comment'|trans }}</th>
+                    <th>{{ 'label.actions'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for comment in pagination.items %}
+                    <tr>
+                        <td>{{ comment.id }}</td>
+                        <td>{{ comment.element_id }}</td>
+                        <td>{{ comment.email }}</td>
+                        <td>{{ comment.nick }}</td>
+                        <td>{{ comment.content }}</td>
+                        <td>
+                            <a href="{{ url('element_show', {id: element.id}) }}" title="{{ 'action.show'|trans }}">
+                                {{ 'action.show'|trans }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
 
             <a href="{{ url('element_index') }}" title="{{ 'action.back_to_list'|trans }}">
                 {{ 'action.back_to_list'|trans }}
@@ -36,10 +59,13 @@
                 {{ 'action.delete'|trans }}
             </a>
 
-        <a href="{{ url('element_create') }}" title="{{ 'action.create'|trans }}">{{ 'action.create'|trans }}</a>
+            <a href="{{ url('element_create') }}" title="{{ 'action.create'|trans }}">{{ 'action.create'|trans }}</a>
+        {% else %}
+            <p>
+                {{ 'message.record_not_found'|trans }}
+            </p>
+        {% endif %}
     {% else %}
-        <p>
-            {{ 'message.record_not_found'|trans }}
-        </p>
+        <p>{{ 'message.element_not_found'|trans }}</p>
     {% endif %}
 {% endblock %}

@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Entity\Comment;
 use App\Entity\Element;
+use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
  *
@@ -26,8 +27,21 @@ interface CommentServiceInterface
     public function save(Comment $comment): void;
 
     /**
+     * @param Comment $comment
+     * @return void
+     */
+    public function delete(Comment $comment): void;
+
+    /**
      * @return array
      */
     public function findAll(): array;
+
+    /**
+     * @param int $page
+     * @param $element
+     * @return mixed
+     */
+    public function getPaginatedList(int $page, Element $element): PaginationInterface;
 
 }
