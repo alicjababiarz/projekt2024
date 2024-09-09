@@ -190,10 +190,10 @@
         <source>message.element_not_found</source>
         <target>Not found</target>
         </trans-unit>
-      <trans-unit id="message.category_contains_tasks">
-              <source>message.category_contains_tasks</source>
-              <target>Contain</target>
-              </trans-unit>
+        <trans-unit id="action.change_password">
+                <source>action.change_password</source>
+                <target>Change password</target>
+                </trans-unit>
     </body>
   </file>
 </xliff>

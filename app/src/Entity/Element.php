@@ -60,7 +60,7 @@ class Element
     /**
      * Category.
      *
-     * @var Category
+     * @var Category|null
      */
     #[ORM\ManyToOne(targetEntity: Category::class, fetch:'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]

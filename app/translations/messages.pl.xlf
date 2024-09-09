@@ -112,7 +112,7 @@
                                                 </trans-unit>
       <trans-unit id=" title.element_create">
                                                       <source>title.element_create</source>
-                                                      <target>Utwórz</target>
+                                                      <target>Dodaj płytę</target>
                                                       </trans-unit>
       <trans-unit id="title.element_edit">
        <source>title.element_edit</source>
@@ -194,6 +194,10 @@
               <source>message.category_contains_tasks</source>
               <target>Kategoria zawiera płyty CD</target>
               </trans-unit>
+      <trans-unit id="action.change_password">
+                      <source>action.change_password</source>
+                      <target>Zmień hasło</target>
+                      </trans-unit>
     </body>
   </file>
 </xliff>

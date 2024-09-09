@@ -21,6 +21,7 @@
             <a href="{{ url('category_index') }}" title="{{ 'action.back_to_list'|trans }}">
                 {{ 'action.back_to_list'|trans }}
             </a>
+            {% if is_granted('ROLE_ADMIN') %}
             <a href="{{ url('category_create') }}" title="{{ 'action.create'|trans }}">
                 {{ 'action.create'|trans }}
             </a>
@@ -30,6 +31,7 @@
             <a href="{{ url('category_delete', {id: category.id}) }}" title="{{ 'action.delete'|trans }}">
                 {{ 'action.delete'|trans }}
             </a>
+                {% endif %}
         </p>
     {% else %}
         <p>

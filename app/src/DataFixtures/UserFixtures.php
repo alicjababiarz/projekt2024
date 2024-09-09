@@ -7,6 +7,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Enum\UserRole;
 use App\Entity\User;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Faker\Generator;
 

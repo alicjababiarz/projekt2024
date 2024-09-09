@@ -41,6 +41,7 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/(create|delete|edit), roles: ROLE_ADMIN}
+        - { path: ^/edit-password, roles: ROLE_ADMIN}
         - { path: ^/, roles: PUBLIC_ACCESS}
 
 when@test:

@@ -54,10 +54,8 @@ class ElementRepository extends ServiceEntityRepository
             ->select(
                 'partial element.{id, createdAt, updatedAt, title}',
                 'partial category.{id, title}',
-                'partial comment.{id, email, nick, content}',
             )
             ->join('element.category', 'category')
-            ->join('element.comment', 'comment')
             ->orderBy('element.updatedAt', 'DESC');
     }
 
