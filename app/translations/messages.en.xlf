@@ -194,6 +194,63 @@
                 <source>action.change_password</source>
                 <target>Change password</target>
                 </trans-unit>
+        <trans-unit id="message.enter_current_email">
+                        <source>message.enter_current_email</source>
+                        <target>Enter current email</target>
+                        </trans-unit>
+        <trans-unit id="message.invalid_email_format">
+                                <source>message.invalid_email_format</source>
+                                <target>Invalid email format</target>
+                                </trans-unit>
+        <trans-unit id="message.enter_new_email">
+                                        <source>message.enter_new_email</source>
+                                        <target>Enter new email</target>
+                                        </trans-unit>
+        <trans-unit id="message.enter_current_password">
+                                        <source>message.enter_current_password</source>
+                                        <target>Enter current password</target>
+                                        </trans-unit>
+        <trans-unit id="message.category_contains_tasks">
+                                        <source>message.category_contains_tasks</source>
+                                        <target>Category contains tasks</target>
+                                        </trans-unit>
+        <trans-unit id="message.edited_successfully">
+                                        <source>message.edited_successfully</source>
+                                        <target>Edited successfully</target>
+                                        </trans-unit>
+        <trans-unit id="message.invalid_current_email">
+                                <source>message.invalid_current_email</source>
+                                <target>Invalid current email</target>
+                                </trans-unit>
+        <trans-unit id="message.current_password_invalid">
+                                        <source>message.current_password_invalid</source>
+                                        <target>Invalid current password</target>
+                                        </trans-unit>
+        <trans-unit id="label.create">
+                                                <source>label.create</source>
+                                                <target>Create</target>
+                                                </trans-unit>
+        <trans-unit id="action.chane_email">
+                                                <source>action.change_email</source>
+                                                <target>Change email</target>
+                                                </trans-unit>
+        <trans-unit id="action.comment_list">
+                                                <source>action.comment_list</source>
+                                                <target>Comment list</target>
+                                                </trans-unit>
+        <trans-unit id="message.confirm_delete">
+                                                <source>message.confirm_delete</source>
+                                                <target>Confirm delete</target>
+                                                </trans-unit>
+        <trans-unit id="action.add_comment">
+                                                <source>action.add_comment</source>
+                                                <target>Add comment</target>
+                                                </trans-unit>
+        <trans-unit id="title.password_edit">
+                                                <source>title.password_edit</source>
+                                                <target>Change password</target>
+                                                </trans-unit>
+
     </body>
   </file>
 </xliff>

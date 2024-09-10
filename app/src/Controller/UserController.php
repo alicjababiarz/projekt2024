@@ -1,12 +1,13 @@
 <?php
 /**
- * ChangePassword Controller.
+ * User Controller.
  */
 
 namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\Type\ChangePasswordType;
+use App\Form\Type\EmailType;
 use App\Service\UserServiceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,7 +22,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  * ChangePassword Controller.
  */
 #[Route('/user')]
-class ChangePasswordController extends AbstractController
+class UserController extends AbstractController
 {
     /**
      * @param UserServiceInterface $userService
@@ -39,7 +40,7 @@ class ChangePasswordController extends AbstractController
      */
     #[Route('/{id}/edit-password', name: 'password_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
     #[IsGranted('ROLE_ADMIN')]
-    public function edit(Request $request, UserPasswordHasherInterface $passwordHasher, int $id): Response
+    public function edit_password(Request $request, UserPasswordHasherInterface $passwordHasher, int $id): Response
     {
         $user = $this->userService->findUserById($id);
 

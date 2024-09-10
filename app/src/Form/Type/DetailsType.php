@@ -7,13 +7,14 @@ namespace App\Form\Type;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * User Email Type.
+ * User Details Type.
  */
-class EmailType extends AbstractType
+class DetailsType extends AbstractType
 {
     /**
      * Builds the form.

@@ -198,6 +198,75 @@
                       <source>action.change_password</source>
                       <target>Zmień hasło</target>
                       </trans-unit>
+                      <trans-unit id="message.enter_current_email">
+                          <source>message.enter_current_email</source>
+                          <target>Wprowadź bieżący adres e-mail</target>
+                      </trans-unit>
+
+                      <trans-unit id="message.invalid_email_format">
+                          <source>message.invalid_email_format</source>
+                          <target>Nieprawidłowy format adresu e-mail</target>
+                      </trans-unit>
+
+                      <trans-unit id="message.enter_new_email">
+                          <source>message.enter_new_email</source>
+                          <target>Wprowadź nowy adres e-mail</target>
+                      </trans-unit>
+
+                      <trans-unit id="message.enter_current_password">
+                          <source>message.enter_current_password</source>
+                          <target>Wprowadź bieżące hasło</target>
+                      </trans-unit>
+
+                      <trans-unit id="message.category_contains_tasks">
+                          <source>message.category_contains_tasks</source>
+                          <target>Kategoria zawiera płyty</target>
+                      </trans-unit>
+
+                      <trans-unit id="message.edited_successfully">
+                          <source>message.edited_successfully</source>
+                          <target>Edytowano pomyślnie</target>
+                      </trans-unit>
+
+                      <trans-unit id="message.invalid_current_email">
+                          <source>message.invalid_current_email</source>
+                          <target>Nieprawidłowy bieżący adres e-mail</target>
+                      </trans-unit>
+
+                      <trans-unit id="message.current_password_invalid">
+                          <source>message.current_password_invalid</source>
+                          <target>Nieprawidłowe bieżące hasło</target>
+                      </trans-unit>
+
+                      <trans-unit id="label.create">
+                          <source>label.create</source>
+                          <target>Utwórz</target>
+                      </trans-unit>
+
+                      <trans-unit id="action.change_email">
+                          <source>action.change_email</source>
+                          <target>Zmień adres e-mail</target>
+                      </trans-unit>
+
+                      <trans-unit id="action.comment_list">
+                          <source>action.comment_list</source>
+                          <target>Lista komentarzy</target>
+                      </trans-unit>
+
+                      <trans-unit id="message.confirm_delete">
+                          <source>message.confirm_delete</source>
+                          <target>Potwierdź usunięcie</target>
+                      </trans-unit>
+
+                      <trans-unit id="action.add_comment">
+                          <source>action.add_comment</source>
+                          <target>Dodaj komentarz</target>
+                      </trans-unit>
+
+                      <trans-unit id="title.password_edit">
+                          <source>title.password_edit</source>
+                          <target>Zmień hasło</target>
+                      </trans-unit>
     </body>
   </file>
 </xliff>
