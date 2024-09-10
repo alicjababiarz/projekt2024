@@ -7,7 +7,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\Type\ChangePasswordType;
-use App\Form\Type\EmailType;
+use App\Form\Type\DetailsType;
 use App\Service\UserServiceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

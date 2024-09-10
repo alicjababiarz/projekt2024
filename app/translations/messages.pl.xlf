@@ -218,10 +218,7 @@
                           <target>Wprowadź bieżące hasło</target>
                       </trans-unit>
 
-                      <trans-unit id="message.category_contains_tasks">
-                          <source>message.category_contains_tasks</source>
-                          <target>Kategoria zawiera płyty</target>
-                      </trans-unit>
+
 
                       <trans-unit id="message.edited_successfully">
                           <source>message.edited_successfully</source>
