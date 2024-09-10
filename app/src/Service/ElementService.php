@@ -7,6 +7,7 @@ namespace App\Service;
 
 use App\Entity\Element;
 use App\Repository\ElementRepository;
+use Doctrine\ORM\Exception\ORMException;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -53,11 +54,12 @@ class ElementService implements ElementServiceInterface
     }
 
     /**
-     * Delete entity.
+     * Save entity.
      *
      * @param Element $element
      *
      * @return void
+     * @throws ORMException
      */
     public function save(Element $element): void
     {
@@ -70,6 +72,7 @@ class ElementService implements ElementServiceInterface
      * @param Element $element
      *
      * @return void
+     * @throws ORMException
      */
     public function delete(Element $element): void
     {

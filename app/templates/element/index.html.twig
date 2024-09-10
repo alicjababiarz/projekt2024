@@ -5,9 +5,16 @@
 {% endblock %}
 
 {% block body %}
-    {% if app.user %}
-    <a href="{{ path('password_edit', {id: app.user.id}) }}">{{ 'action.change_password'|trans }}</a>
-    {% endif %}
+    {% block header %}
+        {% if app.user %}
+            <a href="{{ path('password_edit', {id: app.user.id}) }}">{{ 'action.change_password'|trans }}</a>
+            <a href="{{ path('email_edit', {id: app.user.id}) }}">{{ 'action.change_email'|trans }}</a>
+        {% endif %}
+        <a href="{{ url('comment_index')}}" title="{{ 'action.comment_list'|trans }}">
+            {{ 'action.comment_list'|trans }}
+        </a>
+    {% endblock %}
+
     <h1>{{ 'title.element_list'|trans }}</h1>
     {% if pagination is defined and pagination.items|length %}
 
@@ -20,6 +27,7 @@
                 <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'element.title') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.category'|trans, 'category.title') }}</th>
                 <th>{{ 'label.actions'|trans }}</th>
+                <th>{{ 'label.create'|trans }}</th>
                 <th>{{ 'label.edit'|trans }}</th>
                 <th>{{ 'label.delete'|trans }}</th>
             </tr>
@@ -36,6 +44,8 @@
                     <td><a href="{{ url('element_show', {id: element.id}) }}" title="{{ 'action.show'|trans }}">
                             {{ 'action.show'|trans }}</a></td>
                     {% if is_granted('ROLE_ADMIN') %}
+                        <td><a href="{{ url('element_create') }}" title="{{ 'action.create'|trans }}">
+                                    {{ 'action.create'|trans }}</a></td>
                     <td><a href="{{ url('element_edit', {id: element.id}) }}" title="{{ 'action.edit'|trans }}">
                             {{ 'action.edit'|trans }}</a></td>
                     <td><a href="{{ url('element_delete', {id: element.id}) }}" title="{{ 'action.delete'|trans }}">
@@ -45,11 +55,6 @@
             {% endfor %}
             </tbody>
         </table>
-
-    {% if is_granted('ROLE_ADMIN') %}
-        <p><a href="{{ url('element_create') }}" title="{{ 'action.create'|trans }}">
-            {{ 'action.create'|trans }}</a></p>
-        {% endif %}
 
         <div class="navigation text-center">
             {{ knp_pagination_render(pagination) }}

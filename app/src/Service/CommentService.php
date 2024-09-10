@@ -26,27 +26,6 @@ class CommentService implements CommentServiceInterface
         $this->commentRepository = $commentRepository;
     }
 
-
-    /**
-     * @param string $email
-     * @param string $nick
-     * @param string $content
-     * @param Element $element
-     * @return Comment
-     */
-    public function createComment(string $email, string $nick, string $content, Element $element): Comment
-    {
-        $comment = new Comment();
-        $comment->setEmail($email)
-            ->setNick($nick)
-            ->setContent($content)
-            ->setElement($element);
-
-        $this->commentRepository->save($comment);
-
-        return $comment;
-    }
-
     /**
      * @param Comment $comment
      * @return void
@@ -75,7 +54,7 @@ class CommentService implements CommentServiceInterface
 
     /**
      * @param int $page
-     * @param $element
+     * @param Element $element
      * @return mixed
      */
     public function getPaginatedList(int $page, Element $element): PaginationInterface

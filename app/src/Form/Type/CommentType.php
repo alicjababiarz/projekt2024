@@ -37,7 +37,8 @@ class CommentType extends AbstractType
             [
                 'label' => 'label.email',
                 'required' => true,
-                'attr' => ['max_length' => 64],])
+                'attr' => ['max_length' => 64],]
+        )
             ->add(
                 'nick',
                 TextType::class,
@@ -45,7 +46,8 @@ class CommentType extends AbstractType
                     'label' => 'label.nick',
                     'required' => true,
                     'attr' => ['max_length' => 64],
-                ])
+                ]
+            )
 
             ->add(
                 'content',
@@ -54,7 +56,8 @@ class CommentType extends AbstractType
                     'label' => 'label.content',
                     'required' => true,
                     'attr' => ['max_length' => 255],
-                ])
+                ]
+            )
 
             ->add(
                 'element',
@@ -62,7 +65,7 @@ class CommentType extends AbstractType
                 [
                     'class' => Element::class,
                     'choice_label' => function ($element): string {
-                    return $element->getTitle();
+                        return $element->getTitle();
                     },
                     'label' => 'label.element',
                     'placeholder' => 'label.select_element',

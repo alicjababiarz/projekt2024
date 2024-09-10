@@ -90,12 +90,14 @@ class CommentController extends AbstractController
                 $this->translator->trans('message.created_successfully')
             );
 
-            return $this->redirectToRoute('comment_index');
+            return $this->redirectToRoute('element_show', ['id' => $comment->getId()]);
         }
 
         return $this->render(
             'comment/create.html.twig',
-            ['form' => $form->createView()]);}
+            ['form' => $form->createView()]
+        );
+    }
 
     /**
      * Delete action.
@@ -122,7 +124,7 @@ class CommentController extends AbstractController
                 $this->translator->trans('message.deleted_successfully')
             );
 
-            return $this->redirectToRoute('comment_index');
+            return $this->redirectToRoute('element_show', ['id' => $comment->getId()]);
         }
 
         return $this->render(

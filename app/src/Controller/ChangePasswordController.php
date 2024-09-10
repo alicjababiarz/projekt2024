@@ -1,11 +1,12 @@
 <?php
 /**
- * User Controller.
+ * ChangePassword Controller.
  */
 
 namespace App\Controller;
 
-use App\Form\Type\UserType;
+use App\Entity\User;
+use App\Form\Type\ChangePasswordType;
 use App\Service\UserServiceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,10 +18,10 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * User Controller.
+ * ChangePassword Controller.
  */
 #[Route('/user')]
-class UserController extends AbstractController
+class ChangePasswordController extends AbstractController
 {
     /**
      * @param UserServiceInterface $userService
@@ -38,23 +39,22 @@ class UserController extends AbstractController
      */
     #[Route('/{id}/edit-password', name: 'password_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
     #[IsGranted('ROLE_ADMIN')]
-    public function edit(
-        Request $request,
-        UserPasswordHasherInterface $passwordHasher,
-        int $id
-    ): Response {
-        // Fetch the user by ID
+    public function edit(Request $request, UserPasswordHasherInterface $passwordHasher, int $id): Response
+    {
         $user = $this->userService->findUserById($id);
 
         if (!$user) {
             throw $this->createNotFoundException('User not found');
         }
 
-        // Create form with the user data
-        $form = $this->createForm(UserType::class, $user, [
+        $form = $this->createForm(
+            ChangePasswordType::class,
+            $user,
+            [
             'method' => 'PUT',
             'action' => $this->generateUrl('password_edit', ['id' => $id])
-        ]);
+        ]
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -88,4 +88,5 @@ class UserController extends AbstractController
             'user' => $user
         ]);
     }
+
 }
