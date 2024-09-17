@@ -8,7 +8,7 @@
     <h1>{{ 'title.comment_list'|trans }}</h1>
 
     {% if comments is not empty %}
-        <table>
+        <table class="table table-striped">
             <thead>
             <tr>
                 <th>{{ 'label.id'|trans }}</th>
@@ -16,6 +16,9 @@
                 <th>{{ 'label.nick'|trans }}</th>
                 <th>{{ 'label.content'|trans }}</th>
                 <th>{{ 'label.element_id'|trans }}</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <th>{{ 'label.actions'|trans }}</th>
+                {% endif %}
             </tr>
             </thead>
             <tbody>
@@ -26,13 +29,13 @@
                     <td>{{ comment.nick }}</td>
                     <td>{{ comment.content }}</td>
                     <td>{{ comment.element.id }}</td>
-                    <td>
-                        {#
-                        <a href="{{ path('comment_show', {elementID: element.id}) }}" title="{{ 'action.show'|trans }}">
-                            {{ 'action.show'|trans }}
-                        </a> #}
-
-                    </td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td>
+                            <a href="{{ url('comment_delete', {id: comment.id}) }}" class="btn btn-outline-danger btn-sm" title="{{ 'action.delete'|trans }}">
+                                {{ 'action.delete'|trans }}
+                            </a>
+                        </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
             </tbody>
@@ -41,6 +44,7 @@
         <p>{{ 'message.empty_list'|trans }}</p>
     {% endif %}
 
-    <p><a href="{{ path('comment_create') }}" title="{{ 'action.create'|trans }}">
-            {{ 'action.create'|trans }}</a></p>
+    <a href="{{ path('comment_create') }}" class="btn btn-primary" title="{{ 'action.create'|trans }}">
+        {{ 'action.create'|trans }}
+    </a>
 {% endblock %}

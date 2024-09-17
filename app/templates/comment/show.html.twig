@@ -6,33 +6,33 @@
 
 {% block body %}
     <h1>{{ 'title.comment_details'|trans({'%id%': comment.id|default('')}) }}</h1>
+
     {% if comment is defined and comment|length %}
-        <dl class="dl-horizontal">
-            <dt>{{ 'label.id'|trans }}</dt>
-            <dd>{{ comment.id }}</dd>
-            <dt>{{ 'label.email'|trans }}</dt>
-            <dd>{{ comment.email }}</dd>
-            <dt>{{ 'label.nick'|trans }}</dt>
-            <dd>{{ comment.nick }}</dd>
-            <dt>{{ 'label.content'|trans }}</dt>
-            <dd>{{  comment.content }}</dd>
+        <dl class="row">
+            <dt class="col-sm-3">{{ 'label.id'|trans }}</dt>
+            <dd class="col-sm-9">{{ comment.id }}</dd>
+            <dt class="col-sm-3">{{ 'label.email'|trans }}</dt>
+            <dd class="col-sm-9">{{ comment.email }}</dd>
+            <dt class="col-sm-3">{{ 'label.nick'|trans }}</dt>
+            <dd class="col-sm-9">{{ comment.nick }}</dd>
+            <dt class="col-sm-3">{{ 'label.content'|trans }}</dt>
+            <dd class="col-sm-9">{{ comment.content }}</dd>
         </dl>
-        <p>
-            <a href="{{ url('comment_index') }}" title="{{ 'action.back_to_list'|trans }}">
+
+        <div class="mt-4">
+            <a href="{{ url('comment_index') }}" class="btn btn-secondary" title="{{ 'action.back_to_list'|trans }}">
                 {{ 'action.back_to_list'|trans }}
             </a>
-            <a href="{{ url('comment_create') }}" title="{{ 'action.create'|trans }}">
+            <a href="{{ url('comment_create') }}" class="btn btn-primary" title="{{ 'action.create'|trans }}">
                 {{ 'action.create'|trans }}
             </a>
-             {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ url('comment_delete', {id: comment.id}) }}" title="{{ 'action.delete'|trans }}">
-                {{ 'action.delete'|trans }}
-            </a>
-                 {% endif %}
-        </p>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ url('comment_delete', {id: comment.id}) }}" class="btn btn-danger" title="{{ 'action.delete'|trans }}">
+                    {{ 'action.delete'|trans }}
+                </a>
+            {% endif %}
+        </div>
     {% else %}
-        <p>
-            {{ 'message.record_not_found'|trans }}
-        </p>
+        <p>{{ 'message.record_not_found'|trans }}</p>
     {% endif %}
 {% endblock %}

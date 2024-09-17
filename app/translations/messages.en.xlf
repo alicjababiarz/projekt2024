@@ -152,7 +152,7 @@
                </trans-unit>
       <trans-unit id="title.comment_list">
                      <source>title.comment_list</source>
-                     <target>List</target>
+                     <target>Comment list</target>
                      </trans-unit>
       <trans-unit id="label.email">
                      <source>label.email</source>
@@ -266,6 +266,22 @@
                                                                         <source>label.select_element</source>
                                                                         <target>Select CD</target>
                                                                         </trans-unit>
+        <trans-unit id="label.current_password">
+                                                                                <source>label.current_password</source>
+                                                                                <target>Current password</target>
+                                                                                </trans-unit>
+        <trans-unit id="title.email_edit">
+                                                                                        <source>title.email_edit</source>
+                                                                                        <target>Edit email</target>
+                                                                                        </trans-unit>
+        <trans-unit id="message.email_edited_successfully">
+                                                            <source>message.email_edited_successfully</source>
+                                                            <target>Email address edited successfully</target>
+                                                            </trans-unit>
+        <trans-unit id="label.none">
+                                                                    <source>label.none</source>
+                                                                    <target>None</target>
+                                                                    </trans-unit>
 
     </body>
   </file>

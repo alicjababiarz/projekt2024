@@ -280,6 +280,24 @@
                               <source>label.select_element</source>
                               <target>Wybierz płytę CD</target>
                       </trans-unit>
+                      <trans-unit id="label.current_password">
+                              <source>label.current_password</source>
+                              <target>Aktualne hasło</target>
+                      </trans-unit>
+                      <trans-unit id="title.email_edit">
+                              <source>title.email_edit</source>
+                              <target>Edytuj adres email</target>
+                              </trans-unit>
+                      <trans-unit id="message.email_edited_successfully">
+                                                    <source>message.email_edited_successfully</source>
+                                                    <target>Adres email został zmieniony</target>
+                                                    </trans-unit>
+                      <trans-unit id="label.none">
+                                                                                          <source>label.none</source>
+                                                                                          <target>Brak</target>
+                                                                                          </trans-unit>
+
+
 
     </body>
   </file>

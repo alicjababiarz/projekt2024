@@ -62,4 +62,6 @@ class DetailsType extends AbstractType
      */
     public function getBlockPrefix(): string
     {
-        return 'user';}}
+        return 'user';
+    }
+}
