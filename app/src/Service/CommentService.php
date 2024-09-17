@@ -39,9 +39,10 @@ class CommentService implements CommentServiceInterface
      * @param Comment $comment
      * @return void
      */
-    public function delete(Comment $comment): void
+    public function remove(Comment $comment): void
     {
-        $this->commentRepository->delete($comment);
+        $this->commentRepository->remove($comment);
+        $this->commentRepository->flush();
     }
 
     /**

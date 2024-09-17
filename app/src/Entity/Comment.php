@@ -16,13 +16,13 @@ class Comment
     #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
-    #[ORM\Column(type: 'string',length: 64)]
+    #[ORM\Column(type: 'string', length: 64)]
     private ?string $email = null;
 
-    #[ORM\Column(type: 'string',length: 64)]
+    #[ORM\Column(type: 'string', length: 64)]
     private ?string $nick = null;
 
-    #[ORM\Column(type: 'string',length: 255)]
+    #[ORM\Column(type: 'string', length: 255)]
     private ?string $content = null;
 
     #[ORM\ManyToOne(targetEntity: Element::class, fetch:'EXTRA_LAZY')]

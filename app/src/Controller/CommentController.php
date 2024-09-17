@@ -117,14 +117,14 @@ class CommentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->commentService->delete($comment);
+            $this->commentService->remove($comment);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.deleted_successfully')
             );
 
-            return $this->redirectToRoute('element_show', ['id' => $comment->getId()]);
+            return $this->redirectToRoute('comment_index', ['id' => $comment->getId()]);
         }
 
         return $this->render(

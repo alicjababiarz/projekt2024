@@ -250,6 +250,22 @@
                                                 <source>title.password_edit</source>
                                                 <target>Change password</target>
                                                 </trans-unit>
+        <trans-unit id="label.details">
+                                                        <source>label.details</source>
+                                                        <target>Details</target>
+                                                        </trans-unit>
+        <trans-unit id="action.category_list">
+                                                                <source>action.category_list</source>
+                                                                <target>Category list</target>
+                                                                </trans-unit>
+        <trans-unit id="label.element">
+                                                                        <source>label.element</source>
+                                                                        <target>CD</target>
+                                                                        </trans-unit>
+        <trans-unit id="label.select_element">
+                                                                        <source>label.select_element</source>
+                                                                        <target>Select CD</target>
+                                                                        </trans-unit>
 
     </body>
   </file>

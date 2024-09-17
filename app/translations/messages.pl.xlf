@@ -16,7 +16,7 @@
       </trans-unit>
       <trans-unit id="label.content">
         <source>label.content</source>
-        <target>Zawartość</target>
+        <target>Treść</target>
       </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
@@ -264,6 +264,23 @@
                           <source>title.password_edit</source>
                           <target>Zmień hasło</target>
                       </trans-unit>
+                      <trans-unit id="label.details">
+                           <source>label.details</source>
+                           <target>Szczegóły</target>
+                      </trans-unit>
+                      <trans-unit id="action.category_list">
+                           <source>action.category_list</source>
+                           <target>Lista kategorii</target>
+                      </trans-unit>
+                      <trans-unit id="label.element">
+                            <source>label.element</source>
+                            <target>Płyta CD</target>
+                      </trans-unit>
+                              <trans-unit id="label.select_element">
+                              <source>label.select_element</source>
+                              <target>Wybierz płytę CD</target>
+                      </trans-unit>
+
     </body>
   </file>
 </xliff>

@@ -21,7 +21,7 @@ interface CommentServiceInterface
      * @param Comment $comment
      * @return void
      */
-    public function delete(Comment $comment): void;
+    public function remove(Comment $comment): void;
 
     /**
      * @return array

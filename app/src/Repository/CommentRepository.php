@@ -33,11 +33,12 @@ class CommentRepository extends ServiceEntityRepository
      * @param Comment $comment
      * @return void
      */
-    public function delete(Comment $comment): void
+    public function remove(Comment $comment): void
     {
-        $this->_em->persist($comment);
+        $this->_em->remove($comment);
         $this->_em->flush();
     }
+
 
     //    /**
     //     * @return Comment[] Returns an array of Comment objects
@@ -66,7 +67,8 @@ class CommentRepository extends ServiceEntityRepository
     /**
      * @return void
      */
-    public function queryAll()
+    public function flush(): void
     {
+        $this->_em->flush();
     }
 }
