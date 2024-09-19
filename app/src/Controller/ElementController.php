@@ -27,7 +27,10 @@ class ElementController extends AbstractController
      * Constructor.
      *
      * @param ElementServiceInterface $elementService Element service
+     *
      * @param TranslatorInterface $translator Translator
+     *
+     * @param CommentServiceInterface $commentService Comment service
      */
     public function __construct(private readonly ElementServiceInterface $elementService, private readonly TranslatorInterface $translator, private readonly CommentServiceInterface $commentService)
     {
@@ -52,6 +55,8 @@ class ElementController extends AbstractController
      * Show action.
      *
      * @param Element $element Element
+     *
+     * @param int $page Page number
      *
      * @return Response HTTP response
      */

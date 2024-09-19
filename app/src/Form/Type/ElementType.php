@@ -12,6 +12,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class ElementType.
@@ -37,8 +38,18 @@ class ElementType extends AbstractType
             [
                 'label' => 'label.title',
                 'required' => true,
-                'attr' => ['max_length' => 64],])
-
+                'attr' => ['max_length' => 64],
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Tytuł nie może być pusty',
+                    ]),
+                    new Assert\Length([
+                        'max' => 64,
+                        'maxMessage' => 'Tytuł nie może mieć więcej niż 64 znaki',
+                    ]),
+                ]
+            ]
+        )
             ->add(
                 'category',
                 EntityType::class,
@@ -50,9 +61,13 @@ class ElementType extends AbstractType
                     'label' => 'label.category',
                     'placeholder' => 'label.none',
                     'required' => true,
+                    'constraints' => [
+                        new Assert\NotNull([
+                            'message' => 'Pole kategorii nie może być puste',
+                        ])
+                    ]
                 ]
             );
-
     }
 
     /**

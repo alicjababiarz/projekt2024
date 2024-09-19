@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Element repository.
+ */
+
 namespace App\Repository;
 
 use App\Entity\Category;
@@ -42,7 +46,6 @@ class ElementRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Element::class);
     }
-
     /**
      * Query all records.
      *
@@ -58,19 +61,6 @@ class ElementRepository extends ServiceEntityRepository
             ->join('element.category', 'category')
             ->orderBy('element.updatedAt', 'DESC');
     }
-
-    /**
-     * Get or create new query builder.
-     *
-     * @param QueryBuilder|null $queryBuilder Query builder
-     *
-     * @return QueryBuilder Query builder
-     */
-    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
-    {
-        return $queryBuilder ?? $this->createQueryBuilder('element');
-    }
-
     /**
      * Save entity.
      *
@@ -83,7 +73,6 @@ class ElementRepository extends ServiceEntityRepository
         $this->_em->persist($element);
         $this->_em->flush();
     }
-
     /**
      * Delete entity.
      *
@@ -98,7 +87,6 @@ class ElementRepository extends ServiceEntityRepository
         $this->_em->remove($element);
         $this->_em->flush();
     }
-
     /**
      * Count elements by category.
      *
@@ -118,5 +106,16 @@ class ElementRepository extends ServiceEntityRepository
             ->setParameter(':category', $category)
             ->getQuery()
             ->getSingleScalarResult();
+    }
+    /**
+     * Get or create new query builder.
+     *
+     * @param QueryBuilder|null $queryBuilder Query builder
+     *
+     * @return QueryBuilder Query builder
+     */
+    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    {
+        return $queryBuilder ?? $this->createQueryBuilder('element');
     }
 }

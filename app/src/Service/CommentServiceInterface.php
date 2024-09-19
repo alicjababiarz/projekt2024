@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Comment service interface.
+ */
+
 namespace App\Service;
 
 use App\Entity\Comment;
@@ -34,5 +38,4 @@ interface CommentServiceInterface
      * @return mixed
      */
     public function getPaginatedList(int $page, Element $element): PaginationInterface;
-
 }

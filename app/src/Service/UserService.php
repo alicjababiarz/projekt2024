@@ -1,20 +1,29 @@
 <?php
 
+/**
+ * User interface.
+ */
+
 namespace App\Service;
 
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 /**
  *
  */
 class UserService implements UserServiceInterface
 {
+    public UserPasswordHasherInterface $passwordHasher;
+
     /**
      * @param EntityManagerInterface $entityManager
+     * @param UserPasswordHasherInterface $passwordHasher
      */
-    public function __construct(private readonly EntityManagerInterface $entityManager)
+    public function __construct(private readonly EntityManagerInterface $entityManager,  UserPasswordHasherInterface $passwordHasher)
     {
+        $this->passwordHasher = $passwordHasher;
     }
 
     /**
@@ -45,5 +54,16 @@ class UserService implements UserServiceInterface
     {
         $user->setPassword($hashedPassword);
         $this->saveUser($user);
+    }
+
+    /**
+     * @param User $user
+     * @param string $newPassword
+     * @return void
+     */
+    public function changePassword(User $user, string $newPassword): void
+    {
+        $hashedPassword = $this->passwordHasher->hashPassword($user, $newPassword);
+        $this->upgradePassword($user, $hashedPassword);
     }
 }

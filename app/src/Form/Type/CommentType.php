@@ -12,6 +12,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class ElementType.
@@ -37,7 +38,20 @@ class CommentType extends AbstractType
             [
                 'label' => 'label.email',
                 'required' => true,
-                'attr' => ['max_length' => 64],]
+                'attr' => ['max_length' => 64],
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Pole email nie może być puste',
+                    ]),
+                    new Assert\Email([
+                        'message' => 'Podaj prawidłowy adres email',
+                    ]),
+                    new Assert\Length([
+                        'max' => 64,
+                        'maxMessage' => 'Adres email nie może mieć więcej niż 64 znaki',
+                    ]),
+                ]
+            ]
         )
             ->add(
                 'nick',
@@ -46,9 +60,17 @@ class CommentType extends AbstractType
                     'label' => 'label.nick',
                     'required' => true,
                     'attr' => ['max_length' => 64],
+                    'constraints' => [
+                        new Assert\NotBlank([
+                            'message' => 'Pole nick nie może być puste.',
+                        ]), new Assert\Length(
+                            [
+                                'max' => 64,
+                                'maxMessage' => 'Nick nie może mieć więcej niż 64 znaki',
+                            ]
+                        )]
                 ]
             )
-
             ->add(
                 'content',
                 TextType::class,
@@ -56,6 +78,15 @@ class CommentType extends AbstractType
                     'label' => 'label.content',
                     'required' => true,
                     'attr' => ['max_length' => 255],
+                    'constraints' => [
+                        new Assert\NotBlank([
+                            'message' => 'Pole treść komentarza nie może być puste',
+                        ]),
+                        new Assert\Length([
+                            'max' => 255,
+                            'maxMessage' => 'Treść komentarza nie może mieć więcej niż 255 znaków',
+                        ]),
+                    ]
                 ]
             )
 
@@ -70,7 +101,11 @@ class CommentType extends AbstractType
                     'label' => 'label.element',
                     'placeholder' => 'label.select_element',
                     'required' => true,
-                ]
+                    'constraints' => [
+                        new Assert\NotNull([
+                            'message' => 'Pole element nie może być puste',
+                        ])
+                    ]]
             );
     }
 

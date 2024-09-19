@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * User service interface.
+ */
+
 namespace App\Service;
 
 use App\Entity\User;
@@ -27,4 +31,11 @@ interface UserServiceInterface
      * @return void
      */
     public function upgradePassword(User $user, string $hashedPassword): void;
+
+    /**
+     * @param User $user
+     * @param string $newPassword
+     * @return void
+     */
+    public function changePassword(User $user, string $newPassword): void;
 }

@@ -9,11 +9,9 @@ use App\Entity\User;
 use App\Form\Type\ChangeEmailType;
 use App\Form\Type\ChangePasswordType;
 use App\Service\UserServiceInterface;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -34,13 +32,12 @@ class UserController extends AbstractController
 
     /**
      * @param Request $request
-     * @param UserPasswordHasherInterface $passwordHasher
      * @param int $id
      * @return Response
      */
     #[Route('/{id}/edit-password', name: 'password_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
     #[IsGranted('ROLE_ADMIN')]
-    public function edit_password(Request $request, UserPasswordHasherInterface $passwordHasher, int $id): Response
+    public function editPassword(Request $request, int $id): Response
     {
         $user = $this->userService->findUserById($id);
 
@@ -52,16 +49,16 @@ class UserController extends AbstractController
             ChangePasswordType::class,
             $user,
             [
-            'method' => 'PUT',
-            'action' => $this->generateUrl('password_edit', ['id' => $id])
-        ]
+                'method' => 'PUT',
+                'action' => $this->generateUrl('password_edit', ['id' => $id])
+            ]
         );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $currentPassword = $form->get('currentPassword')->getData();
 
-            if (!$passwordHasher->isPasswordValid($user, $currentPassword)) {
+            if (!$this->userService->passwordHasher->isPasswordValid($user, $currentPassword)) {
                 $this->addFlash(
                     'error',
                     $this->translator->trans('message.current_password_invalid')
@@ -71,10 +68,8 @@ class UserController extends AbstractController
             }
 
             $newPassword = $form->get('password')->getData();
-            $hashedPassword = $passwordHasher->hashPassword($user, $newPassword);
 
-            $user->setPassword($hashedPassword);
-            $this->userService->saveUser($user);
+            $this->userService->changePassword($user, $newPassword);
 
             $this->addFlash(
                 'success',
@@ -100,7 +95,7 @@ class UserController extends AbstractController
      */
     #[Route('/{id}/edit-email', name: 'email_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
     #[IsGranted('ROLE_ADMIN')]
-    public function edit_email(Request $request, int $id): Response
+    public function editEmail(Request $request, int $id): Response
     {
         $user = $this->userService->findUserById($id);
 
@@ -119,7 +114,6 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Save the new email to the user
             $this->userService->saveUser($user);
 
             $this->addFlash(
@@ -135,5 +129,4 @@ class UserController extends AbstractController
             'user' => $user
         ]);
     }
-
 }

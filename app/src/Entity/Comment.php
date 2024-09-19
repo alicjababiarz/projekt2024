@@ -1,9 +1,14 @@
 <?php
 
+/**
+ * Comment entity.
+ */
+
 namespace App\Entity;
 
 use App\Repository\CommentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  *
@@ -17,12 +22,21 @@ class Comment
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 64)]
+    #[Assert\Type('string')]
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 64)]
     private ?string $email = null;
 
     #[ORM\Column(type: 'string', length: 64)]
+    #[Assert\Type('string')]
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 10)]
     private ?string $nick = null;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\Type('string')]
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 255)]
     private ?string $content = null;
 
     #[ORM\ManyToOne(targetEntity: Element::class, fetch:'EXTRA_LAZY')]
