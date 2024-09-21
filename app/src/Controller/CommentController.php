@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
@@ -24,7 +25,7 @@ class CommentController extends AbstractController
      * Constructor.
      *
      * @param CommentServiceInterface $commentService Comment service
-     * @param TranslatorInterface $translator Translator
+     * @param TranslatorInterface     $translator     Translator
      */
     public function __construct(private readonly CommentServiceInterface $commentService, private readonly TranslatorInterface $translator)
     {
@@ -75,7 +76,6 @@ class CommentController extends AbstractController
         name: 'comment_create',
         methods: 'GET|POST',
     )]
-
     public function create(Request $request): Response
     {
         $comment = new Comment();
@@ -102,12 +102,12 @@ class CommentController extends AbstractController
     /**
      * Delete action.
      *
-     * @param Request  $request  HTTP request
      * @param Comment $comment Comment entity
      *
      * @return Response HTTP response
      */
     #[Route('/{id}/delete', name: 'comment_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Comment $comment): Response
     {
         $form = $this->createForm(CommentType::class, $comment, [

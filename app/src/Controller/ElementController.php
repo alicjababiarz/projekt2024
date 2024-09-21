@@ -6,6 +6,7 @@
 namespace App\Controller;
 
 use App\Entity\Element;
+use App\Entity\User;
 use App\Form\Type\ElementType;
 use App\Service\CommentServiceInterface;
 use App\Service\ElementServiceInterface;
@@ -14,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
@@ -22,14 +24,11 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 #[Route('/element')]
 class ElementController extends AbstractController
 {
-
     /**
      * Constructor.
      *
      * @param ElementServiceInterface $elementService Element service
-     *
-     * @param TranslatorInterface $translator Translator
-     *
+     * @param TranslatorInterface     $translator     Translator
      * @param CommentServiceInterface $commentService Comment service
      */
     public function __construct(private readonly ElementServiceInterface $elementService, private readonly TranslatorInterface $translator, private readonly CommentServiceInterface $commentService)
@@ -55,8 +54,7 @@ class ElementController extends AbstractController
      * Show action.
      *
      * @param Element $element Element
-     *
-     * @param int $page Page number
+     * @param int     $page    Page number
      *
      * @return Response HTTP response
      */
@@ -66,13 +64,12 @@ class ElementController extends AbstractController
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET'
     )]
-
     public function show(Element $element, #[MapQueryParameter] int $page = 1): Response
     {
         $pagination = $this->commentService->getPaginatedList($page, $element);
+
         return $this->render('element/show.html.twig', ['element' => $element, 'pagination' => $pagination]);
     }
-
 
     /**
      * Create action.
@@ -86,14 +83,18 @@ class ElementController extends AbstractController
         name: 'element_create',
         methods: 'GET|POST',
     )]
+    #[IsGranted('ROLE_ADMIN')]
     public function create(Request $request): Response
     {
+        /** @var User $user */
+        $user = $this->getUser();
         $element = new Element();
+        $element->setAuthor($user);
         $element->setCreatedAt(
-            new \DateTimeImmutable
+            new \DateTimeImmutable()
         );
         $element->setUpdatedAt(
-            new \DateTimeImmutable
+            new \DateTimeImmutable()
         );
         $form = $this->createForm(ElementType::class, $element);
         $form->handleRequest($request);
@@ -118,14 +119,23 @@ class ElementController extends AbstractController
     /**
      * Edit action.
      *
-     * @param Request  $request  HTTP request
+     * @param Request $request HTTP request
      * @param Element $element Element entity
      *
      * @return Response HTTP response
      */
     #[Route('/{id}/edit', name: 'element_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
+    #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Element $element): Response
     {
+        if ($element->getAuthor() !== $this->getUser()) {
+            $this->addFlash(
+                'warning',
+                $this->translator->trans('message.record_not_found')
+            );
+
+            return $this->redirectToRoute('element_index');
+        }
         $form = $this->createForm(
             ElementType::class,
             $element,
@@ -159,14 +169,23 @@ class ElementController extends AbstractController
     /**
      * Delete action.
      *
-     * @param Request  $request  HTTP request
+     * @param Request $request HTTP request
      * @param Element $element Category entity
      *
      * @return Response HTTP response
      */
     #[Route('/{id}/delete', name: 'element_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Element $element): Response
     {
+        if ($element->getAuthor() !== $this->getUser()) {
+            $this->addFlash(
+                'warning',
+                $this->translator->trans('message.record_not_found')
+            );
+
+            return $this->redirectToRoute('element_index');
+        }
         $form = $this->createForm(ElementType::class, $element, [
             'method' => 'DELETE',
             'action' => $this->generateUrl('element_delete', ['id' => $element->getId()]),

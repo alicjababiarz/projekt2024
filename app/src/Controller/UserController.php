@@ -5,7 +5,6 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use App\Form\Type\ChangeEmailType;
 use App\Form\Type\ChangePasswordType;
 use App\Service\UserServiceInterface;
@@ -36,7 +35,7 @@ class UserController extends AbstractController
      * @return Response
      */
     #[Route('/{id}/edit-password', name: 'password_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('IS_AUTHENTICATED_FULLY')]
     public function editPassword(Request $request, int $id): Response
     {
         $user = $this->userService->findUserById($id);
@@ -50,7 +49,7 @@ class UserController extends AbstractController
             $user,
             [
                 'method' => 'PUT',
-                'action' => $this->generateUrl('password_edit', ['id' => $id])
+                'action' => $this->generateUrl('password_edit', ['id' => $id]),
             ]
         );
         $form->handleRequest($request);
@@ -81,20 +80,15 @@ class UserController extends AbstractController
 
         return $this->render('user/edit-password.html.twig', [
             'form' => $form->createView(),
-            'user' => $user
+            'user' => $user,
         ]);
     }
 
-
     /**
      * Edit email action.
-     *
-     * @param Request $request
-     * @param int $id
-     * @return Response
      */
     #[Route('/{id}/edit-email', name: 'email_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('IS_AUTHENTICATED_FULLY')]
     public function editEmail(Request $request, int $id): Response
     {
         $user = $this->userService->findUserById($id);
@@ -108,7 +102,7 @@ class UserController extends AbstractController
             $user,
             [
                 'method' => 'PUT',
-                'action' => $this->generateUrl('email_edit', ['id' => $id])
+                'action' => $this->generateUrl('email_edit', ['id' => $id]),
             ]
         );
         $form->handleRequest($request);
@@ -126,7 +120,7 @@ class UserController extends AbstractController
 
         return $this->render('user/edit-email.html.twig', [
             'form' => $form->createView(),
-            'user' => $user
+            'user' => $user,
         ]);
     }
 }

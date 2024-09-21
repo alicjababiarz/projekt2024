@@ -45,6 +45,10 @@ class ElementFixtures extends AbstractBaseFixtures implements DependentFixtureIn
             $category = $this->getRandomReference('categories');
             $element->setCategory($category);
 
+            /** @var User $author */
+            $author = $this->getRandomReference('users');
+            $element->setAuthor($author);
+
             return $element;
         });
 
@@ -57,10 +61,10 @@ class ElementFixtures extends AbstractBaseFixtures implements DependentFixtureIn
      *
      * @return string[] of dependencies
      *
-     * @psalm-return array{0: CategoryFixtures::class}
+     * @psalm-return array{0: CategoryFixtures::class, UserFixtures::class}
      */
     public function getDependencies(): array
     {
-        return [CategoryFixtures::class];
+        return [CategoryFixtures::class, UserFixtures::class];
     }
 }

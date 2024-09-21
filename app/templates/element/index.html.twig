@@ -30,8 +30,10 @@
                 <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'element.title') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.category'|trans, 'category.title') }}</th>
                 <th>{{ 'label.actions'|trans }}</th>
-                <th>{{ 'label.edit'|trans }}</th>
-                <th>{{ 'label.delete'|trans }}</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <th>{{ 'label.edit'|trans }}</th>
+                    <th>{{ 'label.delete'|trans }}</th>
+                {% endif %}
             </tr>
             </thead>
             <tbody>
@@ -43,8 +45,9 @@
                     <td>{{ element.title }}</td>
                     <td>{{ element.category.title }}</td>
 
-                    <td><a href="{{ url('element_show', {id: element.id}) }}" class="btn btn-outline-primary" title="{{ 'action.show'|trans }}">
-                            {{ 'action.show'|trans }}</a></td>
+                        <td><a href="{{ url('element_show', {id: element.id}) }}" class="btn btn-outline-primary" title="{{ 'action.show'|trans }}">
+                                {{ 'action.show'|trans }}</a></td>
+
                     {% if is_granted('ROLE_ADMIN') %}
                         <td><a href="{{ url('element_edit', {id: element.id}) }}" class="btn btn-outline-warning" title="{{ 'action.edit'|trans }}">
                                 {{ 'action.edit'|trans }}</a></td>

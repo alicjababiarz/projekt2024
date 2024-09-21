@@ -8,6 +8,7 @@ namespace App\Repository;
 
 use App\Entity\Category;
 use App\Entity\Element;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Exception\ORMException;
@@ -37,6 +38,7 @@ class ElementRepository extends ServiceEntityRepository
      * @constant int
      */
     public const PAGINATOR_ITEMS_PER_PAGE = 10;
+
     /**
      * Constructor.
      *
@@ -46,6 +48,7 @@ class ElementRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Element::class);
     }
+
     /**
      * Query all records.
      *
@@ -61,10 +64,12 @@ class ElementRepository extends ServiceEntityRepository
             ->join('element.category', 'category')
             ->orderBy('element.updatedAt', 'DESC');
     }
+
     /**
      * Save entity.
      *
      * @param Element $element Element entity
+     *
      * @throws ORMException
      */
     public function save(Element $element): void
@@ -73,6 +78,7 @@ class ElementRepository extends ServiceEntityRepository
         $this->_em->persist($element);
         $this->_em->flush();
     }
+
     /**
      * Delete entity.
      *
@@ -87,12 +93,13 @@ class ElementRepository extends ServiceEntityRepository
         $this->_em->remove($element);
         $this->_em->flush();
     }
+
     /**
      * Count elements by category.
      *
      * @param Category $category Category
      *
-     * @return int Number of tasks in category
+     * @return int Number of elements in category
      *
      * @throws NoResultException
      * @throws NonUniqueResultException
@@ -107,6 +114,25 @@ class ElementRepository extends ServiceEntityRepository
             ->getQuery()
             ->getSingleScalarResult();
     }
+
+    // ...
+    /**
+     * Query elements by author.
+     *
+     * @param User $user User entity
+     *
+     * @return QueryBuilder Query builder
+     */
+    public function queryByAuthor(User $user): QueryBuilder
+    {
+        $queryBuilder = $this->queryAll();
+
+        $queryBuilder->andWhere('element.author = :author')
+            ->setParameter('author', $user);
+
+        return $queryBuilder;
+    }
+
     /**
      * Get or create new query builder.
      *
@@ -114,7 +140,7 @@ class ElementRepository extends ServiceEntityRepository
      *
      * @return QueryBuilder Query builder
      */
-    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    private function getOrCreateQueryBuilder(?QueryBuilder $queryBuilder = null): QueryBuilder
     {
         return $queryBuilder ?? $this->createQueryBuilder('element');
     }

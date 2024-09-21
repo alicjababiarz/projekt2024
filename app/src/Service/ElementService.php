@@ -6,6 +6,7 @@
 namespace App\Service;
 
 use App\Entity\Element;
+use App\Entity\User;
 use App\Repository\ElementRepository;
 use Doctrine\ORM\Exception\ORMException;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -37,10 +38,11 @@ class ElementService implements ElementServiceInterface
     {
     }
 
+// ...
     /**
      * Get paginated list.
      *
-     * @param int $page Page number
+     * @param int  $page   Page number
      *
      * @return PaginationInterface<string, mixed> Paginated list
      */
@@ -52,6 +54,7 @@ class ElementService implements ElementServiceInterface
             self::PAGINATOR_ITEMS_PER_PAGE
         );
     }
+// ...
 
     /**
      * Save entity.
