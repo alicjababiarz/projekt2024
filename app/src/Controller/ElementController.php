@@ -178,18 +178,10 @@ class ElementController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Element $element): Response
     {
-        if ($element->getAuthor() !== $this->getUser()) {
-            $this->addFlash(
-                'warning',
-                $this->translator->trans('message.record_not_found')
-            );
-
-            return $this->redirectToRoute('element_index');
-        }
-        $form = $this->createForm(ElementType::class, $element, [
-            'method' => 'DELETE',
-            'action' => $this->generateUrl('element_delete', ['id' => $element->getId()]),
-        ]);
+        $form = $this->createFormBuilder()
+            ->setAction($this->generateUrl('element_delete', ['id' => $element->getId()]))
+            ->setMethod('DELETE')
+            ->getForm();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -208,6 +200,9 @@ class ElementController extends AbstractController
             [
                 'form' => $form->createView(),
                 'element' => $element,
+                'page_title' => $this->translator->trans('title.element_delete', ['%id%' => $element->getId()]),
+                'back_to_list_path' => 'element_index',
+                'submit_label' => $this->translator->trans('action.delete'),
             ]
         );
     }

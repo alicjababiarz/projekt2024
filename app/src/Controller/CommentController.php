@@ -32,6 +32,7 @@ class CommentController extends AbstractController
     }
 
     /**
+     * Index method
      * @return Response
      */
     #[Route(name: 'comment_index', methods: 'GET')]
@@ -110,12 +111,12 @@ class CommentController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Comment $comment): Response
     {
-        $form = $this->createForm(CommentType::class, $comment, [
-            'method' => 'DELETE',
-            'action' => $this->generateUrl('comment_delete', ['id' => $comment->getId()]),
-        ]);
-        $form->handleRequest($request);
+        $form = $this->createFormBuilder()
+            ->setAction($this->generateUrl('comment_delete', ['id' => $comment->getId()]))
+            ->setMethod('DELETE')
+            ->getForm();
 
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $this->commentService->remove($comment);
 
@@ -124,14 +125,17 @@ class CommentController extends AbstractController
                 $this->translator->trans('message.deleted_successfully')
             );
 
-            return $this->redirectToRoute('comment_index', ['id' => $comment->getId()]);
+            return $this->redirectToRoute('comment_index');
         }
 
         return $this->render(
             'comment/delete.html.twig',
             [
                 'form' => $form->createView(),
-                'element' => $comment,
+                'comment' => $comment,
+                'page_title' => $this->translator->trans('title.comment_delete', ['%id%' => $comment->getId()]),
+                'back_to_list_path' => 'comment_index',
+                'submit_label' => $this->translator->trans('action.delete'),
             ]
         );
     }
