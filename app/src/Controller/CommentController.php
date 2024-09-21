@@ -103,7 +103,7 @@ class CommentController extends AbstractController
     /**
      * Delete action.
      *
-     * @param Comment $comment Comment entity
+     * @param Request $request HTTP request
      *
      * @return Response HTTP response
      */

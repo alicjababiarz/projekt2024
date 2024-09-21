@@ -21,18 +21,12 @@ class ChangePasswordType extends AbstractType
     /**
      * Builds the form.
      *
-     * This method is called for each type in the hierarchy starting from the
-     * top most type. Type extensions can further modify the form.
-     *
      * @param FormBuilderInterface $builder The form builder
      * @param array<string, mixed> $options Form options
-     *
-     * @see FormTypeExtensionInterface::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-
             ->add('currentPassword', PasswordType::class, [
                 'mapped' => false,
                 'label' => 'label.current_password',
@@ -48,8 +42,8 @@ class ChangePasswordType extends AbstractType
                 'invalid_message' => 'message.passwords_should_match',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
-                'first_options'  => ['label' => 'Nowe hasło'],
-                'second_options' => ['label' => 'Powtórz nowe hasło'],
+                'first_options' => ['label' => 'label.new_password'],
+                'second_options' => ['label' => 'label.repeat_new_password'],
             ]);
     }
 
@@ -65,9 +59,6 @@ class ChangePasswordType extends AbstractType
 
     /**
      * Returns the prefix of the template block name for this type.
-     *
-     * The block prefix defaults to the underscored short class name with
-     * the "Type" suffix removed (e.g. "UserProfileType" => "user_profile").
      *
      * @return string The prefix of the template block name
      */

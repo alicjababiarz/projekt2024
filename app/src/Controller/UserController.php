@@ -22,8 +22,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class UserController extends AbstractController
 {
     /**
-     * @param UserServiceInterface $userService
-     * @param TranslatorInterface $translator
+     * @param UserServiceInterface $userService User service interface
      */
     public function __construct(private readonly UserServiceInterface $userService, private readonly TranslatorInterface $translator)
     {
@@ -47,10 +46,7 @@ class UserController extends AbstractController
         $form = $this->createForm(
             ChangePasswordType::class,
             $user,
-            [
-                'method' => 'PUT',
-                'action' => $this->generateUrl('password_edit', ['id' => $id]),
-            ]
+            ['method' => 'PUT', 'action' => $this->generateUrl('password_edit', ['id' => $id])]
         );
         $form->handleRequest($request);
 
@@ -58,9 +54,7 @@ class UserController extends AbstractController
             $currentPassword = $form->get('currentPassword')->getData();
 
             if (!$this->userService->passwordHasher->isPasswordValid($user, $currentPassword)) {
-                $this->addFlash(
-                    'error',
-                    $this->translator->trans('message.current_password_invalid')
+                $this->addFlash('error', $this->translator->trans('message.current_password_invalid')
                 );
 
                 return $this->redirectToRoute('password_edit', ['id' => $id]);
@@ -70,22 +64,21 @@ class UserController extends AbstractController
 
             $this->userService->changePassword($user, $newPassword);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.edited_successfully')
+            $this->addFlash('success', $this->translator->trans('message.edited_successfully')
             );
 
             return $this->redirectToRoute('element_index');
         }
 
-        return $this->render('user/edit-password.html.twig', [
-            'form' => $form->createView(),
-            'user' => $user,
-        ]);
+        return $this->render('user/edit-password.html.twig', ['form' => $form->createView(), 'user' => $user]);
     }
 
     /**
      * Edit email action.
+     *
+     * @param Request $request
+     * @param int $id
+     * @return Response
      */
     #[Route('/{id}/edit-email', name: 'email_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
     #[IsGranted('IS_AUTHENTICATED_FULLY')]

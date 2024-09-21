@@ -22,13 +22,8 @@ class ElementType extends AbstractType
     /**
      * Builds the form.
      *
-     * This method is called for each type in the hierarchy starting from the
-     * top most type. Type extensions can further modify the form.
-     *
      * @param FormBuilderInterface $builder The form builder
      * @param array<string, mixed> $options Form options
-     *
-     * @see FormTypeExtensionInterface::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -41,11 +36,11 @@ class ElementType extends AbstractType
                 'attr' => ['max_length' => 64],
                 'constraints' => [
                     new Assert\NotBlank([
-                        'message' => 'Tytuł nie może być pusty',
+                        'message' => 'message.title_not_blank',
                     ]),
                     new Assert\Length([
                         'max' => 64,
-                        'maxMessage' => 'Tytuł nie może mieć więcej niż 64 znaki',
+                        'maxMessage' => 'message.title_max_length',
                     ]),
                 ]
             ]
@@ -63,7 +58,7 @@ class ElementType extends AbstractType
                     'required' => true,
                     'constraints' => [
                         new Assert\NotNull([
-                            'message' => 'Pole kategorii nie może być puste',
+                            'message' => 'message.category_not_null',
                         ])
                     ]
                 ]
@@ -82,9 +77,6 @@ class ElementType extends AbstractType
 
     /**
      * Returns the prefix of the template block name for this type.
-     *
-     * The block prefix defaults to the underscored short class name with
-     * the "Type" suffix removed (e.g. "UserProfileType" => "user_profile").
      *
      * @return string The prefix of the template block name
      */

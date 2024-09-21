@@ -39,11 +39,11 @@ class CategoryType extends AbstractType
                 'attr' => ['max_length' => 64],
                 'constraints' => [
                     new Assert\NotBlank([
-                        'message' => 'Tytuł kategorii nie może być pusty',
+                        'message' => 'message.title_not_blank',
                     ]),
                     new Assert\Length([
                         'max' => 64,
-                        'maxMessage' => 'Tytuł kategorii nie może mieć więcej niż 64 znaki',
+                        'maxMessage' => 'message.title_length',
                     ]),
                 ]
             ]);

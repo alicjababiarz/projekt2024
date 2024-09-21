@@ -29,25 +29,25 @@ class ChangeEmailType extends AbstractType
         $builder
             ->add('email', RepeatedType::class, [
                 'type' => EmailType::class,
-                'first_options' => ['label' => 'Nowy adres email'],
-                'second_options' => ['label' => 'Powtórz nowy adres email'],
-                'invalid_message' => 'Podane adresy email muszą być takie same',
+                'first_options' => ['label' => 'label.new_email'],
+                'second_options' => ['label' => 'label.repeat_new_email'],
+                'invalid_message' => 'message.emails_must_match',
                 'required' => true,
                 'attr' => [
                     'max_length' => 128,
-                    'constraints' => [
-                        new Assert\NotBlank([
-                            'message' => 'Adres email nie może być pusty.',
-                        ]),
-                        new Assert\Email([
-                            'message' => 'Podaj prawidłowy adres email.',
-                        ]),
-                        new Assert\Length([
-                            'max' => 128,
-                            'maxMessage' => 'Adres email nie może być dłuższy niż 128 znaków',
-                        ]),
-                    ],
-                ]
+                ],
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'message.email_not_blank',
+                    ]),
+                    new Assert\Email([
+                        'message' => 'message.invalid_email_format',
+                    ]),
+                    new Assert\Length([
+                        'max' => 128,
+                        'maxMessage' => 'message.email_length',
+                    ]),
+                ],
             ]);
     }
 

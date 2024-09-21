@@ -15,20 +15,15 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class ElementType.
+ * Class CommentType.
  */
 class CommentType extends AbstractType
 {
     /**
      * Builds the form.
      *
-     * This method is called for each type in the hierarchy starting from the
-     * top most type. Type extensions can further modify the form.
-     *
      * @param FormBuilderInterface $builder The form builder
      * @param array<string, mixed> $options Form options
-     *
-     * @see FormTypeExtensionInterface::buildForm()
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -41,16 +36,16 @@ class CommentType extends AbstractType
                 'attr' => ['max_length' => 64],
                 'constraints' => [
                     new Assert\NotBlank([
-                        'message' => 'Pole email nie może być puste',
+                        'message' => 'message.email_not_blank',
                     ]),
                     new Assert\Email([
-                        'message' => 'Podaj prawidłowy adres email',
+                        'message' => 'message.invalid_email_format',
                     ]),
                     new Assert\Length([
                         'max' => 64,
-                        'maxMessage' => 'Adres email nie może mieć więcej niż 64 znaki',
+                        'maxMessage' => 'message.email_length',
                     ]),
-                ]
+                ],
             ]
         )
             ->add(
@@ -62,13 +57,13 @@ class CommentType extends AbstractType
                     'attr' => ['max_length' => 64],
                     'constraints' => [
                         new Assert\NotBlank([
-                            'message' => 'Pole nick nie może być puste.',
-                        ]), new Assert\Length(
-                            [
-                                'max' => 64,
-                                'maxMessage' => 'Nick nie może mieć więcej niż 64 znaki',
-                            ]
-                        )]
+                            'message' => 'message.nick_not_blank',
+                        ]),
+                        new Assert\Length([
+                            'max' => 64,
+                            'maxMessage' => 'message.nick_length',
+                        ]),
+                    ],
                 ]
             )
             ->add(
@@ -80,16 +75,15 @@ class CommentType extends AbstractType
                     'attr' => ['max_length' => 255],
                     'constraints' => [
                         new Assert\NotBlank([
-                            'message' => 'Pole treść komentarza nie może być puste',
+                            'message' => 'message.comment_content_not_blank',
                         ]),
                         new Assert\Length([
                             'max' => 255,
-                            'maxMessage' => 'Treść komentarza nie może mieć więcej niż 255 znaków',
+                            'maxMessage' => 'message.comment_content_length',
                         ]),
-                    ]
+                    ],
                 ]
             )
-
             ->add(
                 'element',
                 EntityType::class,
@@ -103,9 +97,10 @@ class CommentType extends AbstractType
                     'required' => true,
                     'constraints' => [
                         new Assert\NotNull([
-                            'message' => 'Pole element nie może być puste',
-                        ])
-                    ]]
+                            'message' => 'message.element_not_null',
+                        ]),
+                    ],
+                ]
             );
     }
 
@@ -121,9 +116,6 @@ class CommentType extends AbstractType
 
     /**
      * Returns the prefix of the template block name for this type.
-     *
-     * The block prefix defaults to the underscored short class name with
-     * the "Type" suffix removed (e.g. "UserProfileType" => "user_profile").
      *
      * @return string The prefix of the template block name
      */

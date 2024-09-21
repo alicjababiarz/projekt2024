@@ -198,10 +198,6 @@
                         <source>message.enter_current_email</source>
                         <target>Enter current email</target>
                         </trans-unit>
-        <trans-unit id="message.invalid_email_format">
-                                <source>message.invalid_email_format</source>
-                                <target>Invalid email format</target>
-                                </trans-unit>
         <trans-unit id="message.enter_new_email">
                                         <source>message.enter_new_email</source>
                                         <target>Enter new email</target>
@@ -282,7 +278,54 @@
                                                                     <source>label.none</source>
                                                                     <target>None</target>
                                                                     </trans-unit>
-
+        <trans-unit id="message.title_not_blank">
+                        <source>message.title_not_blank</source>
+                        <target>Cannot be blank</target>
+                    </trans-unit>
+                    <trans-unit id="message.title_length">
+                        <source>message.title_length</source>
+                        <target>Category title cannot be longer than 64 characters</target>
+                    </trans-unit>
+                    <trans-unit id="message.email_not_blank">
+                        <source>message.email_not_blank</source>
+                        <target>Email cannot be blank</target>
+                    </trans-unit>
+                    <trans-unit id="message.invalid_email_format">
+                        <source>message.invalid_email_format</source>
+                        <target>Please provide valid email address</target>
+                    </trans-unit>
+                    <trans-unit id="message.email_length">
+                        <source>message.email_length</source>
+                        <target>Cannot be longer than 128 characters</target>
+                    </trans-unit>
+                    <trans-unit id="message.nick_not_blank">
+                        <source>message.nick_not_blank</source>
+                        <target>Nickname cannot be blank</target>
+                    </trans-unit>
+                    <trans-unit id="message.nick_length">
+                        <source>message.nick_length</source>
+                        <target>Nickname cannot be longer than 64 characters</target>
+                    </trans-unit>
+                    <trans-unit id="message.comment_content_not_blank">
+                        <source>message.comment_content_not_blank</source>
+                        <target>Comment content cannot be blank</target>
+                    </trans-unit>
+                    <trans-unit id="message.comment_content_length">
+                        <source>message.comment_content_length</source>
+                        <target>Comment content cannot be longer than 255 characters</target>
+                    </trans-unit>
+                    <trans-unit id="message.element_not_null">
+                        <source>message.element_not_null</source>
+                        <target>Element field cannot be empty</target>
+                    </trans-unit>
+                    <trans-unit id="message.title_max_length">
+                        <source>message.title_max_length</source>
+                        <target>Title cannot be longer than 64 characters</target>
+                    </trans-unit>
+                    <trans-unit id="message.category_not_null">
+                        <source>message.category_not_null</source>
+                        <target>Category field cannot be empty</target>
+                    </trans-unit>
     </body>
   </file>
 </xliff>
