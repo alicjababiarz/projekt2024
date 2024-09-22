@@ -33,9 +33,7 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Constructor.
      *
-     * @param CategoryRepository     $categoryRepository Category repository
-     * @param ElementRepository     $elementRepository Element repository
-     * @param PaginatorInterface $paginator      Paginator
+     * @param CategoryRepository $categoryRepository Category repository
      */
     public function __construct(private readonly CategoryRepository $categoryRepository, private readonly PaginatorInterface $paginator, private readonly ElementRepository $elementRepository)
     {
@@ -61,6 +59,7 @@ class CategoryService implements CategoryServiceInterface
      * Save entity.
      *
      * @param Category $category Category entity
+     *
      * @throws ORMException
      */
     public function save(Category $category): void
@@ -73,17 +72,16 @@ class CategoryService implements CategoryServiceInterface
         */
 
         $this->categoryRepository->save($category);
-
     }
 
     /**
      * Delete entity.
      *
      * @param Category $category Category entity
+     *
      * @throws ORMException
-     * @return void
      * */
-        public function delete(Category $category): void
+    public function delete(Category $category): void
     {
         $this->categoryRepository->delete($category);
     }
@@ -105,5 +103,4 @@ class CategoryService implements CategoryServiceInterface
             return false;
         }
     }
-
 }

@@ -42,7 +42,7 @@ class ElementType extends AbstractType
                         'max' => 64,
                         'maxMessage' => 'message.title_max_length',
                     ]),
-                ]
+                ],
             ]
         )
             ->add(
@@ -59,8 +59,8 @@ class ElementType extends AbstractType
                     'constraints' => [
                         new Assert\NotNull([
                             'message' => 'message.category_not_null',
-                        ])
-                    ]
+                        ]),
+                    ],
                 ]
             );
     }

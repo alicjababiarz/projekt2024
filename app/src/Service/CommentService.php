@@ -13,13 +13,12 @@ use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
 /**
- *
+ * Comment service
  */
 class CommentService implements CommentServiceInterface
 {
-    const PAGINATOR_ITEMS_PER_PAGE = 10;
+    public const PAGINATOR_ITEMS_PER_PAGE = 10;
     private CommentRepository $commentRepository;
-
 
     /**
      * @param CommentRepository $commentRepository
@@ -65,7 +64,7 @@ class CommentService implements CommentServiceInterface
     public function getPaginatedList(int $page, Element $element): PaginationInterface
     {
         return $this->paginator->paginate(
-            $this->commentRepository->findBy(['element'=>$element]),
+            $this->commentRepository->findBy(['element' => $element]),
             $page ?? 1,
             self::PAGINATOR_ITEMS_PER_PAGE
         );

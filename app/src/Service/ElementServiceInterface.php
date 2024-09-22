@@ -6,7 +6,6 @@
 namespace App\Service;
 
 use App\Entity\Element;
-use App\Entity\User;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
@@ -25,7 +24,7 @@ interface ElementServiceInterface
 
     /**
      * Save entity.
-     w
+     *
      * @param Element $element Element entity
      */
     public function save(Element $element): void;
@@ -33,9 +32,7 @@ interface ElementServiceInterface
     /**
      * Delete entity.
      *
-     * @param Element $element
-     *
-     * @return void
+     * @param Element $element Element entity
      */
     public function delete(Element $element): void;
 }

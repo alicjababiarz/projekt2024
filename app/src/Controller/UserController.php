@@ -23,6 +23,8 @@ class UserController extends AbstractController
 {
     /**
      * @param UserServiceInterface $userService User service interface
+     *
+     * @param TranslatorInterface $translator Translator interface
      */
     public function __construct(private readonly UserServiceInterface $userService, private readonly TranslatorInterface $translator)
     {
@@ -54,7 +56,9 @@ class UserController extends AbstractController
             $currentPassword = $form->get('currentPassword')->getData();
 
             if (!$this->userService->passwordHasher->isPasswordValid($user, $currentPassword)) {
-                $this->addFlash('error', $this->translator->trans('message.current_password_invalid')
+                $this->addFlash(
+                    'error',
+                    $this->translator->trans('message.current_password_invalid')
                 );
 
                 return $this->redirectToRoute('password_edit', ['id' => $id]);
@@ -64,7 +68,9 @@ class UserController extends AbstractController
 
             $this->userService->changePassword($user, $newPassword);
 
-            $this->addFlash('success', $this->translator->trans('message.edited_successfully')
+            $this->addFlash(
+                'success',
+                $this->translator->trans('message.edited_successfully')
             );
 
             return $this->redirectToRoute('element_index');
@@ -75,7 +81,6 @@ class UserController extends AbstractController
 
     /**
      * Edit email action.
-     *
      * @param Request $request
      * @param int $id
      * @return Response

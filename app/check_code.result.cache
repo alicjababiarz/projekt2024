@@ -1,1678 +1,198 @@
-   1) src/Controller/CommentController.php (no_superfluous_phpdoc_tags, phpdoc_summary)
-   2) src/Controller/SecurityController.php (no_superfluous_phpdoc_tags, no_empty_phpdoc)
-   3) src/Controller/UserController.php (no_superfluous_phpdoc_tags, no_empty_phpdoc)
-   4) src/DataFixtures/AbstractBaseFixtures.php (align_multiline_comment, line_ending)
-   5) src/DataFixtures/AppFixtures.php (no_empty_phpdoc, phpdoc_summary, phpdoc_separation)
-   6) src/DataFixtures/CategoryFixtures.php (method_argument_space, align_multiline_comment, line_ending)
-   7) src/DataFixtures/ElementFixtures.php (method_argument_space, align_multiline_comment, line_ending)
-   8) src/DataFixtures/UserFixtures.php (method_argument_space, align_multiline_comment, line_ending)
-   9) src/Entity/Category.php (align_multiline_comment, fully_qualified_strict_types, no_superfluous_phpdoc_tags, no_empty_phpdoc, global_namespace_import, line_ending, phpdoc_trim, no_unused_imports, single_line_after_imports, no_extra_blank_lines)
-  10) src/Entity/Comment.php (single_space_around_construct, align_multiline_comment, no_superfluous_phpdoc_tags, no_empty_phpdoc, line_ending)
-  11) src/Entity/Element.php (class_attributes_separation, single_space_around_construct, align_multiline_comment, no_superfluous_phpdoc_tags, no_empty_phpdoc, global_namespace_import, line_ending, phpdoc_trim, no_unused_imports, blank_line_before_statement, phpdoc_trim_consecutive_blank_line_separation, single_blank_line_at_eof)
-  12) src/Entity/Enum/UserRole.php (align_multiline_comment, line_ending)
-  13) src/Form/Type/CategoryType.php (method_argument_space, align_multiline_comment, trailing_comma_in_multiline, line_ending)
-  14) src/Form/Type/ChangeEmailType.php (align_multiline_comment, no_superfluous_phpdoc_tags, no_empty_phpdoc, trailing_comma_in_multiline, line_ending)
-  15) src/Form/Type/ChangePasswordType.php (align_multiline_comment, line_ending)
-  16) src/Form/Type/CommentType.php (method_argument_space, align_multiline_comment, trailing_comma_in_multiline, line_ending)
-  17) src/Form/Type/ElementType.php (method_argument_space, align_multiline_comment, trailing_comma_in_multiline, line_ending)
-  18) src/Repository/CategoryRepository.php (class_attributes_separation, nullable_type_declaration_for_default_null_value, phpdoc_separation, blank_lines_before_namespace)
-  19) src/Repository/CommentRepository.php (align_multiline_comment, no_superfluous_phpdoc_tags, no_empty_phpdoc, line_ending, no_extra_blank_lines)
-  20) src/Repository/UserRepository.php (align_multiline_comment, no_superfluous_phpdoc_tags, no_empty_phpdoc, line_ending, phpdoc_separation)
-  21) src/Service/CategoryService.php (class_attributes_separation, method_argument_space, align_multiline_comment, phpdoc_indent, no_superfluous_phpdoc_tags, line_ending, braces_position, phpdoc_separation, statement_indentation, no_extra_blank_lines, phpdoc_align)
-  22) src/Service/CategoryServiceInterface.php (align_multiline_comment, no_superfluous_phpdoc_tags, line_ending, phpdoc_trim)
-  23) src/Service/CommentService.php (visibility_required, class_attributes_separation, no_superfluous_phpdoc_tags, no_empty_phpdoc, binary_operator_spaces)
-  24) src/Service/CommentServiceInterface.php (no_superfluous_phpdoc_tags, no_empty_phpdoc)
-  25) src/Service/ElementService.php (method_argument_space, align_multiline_comment, no_superfluous_phpdoc_tags, line_ending, statement_indentation, no_unused_imports, phpdoc_trim_consecutive_blank_line_separation, phpdoc_align)
-  26) src/Service/ElementServiceInterface.php (align_multiline_comment, no_superfluous_phpdoc_tags, phpdoc_summary, line_ending, phpdoc_separation, phpdoc_trim, no_unused_imports)
-  27) src/Service/UserService.php (method_argument_space, align_multiline_comment, no_superfluous_phpdoc_tags, no_empty_phpdoc, line_ending)
-  28) src/Service/UserServiceInterface.php (align_multiline_comment, no_superfluous_phpdoc_tags, no_empty_phpdoc, line_ending)
 
-Found 28 of 35 files that can be fixed in 1.084 seconds, 18.000 MB memory used
+Found 0 of 35 files that can be fixed in 2.972 seconds, 18.000 MB memory used
 
 FILE: /home/wwwroot/app/src/Controller/CommentController.php
------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
 FOUND 2 ERRORS AFFECTING 2 LINES
------------------------------------------------------------------------------------------------
- 103 | ERROR | Doc comment for parameter "$request" missing
- 106 | ERROR | Doc comment for parameter $comment does not match actual variable name $request
------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+  36 | ERROR | Missing @return tag in function comment
+ 102 | ERROR | Doc comment for parameter "$comment" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Controller/SecurityController.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 20 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 14 | ERROR | Missing doc comment for class SecurityController
+ 17 | ERROR | Missing doc comment for function login()
+ 32 | ERROR | Missing doc comment for function logout()
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Controller/UserController.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 6 ERRORS AFFECTING 4 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 26 | ERROR | [x] Expected 2 spaces after parameter type; 1 found
- 34 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
- 34 | ERROR | [x] Expected 5 spaces after parameter type; 1 found
- 87 | ERROR | [ ] Doc comment for parameter "$request" missing
- 87 | ERROR | [ ] Doc comment for parameter "$id" missing
- 89 | ERROR | [ ] Missing @return tag in function comment
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 3 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 5 ERRORS AFFECTING 4 LINES
+----------------------------------------------------------------------
+ 24 | ERROR | Doc comment for parameter "$translator" missing
+ 33 | ERROR | Missing doc comment for function editPassword()
+ 75 | ERROR | Doc comment for parameter "$request" missing
+ 75 | ERROR | Doc comment for parameter "$id" missing
+ 77 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
 
 
-FILE: /home/wwwroot/app/src/DataFixtures/AbstractBaseFixtures.php
---------------------------------------------------------------------------------------
-FOUND 1 ERROR AND 82 WARNINGS AFFECTING 83 LINES
---------------------------------------------------------------------------------------
-   1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-   4 | WARNING | [x] Please trim any trailing whitespace
-   5 | WARNING | [x] Please trim any trailing whitespace
-   6 | WARNING | [x] Please trim any trailing whitespace
-   7 | WARNING | [x] Please trim any trailing whitespace
-   8 | WARNING | [x] Please trim any trailing whitespace
-   9 | WARNING | [x] Please trim any trailing whitespace
-  10 | WARNING | [x] Please trim any trailing whitespace
-  11 | WARNING | [x] Please trim any trailing whitespace
-  12 | WARNING | [x] Please trim any trailing whitespace
-  17 | WARNING | [x] Please trim any trailing whitespace
-  18 | WARNING | [x] Please trim any trailing whitespace
-  19 | WARNING | [x] Please trim any trailing whitespace
-  22 | WARNING | [x] Please trim any trailing whitespace
-  23 | WARNING | [x] Please trim any trailing whitespace
-  24 | WARNING | [x] Please trim any trailing whitespace
-  27 | WARNING | [x] Please trim any trailing whitespace
-  28 | WARNING | [x] Please trim any trailing whitespace
-  29 | WARNING | [x] Please trim any trailing whitespace
-  34 | WARNING | [x] Please trim any trailing whitespace
-  35 | WARNING | [x] Please trim any trailing whitespace
-  36 | WARNING | [x] Please trim any trailing whitespace
-  41 | WARNING | [x] Please trim any trailing whitespace
-  42 | WARNING | [x] Please trim any trailing whitespace
-  43 | WARNING | [x] Please trim any trailing whitespace
-  44 | WARNING | [x] Please trim any trailing whitespace
-  45 | WARNING | [x] Please trim any trailing whitespace
-  46 | WARNING | [x] Please trim any trailing whitespace
-  47 | WARNING | [x] Please trim any trailing whitespace
-  48 | WARNING | [x] Please trim any trailing whitespace
-  51 | WARNING | [x] Please trim any trailing whitespace
-  52 | WARNING | [x] Please trim any trailing whitespace
-  53 | WARNING | [x] Please trim any trailing whitespace
-  71 | WARNING | [x] Please trim any trailing whitespace
-  72 | WARNING | [x] Please trim any trailing whitespace
-  73 | WARNING | [x] Please trim any trailing whitespace
-  74 | WARNING | [x] Please trim any trailing whitespace
-  75 | WARNING | [x] Please trim any trailing whitespace
-  76 | WARNING | [x] Please trim any trailing whitespace
-  77 | WARNING | [x] Please trim any trailing whitespace
-  78 | WARNING | [x] Please trim any trailing whitespace
-  79 | WARNING | [x] Please trim any trailing whitespace
-  80 | WARNING | [x] Please trim any trailing whitespace
-  81 | WARNING | [x] Please trim any trailing whitespace
-  82 | WARNING | [x] Please trim any trailing whitespace
-  83 | WARNING | [x] Please trim any trailing whitespace
-  85 | WARNING | [x] Please trim any trailing whitespace
-  86 | WARNING | [x] Please trim any trailing whitespace
-  87 | WARNING | [x] Please trim any trailing whitespace
-  88 | WARNING | [x] Please trim any trailing whitespace
-  98 | WARNING | [x] Please trim any trailing whitespace
-  99 | WARNING | [x] Please trim any trailing whitespace
- 100 | WARNING | [x] Please trim any trailing whitespace
- 101 | WARNING | [x] Please trim any trailing whitespace
- 102 | WARNING | [x] Please trim any trailing whitespace
- 103 | WARNING | [x] Please trim any trailing whitespace
- 104 | WARNING | [x] Please trim any trailing whitespace
- 105 | WARNING | [x] Please trim any trailing whitespace
- 106 | WARNING | [x] Please trim any trailing whitespace
- 107 | WARNING | [x] Please trim any trailing whitespace
- 108 | WARNING | [x] Please trim any trailing whitespace
- 109 | WARNING | [x] Please trim any trailing whitespace
- 110 | WARNING | [x] Please trim any trailing whitespace
- 111 | WARNING | [x] Please trim any trailing whitespace
- 112 | WARNING | [x] Please trim any trailing whitespace
- 113 | WARNING | [x] Please trim any trailing whitespace
- 114 | WARNING | [x] Please trim any trailing whitespace
- 115 | WARNING | [x] Please trim any trailing whitespace
- 116 | WARNING | [x] Please trim any trailing whitespace
- 117 | WARNING | [x] Please trim any trailing whitespace
- 118 | WARNING | [x] Please trim any trailing whitespace
- 119 | WARNING | [x] Please trim any trailing whitespace
- 129 | WARNING | [x] Please trim any trailing whitespace
- 130 | WARNING | [x] Please trim any trailing whitespace
- 131 | WARNING | [x] Please trim any trailing whitespace
- 132 | WARNING | [x] Please trim any trailing whitespace
- 133 | WARNING | [x] Please trim any trailing whitespace
- 134 | WARNING | [x] Please trim any trailing whitespace
- 135 | WARNING | [x] Please trim any trailing whitespace
- 136 | WARNING | [x] Please trim any trailing whitespace
- 137 | WARNING | [x] Please trim any trailing whitespace
- 138 | WARNING | [x] Please trim any trailing whitespace
- 139 | WARNING | [x] Please trim any trailing whitespace
---------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 83 MARKED SNIFF VIOLATIONS AUTOMATICALLY
---------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/DataFixtures/CategoryFixtures.php
--------------------------------------------------------------------------------------
-FOUND 1 ERROR AND 32 WARNINGS AFFECTING 33 LINES
--------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 22 | WARNING | [x] Please trim any trailing whitespace
- 23 | WARNING | [x] Please trim any trailing whitespace
- 24 | WARNING | [x] Please trim any trailing whitespace
- 25 | WARNING | [x] Please trim any trailing whitespace
- 26 | WARNING | [x] Please trim any trailing whitespace
- 27 | WARNING | [x] Please trim any trailing whitespace
- 28 | WARNING | [x] Please trim any trailing whitespace
- 29 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
--------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 33 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/DataFixtures/ElementFixtures.php
--------------------------------------------------------------------------------------
-FOUND 1 ERROR AND 52 WARNINGS AFFECTING 53 LINES
--------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 17 | WARNING | [x] Please trim any trailing whitespace
- 24 | WARNING | [x] Please trim any trailing whitespace
- 25 | WARNING | [x] Please trim any trailing whitespace
- 26 | WARNING | [x] Please trim any trailing whitespace
- 27 | WARNING | [x] Please trim any trailing whitespace
- 28 | WARNING | [x] Please trim any trailing whitespace
- 29 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 48 | WARNING | [x] Please trim any trailing whitespace
- 49 | WARNING | [x] Please trim any trailing whitespace
- 50 | WARNING | [x] Please trim any trailing whitespace
- 51 | WARNING | [x] Please trim any trailing whitespace
- 52 | WARNING | [x] Please trim any trailing whitespace
- 53 | WARNING | [x] Please trim any trailing whitespace
- 54 | WARNING | [x] Please trim any trailing whitespace
- 55 | WARNING | [x] Please trim any trailing whitespace
- 56 | WARNING | [x] Please trim any trailing whitespace
- 57 | WARNING | [x] Please trim any trailing whitespace
- 65 | WARNING | [x] Please trim any trailing whitespace
- 66 | WARNING | [x] Please trim any trailing whitespace
- 67 | WARNING | [x] Please trim any trailing whitespace
- 68 | WARNING | [x] Please trim any trailing whitespace
- 69 | WARNING | [x] Please trim any trailing whitespace
- 70 | WARNING | [x] Please trim any trailing whitespace
--------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 53 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/DataFixtures/UserFixtures.php
--------------------------------------------------------------------------------------
-FOUND 1 ERROR AND 56 WARNINGS AFFECTING 57 LINES
--------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 17 | WARNING | [x] Please trim any trailing whitespace
- 18 | WARNING | [x] Please trim any trailing whitespace
- 21 | WARNING | [x] Please trim any trailing whitespace
- 22 | WARNING | [x] Please trim any trailing whitespace
- 23 | WARNING | [x] Please trim any trailing whitespace
- 24 | WARNING | [x] Please trim any trailing whitespace
- 25 | WARNING | [x] Please trim any trailing whitespace
- 28 | WARNING | [x] Please trim any trailing whitespace
- 29 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 48 | WARNING | [x] Please trim any trailing whitespace
- 49 | WARNING | [x] Please trim any trailing whitespace
- 50 | WARNING | [x] Please trim any trailing whitespace
- 51 | WARNING | [x] Please trim any trailing whitespace
- 52 | WARNING | [x] Please trim any trailing whitespace
- 53 | WARNING | [x] Please trim any trailing whitespace
- 54 | WARNING | [x] Please trim any trailing whitespace
- 55 | WARNING | [x] Please trim any trailing whitespace
- 56 | WARNING | [x] Please trim any trailing whitespace
- 57 | WARNING | [x] Please trim any trailing whitespace
- 58 | WARNING | [x] Please trim any trailing whitespace
- 59 | WARNING | [x] Please trim any trailing whitespace
- 60 | WARNING | [x] Please trim any trailing whitespace
- 61 | WARNING | [x] Please trim any trailing whitespace
- 62 | WARNING | [x] Please trim any trailing whitespace
- 63 | WARNING | [x] Please trim any trailing whitespace
- 64 | WARNING | [x] Please trim any trailing whitespace
- 65 | WARNING | [x] Please trim any trailing whitespace
--------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 57 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------
+FILE: /home/wwwroot/app/src/DataFixtures/AppFixtures.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 12 | ERROR | Missing doc comment for class AppFixtures
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Entity/Category.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 3 ERRORS AND 107 WARNINGS AFFECTING 109 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-   4 | WARNING | [x] Please trim any trailing whitespace
-   5 | WARNING | [x] Please trim any trailing whitespace
-   6 | WARNING | [x] Please trim any trailing whitespace
-   7 | WARNING | [x] Please trim any trailing whitespace
-   8 | WARNING | [x] Please trim any trailing whitespace
-   9 | WARNING | [x] Please trim any trailing whitespace
-  10 | WARNING | [x] Please trim any trailing whitespace
-  11 | WARNING | [x] Please trim any trailing whitespace
-  12 | WARNING | [x] Please trim any trailing whitespace
-  13 | ERROR   | [x] There must be one blank line after the last USE statement; 2 found;
-  13 | WARNING | [x] Please trim any trailing whitespace
-  14 | WARNING | [x] Please trim any trailing whitespace
-  15 | WARNING | [x] Please trim any trailing whitespace
-  18 | WARNING | [x] Please trim any trailing whitespace
-  19 | WARNING | [x] Please trim any trailing whitespace
-  20 | WARNING | [x] Please trim any trailing whitespace
-  21 | WARNING | [x] Please trim any trailing whitespace
-  22 | WARNING | [x] Please trim any trailing whitespace
-  23 | WARNING | [x] Please trim any trailing whitespace
-  28 | WARNING | [x] Please trim any trailing whitespace
-  29 | WARNING | [x] Please trim any trailing whitespace
-  30 | WARNING | [x] Please trim any trailing whitespace
-  31 | WARNING | [x] Please trim any trailing whitespace
-  32 | WARNING | [x] Please trim any trailing whitespace
-  33 | WARNING | [x] Please trim any trailing whitespace
-  38 | WARNING | [x] Please trim any trailing whitespace
-  39 | WARNING | [x] Please trim any trailing whitespace
-  40 | WARNING | [x] Please trim any trailing whitespace
-  41 | WARNING | [x] Please trim any trailing whitespace
-  42 | WARNING | [x] Please trim any trailing whitespace
-  43 | WARNING | [x] Please trim any trailing whitespace
-  48 | WARNING | [x] Please trim any trailing whitespace
-  49 | WARNING | [x] Please trim any trailing whitespace
-  50 | WARNING | [x] Please trim any trailing whitespace
-  51 | WARNING | [x] Please trim any trailing whitespace
-  52 | WARNING | [x] Please trim any trailing whitespace
-  53 | WARNING | [x] Please trim any trailing whitespace
-  54 | WARNING | [x] Please trim any trailing whitespace
-  59 | WARNING | [x] Please trim any trailing whitespace
-  60 | WARNING | [x] Please trim any trailing whitespace
-  61 | WARNING | [x] Please trim any trailing whitespace
-  62 | WARNING | [x] Please trim any trailing whitespace
-  63 | WARNING | [x] Please trim any trailing whitespace
-  64 | WARNING | [x] Please trim any trailing whitespace
-  65 | WARNING | [x] Please trim any trailing whitespace
-  70 | WARNING | [x] Please trim any trailing whitespace
-  71 | WARNING | [x] Please trim any trailing whitespace
-  72 | WARNING | [x] Please trim any trailing whitespace
-  73 | WARNING | [x] Please trim any trailing whitespace
-  74 | WARNING | [x] Please trim any trailing whitespace
-  75 | WARNING | [x] Please trim any trailing whitespace
-  76 | WARNING | [x] Please trim any trailing whitespace
-  79 | WARNING | [x] Please trim any trailing whitespace
-  80 | WARNING | [x] Please trim any trailing whitespace
-  81 | WARNING | [x] Please trim any trailing whitespace
-  82 | WARNING | [x] Please trim any trailing whitespace
-  83 | WARNING | [x] Please trim any trailing whitespace
-  84 | WARNING | [x] Please trim any trailing whitespace
-  89 | WARNING | [x] Please trim any trailing whitespace
-  90 | WARNING | [x] Please trim any trailing whitespace
-  91 | WARNING | [x] Please trim any trailing whitespace
-  92 | WARNING | [x] Please trim any trailing whitespace
-  93 | WARNING | [x] Please trim any trailing whitespace
-  94 | WARNING | [x] Please trim any trailing whitespace
-  99 | WARNING | [x] Please trim any trailing whitespace
- 100 | WARNING | [x] Please trim any trailing whitespace
- 101 | WARNING | [x] Please trim any trailing whitespace
- 102 | WARNING | [x] Please trim any trailing whitespace
- 103 | WARNING | [x] Please trim any trailing whitespace
- 104 | WARNING | [x] Please trim any trailing whitespace
- 109 | WARNING | [x] Please trim any trailing whitespace
- 110 | WARNING | [x] Please trim any trailing whitespace
- 111 | WARNING | [x] Please trim any trailing whitespace
- 112 | WARNING | [x] Please trim any trailing whitespace
- 113 | WARNING | [x] Please trim any trailing whitespace
- 114 | WARNING | [x] Please trim any trailing whitespace
- 119 | WARNING | [x] Please trim any trailing whitespace
- 120 | WARNING | [x] Please trim any trailing whitespace
- 121 | WARNING | [x] Please trim any trailing whitespace
- 122 | WARNING | [x] Please trim any trailing whitespace
- 123 | WARNING | [x] Please trim any trailing whitespace
- 124 | WARNING | [x] Please trim any trailing whitespace
- 129 | WARNING | [x] Please trim any trailing whitespace
- 130 | WARNING | [x] Please trim any trailing whitespace
- 131 | WARNING | [x] Please trim any trailing whitespace
- 132 | WARNING | [x] Please trim any trailing whitespace
- 133 | WARNING | [x] Please trim any trailing whitespace
- 134 | WARNING | [x] Please trim any trailing whitespace
- 139 | WARNING | [x] Please trim any trailing whitespace
- 140 | WARNING | [x] Please trim any trailing whitespace
- 141 | WARNING | [x] Please trim any trailing whitespace
- 142 | WARNING | [x] Please trim any trailing whitespace
- 143 | WARNING | [x] Please trim any trailing whitespace
- 144 | WARNING | [x] Please trim any trailing whitespace
- 147 | WARNING | [x] Please trim any trailing whitespace
- 148 | WARNING | [x] Please trim any trailing whitespace
- 149 | WARNING | [x] Please trim any trailing whitespace
- 150 | WARNING | [x] Please trim any trailing whitespace
- 151 | WARNING | [x] Please trim any trailing whitespace
- 152 | WARNING | [x] Please trim any trailing whitespace
- 154 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
- 156 | WARNING | [x] Please trim any trailing whitespace
- 157 | WARNING | [x] Please trim any trailing whitespace
- 158 | WARNING | [x] Please trim any trailing whitespace
- 159 | WARNING | [x] Please trim any trailing whitespace
- 160 | WARNING | [x] Please trim any trailing whitespace
- 161 | WARNING | [x] Please trim any trailing whitespace
- 162 | WARNING | [x] Please trim any trailing whitespace
- 163 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 110 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+  64 | ERROR | Missing doc comment for function getId()
+ 129 | ERROR | Missing doc comment for function getSlug()
+ 134 | ERROR | Doc comment for parameter "$slug" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Entity/Comment.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 5 ERRORS AND 102 WARNINGS AFFECTING 107 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-   2 | WARNING | [x] Please trim any trailing whitespace
-   5 | WARNING | [x] Please trim any trailing whitespace
-   6 | WARNING | [x] Please trim any trailing whitespace
-   7 | WARNING | [x] Please trim any trailing whitespace
-   8 | WARNING | [x] Please trim any trailing whitespace
-   9 | WARNING | [x] Please trim any trailing whitespace
-  10 | WARNING | [x] Please trim any trailing whitespace
-  11 | WARNING | [x] Please trim any trailing whitespace
-  12 | WARNING | [x] Please trim any trailing whitespace
-  15 | WARNING | [x] Please trim any trailing whitespace
-  16 | WARNING | [x] Please trim any trailing whitespace
-  17 | WARNING | [x] Please trim any trailing whitespace
-  18 | WARNING | [x] Please trim any trailing whitespace
-  19 | WARNING | [x] Please trim any trailing whitespace
-  20 | WARNING | [x] Please trim any trailing whitespace
-  21 | WARNING | [x] Please trim any trailing whitespace
-  22 | WARNING | [x] Please trim any trailing whitespace
-  23 | WARNING | [x] Please trim any trailing whitespace
-  24 | WARNING | [x] Please trim any trailing whitespace
-  25 | WARNING | [x] Please trim any trailing whitespace
-  26 | WARNING | [x] Please trim any trailing whitespace
-  27 | WARNING | [x] Please trim any trailing whitespace
-  28 | WARNING | [x] Please trim any trailing whitespace
-  29 | WARNING | [x] Please trim any trailing whitespace
-  30 | WARNING | [x] Please trim any trailing whitespace
-  31 | WARNING | [x] Please trim any trailing whitespace
-  32 | WARNING | [x] Please trim any trailing whitespace
-  33 | WARNING | [x] Please trim any trailing whitespace
-  34 | WARNING | [x] Please trim any trailing whitespace
-  35 | WARNING | [x] Please trim any trailing whitespace
-  36 | WARNING | [x] Please trim any trailing whitespace
-  37 | WARNING | [x] Please trim any trailing whitespace
-  38 | WARNING | [x] Please trim any trailing whitespace
-  39 | WARNING | [x] Please trim any trailing whitespace
-  40 | WARNING | [x] Please trim any trailing whitespace
-  41 | WARNING | [x] Please trim any trailing whitespace
-  42 | WARNING | [x] Please trim any trailing whitespace
-  43 | WARNING | [x] Please trim any trailing whitespace
-  44 | WARNING | [x] Please trim any trailing whitespace
-  45 | WARNING | [x] Please trim any trailing whitespace
-  48 | WARNING | [x] Please trim any trailing whitespace
-  49 | WARNING | [x] Please trim any trailing whitespace
-  50 | WARNING | [x] Please trim any trailing whitespace
-  51 | WARNING | [x] Please trim any trailing whitespace
-  52 | WARNING | [x] Please trim any trailing whitespace
-  53 | WARNING | [x] Please trim any trailing whitespace
-  56 | WARNING | [x] Please trim any trailing whitespace
-  57 | WARNING | [x] Please trim any trailing whitespace
-  58 | WARNING | [x] Please trim any trailing whitespace
-  59 | WARNING | [x] Please trim any trailing whitespace
-  60 | WARNING | [x] Please trim any trailing whitespace
-  61 | WARNING | [x] Please trim any trailing whitespace
-  63 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
-  65 | WARNING | [x] Please trim any trailing whitespace
-  66 | WARNING | [x] Please trim any trailing whitespace
-  67 | WARNING | [x] Please trim any trailing whitespace
-  68 | WARNING | [x] Please trim any trailing whitespace
-  69 | WARNING | [x] Please trim any trailing whitespace
-  70 | WARNING | [x] Please trim any trailing whitespace
-  71 | WARNING | [x] Please trim any trailing whitespace
-  72 | WARNING | [x] Please trim any trailing whitespace
-  75 | WARNING | [x] Please trim any trailing whitespace
-  76 | WARNING | [x] Please trim any trailing whitespace
-  77 | WARNING | [x] Please trim any trailing whitespace
-  78 | WARNING | [x] Please trim any trailing whitespace
-  79 | WARNING | [x] Please trim any trailing whitespace
-  80 | WARNING | [x] Please trim any trailing whitespace
-  82 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
-  84 | WARNING | [x] Please trim any trailing whitespace
-  85 | WARNING | [x] Please trim any trailing whitespace
-  86 | WARNING | [x] Please trim any trailing whitespace
-  87 | WARNING | [x] Please trim any trailing whitespace
-  88 | WARNING | [x] Please trim any trailing whitespace
-  89 | WARNING | [x] Please trim any trailing whitespace
-  90 | WARNING | [x] Please trim any trailing whitespace
-  91 | WARNING | [x] Please trim any trailing whitespace
-  94 | WARNING | [x] Please trim any trailing whitespace
-  95 | WARNING | [x] Please trim any trailing whitespace
-  96 | WARNING | [x] Please trim any trailing whitespace
-  97 | WARNING | [x] Please trim any trailing whitespace
-  98 | WARNING | [x] Please trim any trailing whitespace
-  99 | WARNING | [x] Please trim any trailing whitespace
- 101 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
- 103 | WARNING | [x] Please trim any trailing whitespace
- 104 | WARNING | [x] Please trim any trailing whitespace
- 105 | WARNING | [x] Please trim any trailing whitespace
- 106 | WARNING | [x] Please trim any trailing whitespace
- 107 | WARNING | [x] Please trim any trailing whitespace
- 108 | WARNING | [x] Please trim any trailing whitespace
- 109 | WARNING | [x] Please trim any trailing whitespace
- 110 | WARNING | [x] Please trim any trailing whitespace
- 113 | WARNING | [x] Please trim any trailing whitespace
- 114 | WARNING | [x] Please trim any trailing whitespace
- 115 | WARNING | [x] Please trim any trailing whitespace
- 116 | WARNING | [x] Please trim any trailing whitespace
- 117 | WARNING | [x] Please trim any trailing whitespace
- 118 | WARNING | [x] Please trim any trailing whitespace
- 120 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
- 122 | WARNING | [x] Please trim any trailing whitespace
- 123 | WARNING | [x] Please trim any trailing whitespace
- 124 | WARNING | [x] Please trim any trailing whitespace
- 125 | WARNING | [x] Please trim any trailing whitespace
- 126 | WARNING | [x] Please trim any trailing whitespace
- 127 | WARNING | [x] Please trim any trailing whitespace
- 128 | WARNING | [x] Please trim any trailing whitespace
- 129 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 107 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 10 ERRORS AFFECTING 10 LINES
+----------------------------------------------------------------------
+ 14 | ERROR | Missing doc comment for class Comment
+ 43 | ERROR | Missing doc comment for function getId()
+ 48 | ERROR | Missing doc comment for function getEmail()
+ 53 | ERROR | Doc comment for parameter "$email" missing
+ 63 | ERROR | Missing doc comment for function getNick()
+ 68 | ERROR | Doc comment for parameter "$nick" missing
+ 78 | ERROR | Missing doc comment for function getContent()
+ 83 | ERROR | Doc comment for parameter "$content" missing
+ 93 | ERROR | Missing doc comment for function getElement()
+ 98 | ERROR | Doc comment for parameter "$element" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Entity/Element.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 5 ERRORS AND 123 WARNINGS AFFECTING 127 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-   2 | WARNING | [x] Please trim any trailing whitespace
-   5 | WARNING | [x] Please trim any trailing whitespace
-   6 | WARNING | [x] Please trim any trailing whitespace
-   7 | WARNING | [x] Please trim any trailing whitespace
-   8 | WARNING | [x] Please trim any trailing whitespace
-   9 | WARNING | [x] Please trim any trailing whitespace
-  10 | WARNING | [x] Please trim any trailing whitespace
-  11 | WARNING | [x] Please trim any trailing whitespace
-  12 | WARNING | [x] Please trim any trailing whitespace
-  13 | WARNING | [x] Please trim any trailing whitespace
-  14 | WARNING | [x] Please trim any trailing whitespace
-  15 | WARNING | [x] Please trim any trailing whitespace
-  20 | WARNING | [x] Please trim any trailing whitespace
-  21 | WARNING | [x] Please trim any trailing whitespace
-  22 | WARNING | [x] Please trim any trailing whitespace
-  23 | WARNING | [x] Please trim any trailing whitespace
-  24 | WARNING | [x] Please trim any trailing whitespace
-  25 | WARNING | [x] Please trim any trailing whitespace
-  30 | WARNING | [x] Please trim any trailing whitespace
-  31 | WARNING | [x] Please trim any trailing whitespace
-  32 | WARNING | [x] Please trim any trailing whitespace
-  33 | WARNING | [x] Please trim any trailing whitespace
-  34 | WARNING | [x] Please trim any trailing whitespace
-  35 | WARNING | [x] Please trim any trailing whitespace
-  42 | WARNING | [x] Please trim any trailing whitespace
-  43 | WARNING | [x] Please trim any trailing whitespace
-  44 | WARNING | [x] Please trim any trailing whitespace
-  45 | WARNING | [x] Please trim any trailing whitespace
-  46 | WARNING | [x] Please trim any trailing whitespace
-  47 | WARNING | [x] Please trim any trailing whitespace
-  54 | WARNING | [x] Please trim any trailing whitespace
-  55 | WARNING | [x] Please trim any trailing whitespace
-  56 | WARNING | [x] Please trim any trailing whitespace
-  57 | WARNING | [x] Please trim any trailing whitespace
-  58 | WARNING | [x] Please trim any trailing whitespace
-  59 | WARNING | [x] Please trim any trailing whitespace
-  64 | WARNING | [x] Please trim any trailing whitespace
-  65 | WARNING | [x] Please trim any trailing whitespace
-  66 | WARNING | [x] Please trim any trailing whitespace
-  67 | WARNING | [x] Please trim any trailing whitespace
-  68 | WARNING | [x] Please trim any trailing whitespace
-  69 | WARNING | [x] Please trim any trailing whitespace
-  70 | WARNING | [x] Please trim any trailing whitespace
-  75 | WARNING | [x] Please trim any trailing whitespace
-  76 | WARNING | [x] Please trim any trailing whitespace
-  77 | WARNING | [x] Please trim any trailing whitespace
-  78 | WARNING | [x] Please trim any trailing whitespace
-  79 | WARNING | [x] Please trim any trailing whitespace
-  80 | WARNING | [x] Please trim any trailing whitespace
-  81 | WARNING | [x] Please trim any trailing whitespace
-  82 | WARNING | [x] Please trim any trailing whitespace
-  83 | WARNING | [x] Please trim any trailing whitespace
-  84 | WARNING | [x] Please trim any trailing whitespace
-  85 | WARNING | [x] Please trim any trailing whitespace
-  86 | WARNING | [x] Please trim any trailing whitespace
-  91 | WARNING | [x] Please trim any trailing whitespace
-  92 | WARNING | [x] Please trim any trailing whitespace
-  93 | WARNING | [x] Please trim any trailing whitespace
-  94 | WARNING | [x] Please trim any trailing whitespace
-  95 | WARNING | [x] Please trim any trailing whitespace
-  96 | WARNING | [x] Please trim any trailing whitespace
- 101 | WARNING | [x] Please trim any trailing whitespace
- 102 | WARNING | [x] Please trim any trailing whitespace
- 103 | WARNING | [x] Please trim any trailing whitespace
- 104 | WARNING | [x] Please trim any trailing whitespace
- 105 | WARNING | [x] Please trim any trailing whitespace
- 106 | WARNING | [x] Please trim any trailing whitespace
- 111 | WARNING | [x] Please trim any trailing whitespace
- 112 | WARNING | [x] Please trim any trailing whitespace
- 113 | WARNING | [x] Please trim any trailing whitespace
- 114 | WARNING | [x] Please trim any trailing whitespace
- 115 | WARNING | [x] Please trim any trailing whitespace
- 116 | WARNING | [x] Please trim any trailing whitespace
- 121 | WARNING | [x] Please trim any trailing whitespace
- 122 | WARNING | [x] Please trim any trailing whitespace
- 123 | WARNING | [x] Please trim any trailing whitespace
- 124 | WARNING | [x] Please trim any trailing whitespace
- 125 | WARNING | [x] Please trim any trailing whitespace
- 126 | WARNING | [x] Please trim any trailing whitespace
- 131 | WARNING | [x] Please trim any trailing whitespace
- 132 | WARNING | [x] Please trim any trailing whitespace
- 133 | WARNING | [x] Please trim any trailing whitespace
- 134 | WARNING | [x] Please trim any trailing whitespace
- 135 | WARNING | [x] Please trim any trailing whitespace
- 136 | WARNING | [x] Please trim any trailing whitespace
- 141 | WARNING | [x] Please trim any trailing whitespace
- 142 | WARNING | [x] Please trim any trailing whitespace
- 143 | WARNING | [x] Please trim any trailing whitespace
- 144 | WARNING | [x] Please trim any trailing whitespace
- 145 | WARNING | [x] Please trim any trailing whitespace
- 146 | WARNING | [x] Please trim any trailing whitespace
- 151 | WARNING | [x] Please trim any trailing whitespace
- 152 | WARNING | [x] Please trim any trailing whitespace
- 153 | WARNING | [x] Please trim any trailing whitespace
- 154 | WARNING | [x] Please trim any trailing whitespace
- 155 | WARNING | [x] Please trim any trailing whitespace
- 156 | WARNING | [x] Please trim any trailing whitespace
- 159 | WARNING | [x] Please trim any trailing whitespace
- 160 | WARNING | [x] Please trim any trailing whitespace
- 161 | WARNING | [x] Please trim any trailing whitespace
- 162 | WARNING | [x] Please trim any trailing whitespace
- 163 | WARNING | [x] Please trim any trailing whitespace
- 164 | WARNING | [x] Please trim any trailing whitespace
- 166 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
- 168 | WARNING | [x] Please trim any trailing whitespace
- 169 | WARNING | [x] Please trim any trailing whitespace
- 170 | WARNING | [x] Please trim any trailing whitespace
- 171 | WARNING | [x] Please trim any trailing whitespace
- 172 | ERROR   | [x] Missing blank line before return statement
- 172 | WARNING | [x] Please trim any trailing whitespace
- 173 | WARNING | [x] Please trim any trailing whitespace
- 174 | WARNING | [x] Please trim any trailing whitespace
- 177 | WARNING | [x] Please trim any trailing whitespace
- 178 | WARNING | [x] Please trim any trailing whitespace
- 179 | WARNING | [x] Please trim any trailing whitespace
- 180 | WARNING | [x] Please trim any trailing whitespace
- 181 | WARNING | [x] Please trim any trailing whitespace
- 182 | WARNING | [x] Please trim any trailing whitespace
- 184 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
- 186 | WARNING | [x] Please trim any trailing whitespace
- 187 | WARNING | [x] Please trim any trailing whitespace
- 188 | WARNING | [x] Please trim any trailing whitespace
- 189 | WARNING | [x] Please trim any trailing whitespace
- 190 | WARNING | [x] Please trim any trailing whitespace
- 191 | WARNING | [x] Please trim any trailing whitespace
- 192 | WARNING | [x] Please trim any trailing whitespace
- 193 | ERROR   | [x] Expected 1 newline at end of file; 0 found
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 128 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Entity/Enum/UserRole.php
--------------------------------------------------------------------------------------
-FOUND 1 ERROR AND 19 WARNINGS AFFECTING 20 LINES
--------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 20 | WARNING | [x] Please trim any trailing whitespace
- 21 | WARNING | [x] Please trim any trailing whitespace
- 22 | WARNING | [x] Please trim any trailing whitespace
- 23 | WARNING | [x] Please trim any trailing whitespace
- 24 | WARNING | [x] Please trim any trailing whitespace
- 25 | WARNING | [x] Please trim any trailing whitespace
- 26 | WARNING | [x] Please trim any trailing whitespace
- 27 | WARNING | [x] Please trim any trailing whitespace
- 28 | WARNING | [x] Please trim any trailing whitespace
--------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 20 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Form/Type/CategoryType.php
-----------------------------------------------------------------------------------------------------
-FOUND 5 ERRORS AND 48 WARNINGS AFFECTING 49 LINES
-----------------------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 17 | WARNING | [x] Please trim any trailing whitespace
- 18 | WARNING | [x] Please trim any trailing whitespace
- 19 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 36 | ERROR   | [x] Add a comma after each item in a multi-line array
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 48 | WARNING | [x] Please trim any trailing whitespace
- 49 | ERROR   | [x] Multi-line function call not indented correctly; expected 8 spaces but found 12
- 49 | ERROR   | [x] Multi-line function call not indented correctly; expected 8 spaces but found 12
- 49 | ERROR   | [x] Closing parenthesis of a multi-line function call must be on a line by itself
- 49 | WARNING | [x] Please trim any trailing whitespace
- 50 | WARNING | [x] Please trim any trailing whitespace
- 51 | WARNING | [x] Please trim any trailing whitespace
- 56 | WARNING | [x] Please trim any trailing whitespace
- 57 | WARNING | [x] Please trim any trailing whitespace
- 58 | WARNING | [x] Please trim any trailing whitespace
- 59 | WARNING | [x] Please trim any trailing whitespace
- 60 | WARNING | [x] Please trim any trailing whitespace
- 61 | WARNING | [x] Please trim any trailing whitespace
- 69 | WARNING | [x] Please trim any trailing whitespace
- 70 | WARNING | [x] Please trim any trailing whitespace
- 71 | WARNING | [x] Please trim any trailing whitespace
- 72 | WARNING | [x] Please trim any trailing whitespace
- 73 | WARNING | [x] Please trim any trailing whitespace
- 74 | WARNING | [x] Please trim any trailing whitespace
-----------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 53 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 4 ERRORS AFFECTING 4 LINES
+----------------------------------------------------------------------
+ 145 | ERROR | Missing doc comment for function getCategory()
+ 150 | ERROR | Doc comment for parameter "$category" missing
+ 160 | ERROR | Missing doc comment for function getAuthor()
+ 165 | ERROR | Doc comment for parameter "$author" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Form/Type/ChangeEmailType.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 5 ERRORS AND 52 WARNINGS AFFECTING 55 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  2 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 19 | WARNING | [x] Please trim any trailing whitespace
- 20 | WARNING | [x] Please trim any trailing whitespace
- 21 | WARNING | [x] Please trim any trailing whitespace
- 24 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 24 | ERROR   | [x] Expected 16 spaces after parameter type; 1 found
- 26 | WARNING | [x] Please trim any trailing whitespace
- 27 | WARNING | [x] Please trim any trailing whitespace
- 28 | WARNING | [x] Please trim any trailing whitespace
- 29 | WARNING | [x] Please trim any trailing whitespace
- 30 | ERROR   | [x] Add a comma after each item in a multi-line array
- 30 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 48 | WARNING | [x] Please trim any trailing whitespace
- 49 | WARNING | [x] Please trim any trailing whitespace
- 50 | WARNING | [x] Please trim any trailing whitespace
- 51 | WARNING | [x] Please trim any trailing whitespace
- 52 | WARNING | [x] Please trim any trailing whitespace
- 53 | WARNING | [x] Please trim any trailing whitespace
- 55 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 57 | WARNING | [x] Please trim any trailing whitespace
- 58 | WARNING | [x] Please trim any trailing whitespace
- 59 | WARNING | [x] Please trim any trailing whitespace
- 60 | WARNING | [x] Please trim any trailing whitespace
- 61 | WARNING | [x] Please trim any trailing whitespace
- 62 | WARNING | [x] Please trim any trailing whitespace
- 63 | WARNING | [x] Please trim any trailing whitespace
- 64 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 57 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Form/Type/ChangePasswordType.php
--------------------------------------------------------------------------------------
-FOUND 1 ERROR AND 52 WARNINGS AFFECTING 53 LINES
--------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 18 | WARNING | [x] Please trim any trailing whitespace
- 19 | WARNING | [x] Please trim any trailing whitespace
- 20 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 48 | WARNING | [x] Please trim any trailing whitespace
- 49 | WARNING | [x] Please trim any trailing whitespace
- 50 | WARNING | [x] Please trim any trailing whitespace
- 51 | WARNING | [x] Please trim any trailing whitespace
- 52 | WARNING | [x] Please trim any trailing whitespace
- 53 | WARNING | [x] Please trim any trailing whitespace
- 54 | WARNING | [x] Please trim any trailing whitespace
- 55 | WARNING | [x] Please trim any trailing whitespace
- 60 | WARNING | [x] Please trim any trailing whitespace
- 61 | WARNING | [x] Please trim any trailing whitespace
- 62 | WARNING | [x] Please trim any trailing whitespace
- 63 | WARNING | [x] Please trim any trailing whitespace
- 64 | WARNING | [x] Please trim any trailing whitespace
- 65 | WARNING | [x] Please trim any trailing whitespace
- 73 | WARNING | [x] Please trim any trailing whitespace
- 74 | WARNING | [x] Please trim any trailing whitespace
- 75 | WARNING | [x] Please trim any trailing whitespace
- 76 | WARNING | [x] Please trim any trailing whitespace
- 77 | WARNING | [x] Please trim any trailing whitespace
- 78 | WARNING | [x] Please trim any trailing whitespace
--------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 53 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Form/Type/CommentType.php
---------------------------------------------------------------------------------------
-FOUND 7 ERRORS AND 108 WARNINGS AFFECTING 109 LINES
---------------------------------------------------------------------------------------
-   1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-   4 | WARNING | [x] Please trim any trailing whitespace
-   5 | WARNING | [x] Please trim any trailing whitespace
-   6 | WARNING | [x] Please trim any trailing whitespace
-   7 | WARNING | [x] Please trim any trailing whitespace
-   8 | WARNING | [x] Please trim any trailing whitespace
-   9 | WARNING | [x] Please trim any trailing whitespace
-  10 | WARNING | [x] Please trim any trailing whitespace
-  11 | WARNING | [x] Please trim any trailing whitespace
-  12 | WARNING | [x] Please trim any trailing whitespace
-  13 | WARNING | [x] Please trim any trailing whitespace
-  14 | WARNING | [x] Please trim any trailing whitespace
-  15 | WARNING | [x] Please trim any trailing whitespace
-  16 | WARNING | [x] Please trim any trailing whitespace
-  19 | WARNING | [x] Please trim any trailing whitespace
-  20 | WARNING | [x] Please trim any trailing whitespace
-  21 | WARNING | [x] Please trim any trailing whitespace
-  32 | WARNING | [x] Please trim any trailing whitespace
-  33 | WARNING | [x] Please trim any trailing whitespace
-  34 | WARNING | [x] Please trim any trailing whitespace
-  35 | WARNING | [x] Please trim any trailing whitespace
-  36 | WARNING | [x] Please trim any trailing whitespace
-  37 | WARNING | [x] Please trim any trailing whitespace
-  38 | ERROR   | [x] Add a comma after each item in a multi-line array
-  38 | WARNING | [x] Please trim any trailing whitespace
-  39 | WARNING | [x] Please trim any trailing whitespace
-  40 | WARNING | [x] Please trim any trailing whitespace
-  41 | WARNING | [x] Please trim any trailing whitespace
-  42 | WARNING | [x] Please trim any trailing whitespace
-  43 | WARNING | [x] Please trim any trailing whitespace
-  44 | WARNING | [x] Please trim any trailing whitespace
-  45 | WARNING | [x] Please trim any trailing whitespace
-  46 | WARNING | [x] Please trim any trailing whitespace
-  47 | WARNING | [x] Please trim any trailing whitespace
-  48 | WARNING | [x] Please trim any trailing whitespace
-  49 | WARNING | [x] Please trim any trailing whitespace
-  50 | WARNING | [x] Please trim any trailing whitespace
-  51 | WARNING | [x] Please trim any trailing whitespace
-  52 | WARNING | [x] Please trim any trailing whitespace
-  53 | WARNING | [x] Please trim any trailing whitespace
-  54 | WARNING | [x] Please trim any trailing whitespace
-  55 | WARNING | [x] Please trim any trailing whitespace
-  56 | WARNING | [x] Please trim any trailing whitespace
-  57 | WARNING | [x] Please trim any trailing whitespace
-  58 | WARNING | [x] Please trim any trailing whitespace
-  59 | ERROR   | [x] Add a comma after each item in a multi-line array
-  59 | WARNING | [x] Please trim any trailing whitespace
-  60 | WARNING | [x] Please trim any trailing whitespace
-  61 | WARNING | [x] Please trim any trailing whitespace
-  62 | WARNING | [x] Please trim any trailing whitespace
-  63 | ERROR   | [x] Add a comma after each item in a multi-line array
-  63 | WARNING | [x] Please trim any trailing whitespace
-  64 | WARNING | [x] Please trim any trailing whitespace
-  65 | WARNING | [x] Please trim any trailing whitespace
-  66 | WARNING | [x] Please trim any trailing whitespace
-  67 | WARNING | [x] Please trim any trailing whitespace
-  68 | WARNING | [x] Please trim any trailing whitespace
-  69 | WARNING | [x] Please trim any trailing whitespace
-  70 | WARNING | [x] Please trim any trailing whitespace
-  71 | WARNING | [x] Please trim any trailing whitespace
-  72 | WARNING | [x] Please trim any trailing whitespace
-  73 | WARNING | [x] Please trim any trailing whitespace
-  74 | WARNING | [x] Please trim any trailing whitespace
-  75 | WARNING | [x] Please trim any trailing whitespace
-  76 | WARNING | [x] Please trim any trailing whitespace
-  77 | ERROR   | [x] Add a comma after each item in a multi-line array
-  77 | WARNING | [x] Please trim any trailing whitespace
-  78 | WARNING | [x] Please trim any trailing whitespace
-  79 | WARNING | [x] Please trim any trailing whitespace
-  80 | WARNING | [x] Please trim any trailing whitespace
-  81 | WARNING | [x] Please trim any trailing whitespace
-  82 | WARNING | [x] Please trim any trailing whitespace
-  83 | WARNING | [x] Please trim any trailing whitespace
-  84 | WARNING | [x] Please trim any trailing whitespace
-  85 | WARNING | [x] Please trim any trailing whitespace
-  86 | WARNING | [x] Please trim any trailing whitespace
-  87 | WARNING | [x] Please trim any trailing whitespace
-  88 | WARNING | [x] Please trim any trailing whitespace
-  89 | WARNING | [x] Please trim any trailing whitespace
-  90 | WARNING | [x] Please trim any trailing whitespace
-  91 | WARNING | [x] Please trim any trailing whitespace
-  92 | WARNING | [x] Please trim any trailing whitespace
-  93 | WARNING | [x] Please trim any trailing whitespace
-  94 | WARNING | [x] Please trim any trailing whitespace
-  95 | WARNING | [x] Please trim any trailing whitespace
-  96 | ERROR   | [x] Add a comma after each item in a multi-line array
-  96 | WARNING | [x] Please trim any trailing whitespace
-  97 | WARNING | [x] Please trim any trailing whitespace
-  98 | WARNING | [x] Please trim any trailing whitespace
-  99 | WARNING | [x] Please trim any trailing whitespace
- 100 | WARNING | [x] Please trim any trailing whitespace
- 101 | WARNING | [x] Please trim any trailing whitespace
- 102 | WARNING | [x] Please trim any trailing whitespace
- 103 | WARNING | [x] Please trim any trailing whitespace
- 104 | ERROR   | [x] Add a comma after each item in a multi-line array
- 104 | WARNING | [x] Please trim any trailing whitespace
- 105 | WARNING | [x] Please trim any trailing whitespace
- 106 | WARNING | [x] Please trim any trailing whitespace
- 107 | WARNING | [x] Please trim any trailing whitespace
- 108 | WARNING | [x] Please trim any trailing whitespace
- 109 | WARNING | [x] Please trim any trailing whitespace
- 110 | WARNING | [x] Please trim any trailing whitespace
- 111 | WARNING | [x] Please trim any trailing whitespace
- 116 | WARNING | [x] Please trim any trailing whitespace
- 117 | WARNING | [x] Please trim any trailing whitespace
- 118 | WARNING | [x] Please trim any trailing whitespace
- 119 | WARNING | [x] Please trim any trailing whitespace
- 120 | WARNING | [x] Please trim any trailing whitespace
- 121 | WARNING | [x] Please trim any trailing whitespace
- 129 | WARNING | [x] Please trim any trailing whitespace
- 130 | WARNING | [x] Please trim any trailing whitespace
- 131 | WARNING | [x] Please trim any trailing whitespace
- 132 | WARNING | [x] Please trim any trailing whitespace
- 133 | WARNING | [x] Please trim any trailing whitespace
- 134 | WARNING | [x] Please trim any trailing whitespace
---------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 115 MARKED SNIFF VIOLATIONS AUTOMATICALLY
---------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Form/Type/ElementType.php
--------------------------------------------------------------------------------------
-FOUND 4 ERRORS AND 69 WARNINGS AFFECTING 70 LINES
--------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 19 | WARNING | [x] Please trim any trailing whitespace
- 20 | WARNING | [x] Please trim any trailing whitespace
- 21 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | ERROR   | [x] Add a comma after each item in a multi-line array
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 48 | WARNING | [x] Please trim any trailing whitespace
- 49 | WARNING | [x] Please trim any trailing whitespace
- 50 | WARNING | [x] Please trim any trailing whitespace
- 51 | WARNING | [x] Please trim any trailing whitespace
- 52 | WARNING | [x] Please trim any trailing whitespace
- 53 | WARNING | [x] Please trim any trailing whitespace
- 54 | WARNING | [x] Please trim any trailing whitespace
- 55 | WARNING | [x] Please trim any trailing whitespace
- 56 | ERROR   | [x] Add a comma after each item in a multi-line array
- 56 | WARNING | [x] Please trim any trailing whitespace
- 57 | WARNING | [x] Please trim any trailing whitespace
- 58 | WARNING | [x] Please trim any trailing whitespace
- 59 | WARNING | [x] Please trim any trailing whitespace
- 60 | WARNING | [x] Please trim any trailing whitespace
- 61 | WARNING | [x] Please trim any trailing whitespace
- 62 | WARNING | [x] Please trim any trailing whitespace
- 63 | WARNING | [x] Please trim any trailing whitespace
- 64 | ERROR   | [x] Add a comma after each item in a multi-line array
- 64 | WARNING | [x] Please trim any trailing whitespace
- 65 | WARNING | [x] Please trim any trailing whitespace
- 66 | WARNING | [x] Please trim any trailing whitespace
- 67 | WARNING | [x] Please trim any trailing whitespace
- 68 | WARNING | [x] Please trim any trailing whitespace
- 69 | WARNING | [x] Please trim any trailing whitespace
- 70 | WARNING | [x] Please trim any trailing whitespace
- 71 | WARNING | [x] Please trim any trailing whitespace
- 72 | WARNING | [x] Please trim any trailing whitespace
- 77 | WARNING | [x] Please trim any trailing whitespace
- 78 | WARNING | [x] Please trim any trailing whitespace
- 79 | WARNING | [x] Please trim any trailing whitespace
- 80 | WARNING | [x] Please trim any trailing whitespace
- 81 | WARNING | [x] Please trim any trailing whitespace
- 82 | WARNING | [x] Please trim any trailing whitespace
- 90 | WARNING | [x] Please trim any trailing whitespace
- 91 | WARNING | [x] Please trim any trailing whitespace
- 92 | WARNING | [x] Please trim any trailing whitespace
- 93 | WARNING | [x] Please trim any trailing whitespace
- 94 | WARNING | [x] Please trim any trailing whitespace
- 95 | WARNING | [x] Please trim any trailing whitespace
--------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 73 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Repository/CategoryRepository.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 48 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 17 | ERROR | Missing doc comment for class ChangeEmailType
+ 19 | ERROR | Missing doc comment for function buildForm()
+ 46 | ERROR | Missing doc comment for function configureOptions()
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Repository/CommentRepository.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 3 ERRORS AND 40 WARNINGS AFFECTING 43 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  2 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 17 | WARNING | [x] Please trim any trailing whitespace
- 20 | WARNING | [x] Please trim any trailing whitespace
- 21 | WARNING | [x] Please trim any trailing whitespace
- 22 | WARNING | [x] Please trim any trailing whitespace
- 23 | WARNING | [x] Please trim any trailing whitespace
- 24 | WARNING | [x] Please trim any trailing whitespace
- 25 | WARNING | [x] Please trim any trailing whitespace
- 27 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 29 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 37 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 61 | WARNING | [x] Please trim any trailing whitespace
- 73 | WARNING | [x] Please trim any trailing whitespace
- 74 | WARNING | [x] Please trim any trailing whitespace
- 75 | WARNING | [x] Please trim any trailing whitespace
- 76 | WARNING | [x] Please trim any trailing whitespace
- 77 | WARNING | [x] Please trim any trailing whitespace
- 78 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 43 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------
+FOUND 4 ERRORS AFFECTING 4 LINES
+-----------------------------------------------------------------------
+ 18 | ERROR | Missing doc comment for function __construct()
+ 23 | ERROR | Missing doc comment for function save()
+ 29 | ERROR | Missing doc comment for function remove()
+ 59 | ERROR | You must use "/**" style comments for a function comment
+-----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Repository/UserRepository.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 5 ERRORS AND 45 WARNINGS AFFECTING 50 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  2 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 17 | WARNING | [x] Please trim any trailing whitespace
- 20 | WARNING | [x] Please trim any trailing whitespace
- 21 | WARNING | [x] Please trim any trailing whitespace
- 22 | WARNING | [x] Please trim any trailing whitespace
- 25 | WARNING | [x] Please trim any trailing whitespace
- 26 | WARNING | [x] Please trim any trailing whitespace
- 27 | WARNING | [x] Please trim any trailing whitespace
- 28 | WARNING | [x] Please trim any trailing whitespace
- 29 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 33 | ERROR   | [x] Expected 3 spaces after parameter type; 1 found
- 34 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 49 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 50 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 52 | WARNING | [x] Please trim any trailing whitespace
- 53 | WARNING | [x] Please trim any trailing whitespace
- 54 | WARNING | [x] Please trim any trailing whitespace
- 55 | WARNING | [x] Please trim any trailing whitespace
- 56 | WARNING | [x] Please trim any trailing whitespace
- 57 | WARNING | [x] Please trim any trailing whitespace
- 58 | WARNING | [x] Please trim any trailing whitespace
- 59 | WARNING | [x] Please trim any trailing whitespace
- 74 | WARNING | [x] Please trim any trailing whitespace
- 84 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 50 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 23 | ERROR | Missing doc comment for function __construct()
+ 28 | ERROR | Doc comment for parameter "$newHashedPassword" missing
+ 44 | ERROR | Doc comment for parameter "$user" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/CategoryService.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 17 ERRORS AND 62 WARNINGS AFFECTING 69 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-   4 | WARNING | [x] Please trim any trailing whitespace
-   5 | WARNING | [x] Please trim any trailing whitespace
-   6 | WARNING | [x] Please trim any trailing whitespace
-   7 | WARNING | [x] Please trim any trailing whitespace
-   8 | WARNING | [x] Please trim any trailing whitespace
-   9 | WARNING | [x] Please trim any trailing whitespace
-  10 | WARNING | [x] Please trim any trailing whitespace
-  11 | WARNING | [x] Please trim any trailing whitespace
-  12 | WARNING | [x] Please trim any trailing whitespace
-  13 | WARNING | [x] Please trim any trailing whitespace
-  14 | WARNING | [x] Please trim any trailing whitespace
-  15 | WARNING | [x] Please trim any trailing whitespace
-  16 | WARNING | [x] Please trim any trailing whitespace
-  19 | WARNING | [x] Please trim any trailing whitespace
-  20 | WARNING | [x] Please trim any trailing whitespace
-  21 | WARNING | [x] Please trim any trailing whitespace
-  30 | WARNING | [x] Please trim any trailing whitespace
-  31 | WARNING | [x] Please trim any trailing whitespace
-  32 | WARNING | [x] Please trim any trailing whitespace
-  36 | ERROR   | [x] Expected 1 spaces after parameter type; 5 found
-  37 | ERROR   | [x] Expected 2 spaces after parameter type; 5 found
-  37 | ERROR   | [ ] Doc comment for parameter $elementRepository does not match actual variable name $paginator
-  37 | ERROR   | [x] Expected 2 spaces after parameter name; 1 found
-  38 | ERROR   | [ ] Doc comment for parameter $paginator does not match actual variable name $elementRepository
-  38 | ERROR   | [x] Expected 10 spaces after parameter name; 6 found
-  39 | WARNING | [x] Please trim any trailing whitespace
-  40 | WARNING | [x] Please trim any trailing whitespace
-  41 | WARNING | [x] Please trim any trailing whitespace
-  42 | WARNING | [x] Please trim any trailing whitespace
-  43 | WARNING | [x] Please trim any trailing whitespace
-  50 | WARNING | [x] Please trim any trailing whitespace
-  51 | WARNING | [x] Please trim any trailing whitespace
-  52 | WARNING | [x] Please trim any trailing whitespace
-  53 | WARNING | [x] Please trim any trailing whitespace
-  54 | WARNING | [x] Please trim any trailing whitespace
-  55 | WARNING | [x] Please trim any trailing whitespace
-  56 | WARNING | [x] Please trim any trailing whitespace
-  57 | WARNING | [x] Please trim any trailing whitespace
-  58 | WARNING | [x] Please trim any trailing whitespace
-  59 | WARNING | [x] Please trim any trailing whitespace
-  63 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
-  65 | WARNING | [x] Please trim any trailing whitespace
-  66 | WARNING | [x] Please trim any trailing whitespace
-  67 | WARNING | [x] Please trim any trailing whitespace
-  73 | WARNING | [x] Please trim any trailing whitespace
-  74 | WARNING | [x] Please trim any trailing whitespace
-  75 | WARNING | [x] Please trim any trailing whitespace
-  76 | WARNING | [x] Please trim any trailing whitespace
-  77 | ERROR   | [x] Function closing brace must go on the next line following the body; found 1 blank lines before brace
-  77 | WARNING | [x] Please trim any trailing whitespace
-  78 | WARNING | [x] Please trim any trailing whitespace
-  82 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
-  83 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-     |         |     blank line
-  85 | WARNING | [x] Please trim any trailing whitespace
-  86 | ERROR   | [x] Line indented incorrectly; expected 4 spaces, found 8
-  86 | WARNING | [x] Please trim any trailing whitespace
-  87 | ERROR   | [x] Opening brace indented incorrectly; expected 8 spaces, found 4
-  87 | ERROR   | [x] Opening brace indented incorrectly; expected 8 spaces, found 4
-  87 | WARNING | [x] Please trim any trailing whitespace
-  88 | WARNING | [x] Please trim any trailing whitespace
-  89 | ERROR   | [x] Closing brace indented incorrectly; expected 8 spaces, found 4
-  89 | ERROR   | [x] Closing brace indented incorrectly; expected 8 spaces, found 4
-  89 | WARNING | [x] Please trim any trailing whitespace
-  90 | WARNING | [x] Please trim any trailing whitespace
-  97 | WARNING | [x] Please trim any trailing whitespace
-  98 | WARNING | [x] Please trim any trailing whitespace
-  99 | WARNING | [x] Please trim any trailing whitespace
- 100 | WARNING | [x] Please trim any trailing whitespace
- 101 | WARNING | [x] Please trim any trailing whitespace
- 102 | WARNING | [x] Please trim any trailing whitespace
- 103 | WARNING | [x] Please trim any trailing whitespace
- 104 | WARNING | [x] Please trim any trailing whitespace
- 105 | WARNING | [x] Please trim any trailing whitespace
- 106 | WARNING | [x] Please trim any trailing whitespace
- 107 | WARNING | [x] Please trim any trailing whitespace
- 108 | WARNING | [x] Please trim any trailing whitespace
- 109 | ERROR   | [x] The closing brace for the class must go on the next line after the body
- 109 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 77 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------------------------------------------
+ 37 | ERROR | Doc comment for parameter $elementRepository does not match actual variable name $paginator
+ 38 | ERROR | Doc comment for parameter $paginator does not match actual variable name $elementRepository
+----------------------------------------------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/CategoryServiceInterface.php
--------------------------------------------------------------------------------------
-FOUND 1 ERROR AND 22 WARNINGS AFFECTING 23 LINES
--------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 22 | WARNING | [x] Please trim any trailing whitespace
- 23 | WARNING | [x] Please trim any trailing whitespace
- 24 | WARNING | [x] Please trim any trailing whitespace
- 29 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 48 | WARNING | [x] Please trim any trailing whitespace
- 49 | WARNING | [x] Please trim any trailing whitespace
--------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 23 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 32 | ERROR | Doc comment for parameter "$category" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/CommentService.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 6 ERRORS AFFECTING 6 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 25 | ERROR | [x] Expected 2 spaces after parameter type; 1 found
- 34 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
- 43 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
- 61 | ERROR | [x] Expected 5 spaces after parameter type; 1 found
- 62 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
- 68 | ERROR | [x] Add a single space around assignment operators
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 6 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 7 ERRORS AFFECTING 6 LINES
+----------------------------------------------------------------------
+ 15 | ERROR | Missing doc comment for class CommentService
+ 20 | ERROR | Missing doc comment for function __construct()
+ 25 | ERROR | Missing doc comment for function save()
+ 30 | ERROR | Missing doc comment for function remove()
+ 36 | ERROR | Missing doc comment for function findAll()
+ 41 | ERROR | Doc comment for parameter "$page" missing
+ 41 | ERROR | Doc comment for parameter "$element" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/CommentServiceInterface.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 4 ERRORS AFFECTING 4 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 19 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
- 25 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
- 36 | ERROR | [x] Expected 5 spaces after parameter type; 1 found
- 37 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |       |     blank line
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 4 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------
+FOUND 6 ERRORS AFFECTING 5 LINES
+------------------------------------------------------------------------
+ 13 | ERROR | Missing doc comment for interface CommentServiceInterface
+ 15 | ERROR | Missing doc comment for function save()
+ 17 | ERROR | Missing doc comment for function remove()
+ 19 | ERROR | Missing doc comment for function findAll()
+ 21 | ERROR | Doc comment for parameter "$page" missing
+ 21 | ERROR | Doc comment for parameter "$element" missing
+------------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/ElementService.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 7 ERRORS AND 44 WARNINGS AFFECTING 50 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 17 | WARNING | [x] Please trim any trailing whitespace
- 18 | WARNING | [x] Please trim any trailing whitespace
- 19 | WARNING | [x] Please trim any trailing whitespace
- 28 | WARNING | [x] Please trim any trailing whitespace
- 29 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 34 | ERROR   | [x] Expected 2 spaces after parameter type; 5 found
- 35 | ERROR   | [x] Expected 9 spaces after parameter name; 6 found
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 38 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 45 | ERROR   | [x] Expected 1 spaces after parameter type; 2 found
- 45 | ERROR   | [x] Expected 1 spaces after parameter name; 3 found
- 48 | WARNING | [x] Please trim any trailing whitespace
- 49 | WARNING | [x] Please trim any trailing whitespace
- 50 | WARNING | [x] Please trim any trailing whitespace
- 51 | WARNING | [x] Please trim any trailing whitespace
- 52 | WARNING | [x] Please trim any trailing whitespace
- 53 | WARNING | [x] Please trim any trailing whitespace
- 54 | WARNING | [x] Please trim any trailing whitespace
- 55 | WARNING | [x] Please trim any trailing whitespace
- 56 | WARNING | [x] Please trim any trailing whitespace
- 58 | WARNING | [x] Please trim any trailing whitespace
- 64 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 66 | WARNING | [x] Please trim any trailing whitespace
- 67 | WARNING | [x] Please trim any trailing whitespace
- 68 | WARNING | [x] Please trim any trailing whitespace
- 69 | WARNING | [x] Please trim any trailing whitespace
- 70 | WARNING | [x] Please trim any trailing whitespace
- 71 | WARNING | [x] Please trim any trailing whitespace
- 77 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 79 | WARNING | [x] Please trim any trailing whitespace
- 80 | WARNING | [x] Please trim any trailing whitespace
- 81 | WARNING | [x] Please trim any trailing whitespace
- 82 | WARNING | [x] Please trim any trailing whitespace
- 83 | WARNING | [x] Please trim any trailing whitespace
- 84 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 51 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 58 | ERROR | Doc comment for parameter "$element" missing
+ 68 | ERROR | Doc comment for parameter "$element" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/ElementServiceInterface.php
--------------------------------------------------------------------------------------
-FOUND 1 ERROR AND 20 WARNINGS AFFECTING 21 LINES
--------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  4 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 23 | WARNING | [x] Please trim any trailing whitespace
- 24 | WARNING | [x] Please trim any trailing whitespace
- 25 | WARNING | [x] Please trim any trailing whitespace
- 30 | WARNING | [x] Please trim any trailing whitespace
- 31 | WARNING | [x] Please trim any trailing whitespace
- 32 | WARNING | [x] Please trim any trailing whitespace
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
--------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 21 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 33 | ERROR | Doc comment for parameter "$element" missing
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/UserService.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 9 ERRORS AND 47 WARNINGS AFFECTING 55 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  2 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 11 | WARNING | [x] Please trim any trailing whitespace
- 12 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 16 | WARNING | [x] Please trim any trailing whitespace
- 17 | WARNING | [x] Please trim any trailing whitespace
- 18 | WARNING | [x] Please trim any trailing whitespace
- 19 | WARNING | [x] Please trim any trailing whitespace
- 21 | ERROR   | [x] Expected 6 spaces after parameter type; 1 found
- 23 | WARNING | [x] Please trim any trailing whitespace
- 24 | ERROR   | [x] Expected 1 space between comma and type hint "UserPasswordHasherInterface"; 2 found
- 24 | WARNING | [x] Please trim any trailing whitespace
- 25 | WARNING | [x] Please trim any trailing whitespace
- 26 | WARNING | [x] Please trim any trailing whitespace
- 27 | WARNING | [x] Please trim any trailing whitespace
- 28 | WARNING | [x] Please trim any trailing whitespace
- 30 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 35 | WARNING | [x] Please trim any trailing whitespace
- 36 | WARNING | [x] Please trim any trailing whitespace
- 37 | WARNING | [x] Please trim any trailing whitespace
- 39 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 41 | WARNING | [x] Please trim any trailing whitespace
- 42 | WARNING | [x] Please trim any trailing whitespace
- 43 | WARNING | [x] Please trim any trailing whitespace
- 44 | WARNING | [x] Please trim any trailing whitespace
- 45 | WARNING | [x] Please trim any trailing whitespace
- 46 | WARNING | [x] Please trim any trailing whitespace
- 47 | WARNING | [x] Please trim any trailing whitespace
- 49 | ERROR   | [x] Expected 3 spaces after parameter type; 1 found
- 50 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 52 | WARNING | [x] Please trim any trailing whitespace
- 53 | WARNING | [x] Please trim any trailing whitespace
- 54 | WARNING | [x] Please trim any trailing whitespace
- 55 | WARNING | [x] Please trim any trailing whitespace
- 56 | WARNING | [x] Please trim any trailing whitespace
- 57 | WARNING | [x] Please trim any trailing whitespace
- 58 | WARNING | [x] Please trim any trailing whitespace
- 60 | ERROR   | [x] Expected 3 spaces after parameter type; 1 found
- 61 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 63 | WARNING | [x] Please trim any trailing whitespace
- 64 | WARNING | [x] Please trim any trailing whitespace
- 65 | WARNING | [x] Please trim any trailing whitespace
- 66 | WARNING | [x] Please trim any trailing whitespace
- 67 | WARNING | [x] Please trim any trailing whitespace
- 68 | WARNING | [x] Please trim any trailing whitespace
- 69 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 56 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 6 ERRORS AFFECTING 6 LINES
+----------------------------------------------------------------------
+ 13 | ERROR | Missing doc comment for class UserService
+ 17 | ERROR | Missing doc comment for function __construct()
+ 22 | ERROR | Missing doc comment for function findUserById()
+ 27 | ERROR | Missing doc comment for function saveUser()
+ 33 | ERROR | Missing doc comment for function upgradePassword()
+ 39 | ERROR | Missing doc comment for function changePassword()
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/UserServiceInterface.php
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 7 ERRORS AND 22 WARNINGS AFFECTING 29 LINES
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1 | ERROR   | [x] End of line character is invalid; expected "\n" but found "\r\n"
-  2 | WARNING | [x] Please trim any trailing whitespace
-  5 | WARNING | [x] Please trim any trailing whitespace
-  6 | WARNING | [x] Please trim any trailing whitespace
-  7 | WARNING | [x] Please trim any trailing whitespace
-  8 | WARNING | [x] Please trim any trailing whitespace
-  9 | WARNING | [x] Please trim any trailing whitespace
- 10 | WARNING | [x] Please trim any trailing whitespace
- 13 | WARNING | [x] Please trim any trailing whitespace
- 14 | WARNING | [x] Please trim any trailing whitespace
- 15 | WARNING | [x] Please trim any trailing whitespace
- 17 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 19 | WARNING | [x] Please trim any trailing whitespace
- 20 | WARNING | [x] Please trim any trailing whitespace
- 21 | WARNING | [x] Please trim any trailing whitespace
- 23 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 25 | WARNING | [x] Please trim any trailing whitespace
- 26 | WARNING | [x] Please trim any trailing whitespace
- 27 | WARNING | [x] Please trim any trailing whitespace
- 29 | ERROR   | [x] Expected 3 spaces after parameter type; 1 found
- 30 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 32 | WARNING | [x] Please trim any trailing whitespace
- 33 | WARNING | [x] Please trim any trailing whitespace
- 34 | WARNING | [x] Please trim any trailing whitespace
- 36 | ERROR   | [x] Expected 3 spaces after parameter type; 1 found
- 37 | ERROR   | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single
-    |         |     blank line
- 39 | WARNING | [x] Please trim any trailing whitespace
- 40 | WARNING | [x] Please trim any trailing whitespace
- 41 | WARNING | [x] Please trim any trailing whitespace
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 29 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 5 ERRORS AFFECTING 5 LINES
+----------------------------------------------------------------------
+ 11 | ERROR | Missing doc comment for interface UserServiceInterface
+ 13 | ERROR | Missing doc comment for function findUserById()
+ 15 | ERROR | Missing doc comment for function saveUser()
+ 17 | ERROR | Missing doc comment for function upgradePassword()
+ 19 | ERROR | Missing doc comment for function changePassword()
+----------------------------------------------------------------------
 
-Time: 3.61 secs; Memory: 10MB
+Time: 6.84 secs; Memory: 8MB
 
- ----------- ------------ ------------------------------------------------------ ------------------------------------------ 
-  State       Domain       Id                                                     Message Preview (en)                      
- ----------- ------------ ------------------------------------------------------ ------------------------------------------ 
-   missing    validators   Tytuł kategorii nie może być pusty                     Tytuł kategorii nie może być pusty        
-   missing    validators   Tytuł kategorii nie może mieć więcej niż 64 znaki      Tytuł kategorii nie może mieć więcej ...  
-   missing    validators   Adres email nie może być pusty.                        Adres email nie może być pusty.           
-   missing    validators   Podaj prawidłowy adres email.                          Podaj prawidłowy adres email.             
-   missing    validators   Adres email nie może być dłuższy niż 128 znaków        Adres email nie może być dłuższy niż ...  
-   missing    validators   message.enter_current_password                         message.enter_current_password            
-   missing    validators   Pole email nie może być puste                          Pole email nie może być puste             
-   missing    validators   Podaj prawidłowy adres email                           Podaj prawidłowy adres email              
-   missing    validators   Adres email nie może mieć więcej niż 64 znaki          Adres email nie może mieć więcej niż ...  
-   missing    validators   Pole nick nie może być puste.                          Pole nick nie może być puste.             
-   missing    validators   Nick nie może mieć więcej niż 64 znaki                 Nick nie może mieć więcej niż 64 znaki    
-   missing    validators   Pole treść komentarza nie może być puste               Pole treść komentarza nie może być puste  
-   missing    validators   Treść komentarza nie może mieć więcej niż 255 znaków   Treść komentarza nie może mieć więcej...  
-   missing    validators   Pole element nie może być puste                        Pole element nie może być puste           
-   missing    validators   Tytuł nie może być pusty                               Tytuł nie może być pusty                  
-   missing    validators   Tytuł nie może mieć więcej niż 64 znaki                Tytuł nie może mieć więcej niż 64 znaki   
-   missing    validators   Pole kategorii nie może być puste                      Pole kategorii nie może być puste         
- ----------- ------------ ------------------------------------------------------ ------------------------------------------ 
-
- ----------- ------------ ------------------------------------------------------ ------------------------------------------ ------------------------------------------ 
-  State       Domain       Id                                                     Message Preview (pl)                       Fallback Message Preview (en)             
- ----------- ------------ ------------------------------------------------------ ------------------------------------------ ------------------------------------------ 
-   missing    validators   Tytuł kategorii nie może być pusty                     Tytuł kategorii nie może być pusty         Tytuł kategorii nie może być pusty        
-   missing    validators   Tytuł kategorii nie może mieć więcej niż 64 znaki      Tytuł kategorii nie może mieć więcej ...   Tytuł kategorii nie może mieć więcej ...  
-   missing    validators   Adres email nie może być pusty.                        Adres email nie może być pusty.            Adres email nie może być pusty.           
-   missing    validators   Podaj prawidłowy adres email.                          Podaj prawidłowy adres email.              Podaj prawidłowy adres email.             
-   missing    validators   Adres email nie może być dłuższy niż 128 znaków        Adres email nie może być dłuższy niż ...   Adres email nie może być dłuższy niż ...  
-   missing    validators   message.enter_current_password                         message.enter_current_password             message.enter_current_password            
-   missing    validators   Pole email nie może być puste                          Pole email nie może być puste              Pole email nie może być puste             
-   missing    validators   Podaj prawidłowy adres email                           Podaj prawidłowy adres email               Podaj prawidłowy adres email              
-   missing    validators   Adres email nie może mieć więcej niż 64 znaki          Adres email nie może mieć więcej niż ...   Adres email nie może mieć więcej niż ...  
-   missing    validators   Pole nick nie może być puste.                          Pole nick nie może być puste.              Pole nick nie może być puste.             
-   missing    validators   Nick nie może mieć więcej niż 64 znaki                 Nick nie może mieć więcej niż 64 znaki     Nick nie może mieć więcej niż 64 znaki    
-   missing    validators   Pole treść komentarza nie może być puste               Pole treść komentarza nie może być puste   Pole treść komentarza nie może być puste  
-   missing    validators   Treść komentarza nie może mieć więcej niż 255 znaków   Treść komentarza nie może mieć więcej...   Treść komentarza nie może mieć więcej...  
-   missing    validators   Pole element nie może być puste                        Pole element nie może być puste            Pole element nie może być puste           
-   missing    validators   Tytuł nie może być pusty                               Tytuł nie może być pusty                   Tytuł nie może być pusty                  
-   missing    validators   Tytuł nie może mieć więcej niż 64 znaki                Tytuł nie może mieć więcej niż 64 znaki    Tytuł nie może mieć więcej niż 64 znaki   
-   missing    validators   Pole kategorii nie może być puste                      Pole kategorii nie może być puste          Pole kategorii nie może być puste         
- ----------- ------------ ------------------------------------------------------ ------------------------------------------ ------------------------------------------ 
-
-[notice] Migrating up to DoctrineMigrations\Version20240921111010
-[notice] finished in 1319.6ms, used 24M memory, 19 migrations executed, 51 sql queries
-
- [OK] Successfully migrated to version: DoctrineMigrations\Version20240921111010                                        
-
-
-   > purging database
-   > loading App\DataFixtures\AppFixtures
-   > loading App\DataFixtures\CategoryFixtures
-   > loading App\DataFixtures\UserFixtures
-   > loading App\DataFixtures\ElementFixtures

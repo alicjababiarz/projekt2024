@@ -9,7 +9,7 @@ namespace App\Service;
 use App\Entity\User;
 
 /**
- *
+ * User service interface
  */
 interface UserServiceInterface
 {

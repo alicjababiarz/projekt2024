@@ -45,8 +45,9 @@ class CategoryType extends AbstractType
                         'max' => 64,
                         'maxMessage' => 'message.title_length',
                     ]),
-                ]
-            ]);
+                ],
+            ]
+        );
     }
 
     /**

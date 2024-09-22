@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- *
+ * Comment entity
  */
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
 class Comment
@@ -39,7 +39,7 @@ class Comment
     #[Assert\Length(min: 3, max: 255)]
     private ?string $content = null;
 
-    #[ORM\ManyToOne(targetEntity: Element::class, fetch:'EXTRA_LAZY')]
+    #[ORM\ManyToOne(targetEntity: Element::class, fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Element $element = null;
 
@@ -60,7 +60,6 @@ class Comment
     }
 
     /**
-     * @param string $email
      * @return $this
      */
     public function setEmail(string $email): static
@@ -79,7 +78,6 @@ class Comment
     }
 
     /**
-     * @param string $nick
      * @return $this
      */
     public function setNick(string $nick): static
@@ -98,7 +96,6 @@ class Comment
     }
 
     /**
-     * @param string $content
      * @return $this
      */
     public function setContent(string $content): static
@@ -117,7 +114,6 @@ class Comment
     }
 
     /**
-     * @param Element|null $element
      * @return $this
      */
     public function setElement(?Element $element): static

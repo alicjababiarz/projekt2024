@@ -11,7 +11,7 @@ use App\Entity\Element;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
- *
+ * Comment service interface
  */
 interface CommentServiceInterface
 {

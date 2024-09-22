@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
- *
+ *Security Controller
  */
 class SecurityController extends AbstractController
 {

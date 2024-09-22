@@ -2,6 +2,7 @@
 /**
  * Category repository.
  */
+
 namespace App\Repository;
 
 use App\Entity\Category;
@@ -31,6 +32,7 @@ class CategoryRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Category::class);
     }
+
     /**
      * Query all records.
      *
@@ -42,10 +44,12 @@ class CategoryRepository extends ServiceEntityRepository
             ->select('partial category.{id, createdAt, updatedAt, title}')
             ->orderBy('category.updatedAt', 'DESC');
     }
+
     /**
      * Save entity.
      *
      * @param Category $category Category entity
+     *
      * @throws ORMException
      */
     public function save(Category $category): void
@@ -54,6 +58,7 @@ class CategoryRepository extends ServiceEntityRepository
         $this->_em->persist($category);
         $this->_em->flush();
     }
+
     /**
      * Delete entity.
      *
@@ -68,6 +73,7 @@ class CategoryRepository extends ServiceEntityRepository
         $this->_em->remove($category);
         $this->_em->flush();
     }
+
     /**
      * Get or create new query builder.
      *
@@ -75,7 +81,7 @@ class CategoryRepository extends ServiceEntityRepository
      *
      * @return QueryBuilder Query builder
      */
-    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    private function getOrCreateQueryBuilder(?QueryBuilder $queryBuilder = null): QueryBuilder
     {
         return $queryBuilder ?? $this->createQueryBuilder('category');
     }

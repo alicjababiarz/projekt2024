@@ -32,8 +32,9 @@ class CommentController extends AbstractController
     }
 
     /**
-     * Index method
-     * @return Response
+     * Index method.
+     *
+     * @return Response HTTP response
      */
     #[Route(name: 'comment_index', methods: 'GET')]
     public function index(): Response
@@ -106,6 +107,8 @@ class CommentController extends AbstractController
      * @param Request $request HTTP request
      *
      * @return Response HTTP response
+     *
+     * @param Comment $comment Comment parameter
      */
     #[Route('/{id}/delete', name: 'comment_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     #[IsGranted('ROLE_ADMIN')]

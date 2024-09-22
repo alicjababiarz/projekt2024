@@ -6,7 +6,6 @@
 namespace App\Service;
 
 use App\Entity\Element;
-use App\Entity\User;
 use App\Repository\ElementRepository;
 use Doctrine\ORM\Exception\ORMException;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -31,18 +30,18 @@ class ElementService implements ElementServiceInterface
     /**
      * Constructor.
      *
-     * @param ElementRepository     $elementRepository Element repository
-     * @param PaginatorInterface $paginator      Paginator
+     * @param ElementRepository  $elementRepository Element repository
+     * @param PaginatorInterface $paginator         Paginator
      */
     public function __construct(private readonly ElementRepository $elementRepository, private readonly PaginatorInterface $paginator)
     {
     }
 
-// ...
+    // ...
     /**
      * Get paginated list.
      *
-     * @param int  $page   Page number
+     * @param int $page Page number
      *
      * @return PaginationInterface<string, mixed> Paginated list
      */
@@ -54,14 +53,11 @@ class ElementService implements ElementServiceInterface
             self::PAGINATOR_ITEMS_PER_PAGE
         );
     }
-// ...
+    // ...
 
     /**
      * Save entity.
-     *
      * @param Element $element
-     *
-     * @return void
      * @throws ORMException
      */
     public function save(Element $element): void
@@ -71,10 +67,7 @@ class ElementService implements ElementServiceInterface
 
     /**
      * Delete entity.
-     *
      * @param Element $element
-     *
-     * @return void
      * @throws ORMException
      */
     public function delete(Element $element): void

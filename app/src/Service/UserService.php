@@ -11,7 +11,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 /**
- *
+ * User service
  */
 class UserService implements UserServiceInterface
 {
@@ -21,7 +21,7 @@ class UserService implements UserServiceInterface
      * @param EntityManagerInterface $entityManager
      * @param UserPasswordHasherInterface $passwordHasher
      */
-    public function __construct(private readonly EntityManagerInterface $entityManager,  UserPasswordHasherInterface $passwordHasher)
+    public function __construct(private readonly EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher)
     {
         $this->passwordHasher = $passwordHasher;
     }
