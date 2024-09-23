@@ -7,7 +7,6 @@ namespace App\DataFixtures;
 
 use App\Entity\Category;
 use App\Entity\Element;
-use App\Entity\User;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 /**
@@ -44,10 +43,6 @@ class ElementFixtures extends AbstractBaseFixtures implements DependentFixtureIn
             /** @var Category $category */
             $category = $this->getRandomReference('categories');
             $element->setCategory($category);
-
-            /** @var User $author */
-            $author = $this->getRandomReference('users');
-            $element->setAuthor($author);
 
             return $element;
         });

@@ -10,7 +10,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 /**
- *App fixtures class
+ *App fixtures class.
  */
 class AppFixtures extends Fixture
 {

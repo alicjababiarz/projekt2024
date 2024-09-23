@@ -8,7 +8,6 @@ namespace App\Repository;
 
 use App\Entity\Category;
 use App\Entity\Element;
-use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Exception\ORMException;
@@ -113,24 +112,6 @@ class ElementRepository extends ServiceEntityRepository
             ->setParameter(':category', $category)
             ->getQuery()
             ->getSingleScalarResult();
-    }
-
-    // ...
-    /**
-     * Query elements by author.
-     *
-     * @param User $user User entity
-     *
-     * @return QueryBuilder Query builder
-     */
-    public function queryByAuthor(User $user): QueryBuilder
-    {
-        $queryBuilder = $this->queryAll();
-
-        $queryBuilder->andWhere('element.author = :author')
-            ->setParameter('author', $user);
-
-        return $queryBuilder;
     }
 
     /**

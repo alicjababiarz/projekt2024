@@ -63,14 +63,8 @@ class Element
      * Category.
      */
     #[ORM\ManyToOne(targetEntity: Category::class, fetch: 'EXTRA_LAZY')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
     private ?Category $category = null;
-
-    #[ORM\ManyToOne(targetEntity: User::class, fetch: 'EXTRA_LAZY')]
-    #[ORM\JoinColumn(nullable: false)]
-    #[Assert\NotBlank]
-    #[Assert\Type(User::class)]
-    private ?User $author;
 
     /**
      * Getter for Id.
@@ -156,24 +150,6 @@ class Element
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * @return User|null
-     */
-    public function getAuthor(): ?User
-    {
-        return $this->author;
-    }
-
-    /**
-     * @return $this
-     */
-    public function setAuthor(?User $author): static
-    {
-        $this->author = $author;
 
         return $this;
     }

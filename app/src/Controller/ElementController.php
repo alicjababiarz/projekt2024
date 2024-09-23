@@ -6,7 +6,6 @@
 namespace App\Controller;
 
 use App\Entity\Element;
-use App\Entity\User;
 use App\Form\Type\ElementType;
 use App\Service\CommentServiceInterface;
 use App\Service\ElementServiceInterface;
@@ -86,10 +85,7 @@ class ElementController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function create(Request $request): Response
     {
-        /** @var User $user */
-        $user = $this->getUser();
         $element = new Element();
-        $element->setAuthor($user);
         $element->setCreatedAt(
             new \DateTimeImmutable()
         );
@@ -128,14 +124,6 @@ class ElementController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Element $element): Response
     {
-        if ($element->getAuthor() !== $this->getUser()) {
-            $this->addFlash(
-                'warning',
-                $this->translator->trans('message.record_not_found')
-            );
-
-            return $this->redirectToRoute('element_index');
-        }
         $form = $this->createForm(
             ElementType::class,
             $element,

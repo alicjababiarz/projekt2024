@@ -15,7 +15,7 @@ use App\Entity\User;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- *
+ * Change email form type
  */
 class ChangeEmailType extends AbstractType
 {

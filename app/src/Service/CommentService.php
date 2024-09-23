@@ -13,7 +13,7 @@ use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
 /**
- * Comment service
+ * Comment service.
  */
 class CommentService implements CommentServiceInterface
 {

@@ -105,10 +105,9 @@ class CommentController extends AbstractController
      * Delete action.
      *
      * @param Request $request HTTP request
+     * @param Comment $comment Comment parameter
      *
      * @return Response HTTP response
-     *
-     * @param Comment $comment Comment parameter
      */
     #[Route('/{id}/delete', name: 'comment_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     #[IsGranted('ROLE_ADMIN')]

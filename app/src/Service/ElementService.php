@@ -57,8 +57,9 @@ class ElementService implements ElementServiceInterface
 
     /**
      * Save entity.
-     * @param Element $element
+     *
      * @throws ORMException
+     * @param Element $element
      */
     public function save(Element $element): void
     {
@@ -67,8 +68,9 @@ class ElementService implements ElementServiceInterface
 
     /**
      * Delete entity.
-     * @param Element $element
+     *
      * @throws ORMException
+     * @param Element $element
      */
     public function delete(Element $element): void
     {

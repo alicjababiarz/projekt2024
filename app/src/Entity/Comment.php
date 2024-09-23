@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Comment entity
+ * Comment entity.
  */
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
 class Comment
