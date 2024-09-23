@@ -289,7 +289,7 @@
                                                                                           </trans-unit>
  <trans-unit id="message.title_not_blank">
      <source>message.title_not_blank</source>
-     <target>Nie może być pusty</target>
+     <target>Tytuł może być pusty</target>
  </trans-unit>
  <trans-unit id="message.title_length">
      <source>message.title_length</source>
