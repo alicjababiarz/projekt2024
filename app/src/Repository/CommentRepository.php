@@ -16,8 +16,11 @@ use Doctrine\Persistence\ManagerRegistry;
 class CommentRepository extends ServiceEntityRepository
 {
     /**
+     * Constructor.
+     *
      * @psalm-param class-string<T> $entityClass
-     * @param ManagerRegistry $registry
+     *
+     * @param ManagerRegistry $registry Manager registry
      */
     public function __construct(ManagerRegistry $registry)
     {
@@ -25,7 +28,10 @@ class CommentRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param Comment $comment
+     * Save comment.
+     *
+     * @param Comment $comment Comment entity
+     *
      * @return void
      */
     public function save(Comment $comment): void
@@ -35,7 +41,10 @@ class CommentRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param Comment $comment
+     * Remove comment.
+     *
+     * @param Comment $comment Comment entity
+     *
      * @return void
      */
     public function remove(Comment $comment): void
@@ -45,31 +54,46 @@ class CommentRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return void Returns an array of Comment objects
-     *                   public function findByExampleField($value): array
-     *                   {
-     *                   return $this->createQueryBuilder('c')
-     *                   ->andWhere('c.exampleField = :val')
-     *                   ->setParameter('val', $value)
-     *                   ->orderBy('c.id', 'ASC')
-     *                   ->setMaxResults(10)
-     *                   ->getQuery()
-     *                   ->getResult()
-     *                   ;
-     *                   }
+     * Flush entity manager.
      *
-     * public function findOneBySomeField($value): ?Comment
-     * {
-     * return $this->createQueryBuilder('c')
-     * ->andWhere('c.exampleField = :val')
-     * ->setParameter('val', $value)
-     * ->getQuery()
-     * ->getOneOrNullResult()
-     * ;
-     * }
+     * @return void
      */
     public function flush(): void
     {
         $this->_em->flush();
     }
+
+    /**
+     * Example method to find by a field (commented out).
+     *
+     * @return void Returns an array of Comment objects
+     */
+    /*
+    public function findByExampleField($value): array
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
+            ->setParameter('val', $value)
+            ->orderBy('c.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
+    */
+
+    /**
+     * Example method to find one by a field (commented out).
+     *
+     * @return Comment|null
+     */
+    /*
+    public function findOneBySomeField($value): ?Comment
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+    */
 }

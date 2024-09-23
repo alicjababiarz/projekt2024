@@ -33,11 +33,12 @@ class ElementService implements ElementServiceInterface
      * @param ElementRepository  $elementRepository Element repository
      * @param PaginatorInterface $paginator         Paginator
      */
-    public function __construct(private readonly ElementRepository $elementRepository, private readonly PaginatorInterface $paginator)
-    {
+    public function __construct(
+        private readonly ElementRepository $elementRepository,
+        private readonly PaginatorInterface $paginator
+    ) {
     }
 
-    // ...
     /**
      * Get paginated list.
      *
@@ -53,13 +54,13 @@ class ElementService implements ElementServiceInterface
             self::PAGINATOR_ITEMS_PER_PAGE
         );
     }
-    // ...
 
     /**
      * Save entity.
      *
+     * @param Element $element Element entity
+     *
      * @throws ORMException
-     * @param Element $element
      */
     public function save(Element $element): void
     {
@@ -69,8 +70,9 @@ class ElementService implements ElementServiceInterface
     /**
      * Delete entity.
      *
+     * @param Element $element Element entity
+     *
      * @throws ORMException
-     * @param Element $element
      */
     public function delete(Element $element): void
     {

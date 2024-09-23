@@ -16,26 +16,37 @@ use Knp\Component\Pager\Pagination\PaginationInterface;
 interface CommentServiceInterface
 {
     /**
-     * @param Comment $comment
+     * Save entity.
+     *
+     * @param Comment $comment  Comment entity
+     *
      * @return void
      */
     public function save(Comment $comment): void;
 
     /**
-     * @param Comment $comment
+     * Remove entity.
+     *
+     * @param Comment $comment  Comment entity
+     *
      * @return void
      */
     public function remove(Comment $comment): void;
 
     /**
-     * @return array
+     * Find all comments.
+     *
+     * @return array  Array of comments
      */
     public function findAll(): array;
 
     /**
-     * @param int $page
-     * @param Element $element
-     * @return mixed
+     * Get paginated list.
+     *
+     * @param int     $page     Page number
+     * @param Element $element  Element entity
+     *
+     * @return PaginationInterface  Paginated list of comments
      */
     public function getPaginatedList(int $page, Element $element): PaginationInterface;
 }

@@ -33,18 +33,21 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Constructor.
      *
-     * @param CategoryRepository $categoryRepository Category repository
-     * @param PaginatorInterface $paginator
-     * @param ElementRepository $elementRepository
+     * @param CategoryRepository  $categoryRepository  Category repository
+     * @param PaginatorInterface  $paginator           Paginator
+     * @param ElementRepository   $elementRepository   Element repository
      */
-    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly PaginatorInterface $paginator, private readonly ElementRepository $elementRepository)
-    {
+    public function __construct(
+        private readonly CategoryRepository $categoryRepository,
+        private readonly PaginatorInterface $paginator,
+        private readonly ElementRepository $elementRepository
+    ) {
     }
 
     /**
      * Get paginated list.
      *
-     * @param int $page Page number
+     * @param int $page  Page number
      *
      * @return PaginationInterface<string, mixed> Paginated list
      */
@@ -60,29 +63,22 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Save entity.
      *
-     * @param Category $category Category entity
+     * @param Category $category  Category entity
      *
      * @throws ORMException
      */
     public function save(Category $category): void
     {
-        /*
-        if(null === $category->getId()){
-            $category->setCreatedAt(new \DateTimeImmutable());
-        }
-        $category->setCreatedAt(new \DateTimeImmutable());
-        */
-
         $this->categoryRepository->save($category);
     }
 
     /**
      * Delete entity.
      *
-     * @param Category $category Category entity
+     * @param Category $category  Category entity
      *
      * @throws ORMException
-     * */
+     */
     public function delete(Category $category): void
     {
         $this->categoryRepository->delete($category);
@@ -91,9 +87,9 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Can Category be deleted?
      *
-     * @param Category $category Category entity
+     * @param Category $category  Category entity
      *
-     * @return bool Result
+     * @return bool  Result
      */
     public function canBeDeleted(Category $category): bool
     {

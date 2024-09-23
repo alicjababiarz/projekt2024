@@ -18,16 +18,19 @@ class UserService implements UserServiceInterface
     public UserPasswordHasherInterface $passwordHasher;
 
     /**
-     * @param EntityManagerInterface $entityManager
-     * @param UserPasswordHasherInterface $passwordHasher
+     * @param EntityManagerInterface    $entityManager    Entity manager
+     * @param UserPasswordHasherInterface $passwordHasher   Password hasher
      */
-    public function __construct(private readonly EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher)
-    {
+    public function __construct(
+        private readonly EntityManagerInterface $entityManager,
+        UserPasswordHasherInterface $passwordHasher
+    ) {
         $this->passwordHasher = $passwordHasher;
     }
 
     /**
      * @param int $id
+     *
      * @return User|null
      */
     public function findUserById(int $id): ?User
@@ -37,6 +40,7 @@ class UserService implements UserServiceInterface
 
     /**
      * @param User $user
+     *
      * @return void
      */
     public function saveUser(User $user): void
@@ -46,8 +50,9 @@ class UserService implements UserServiceInterface
     }
 
     /**
-     * @param User $user
+     * @param User   $user
      * @param string $hashedPassword
+     *
      * @return void
      */
     public function upgradePassword(User $user, string $hashedPassword): void
@@ -57,8 +62,9 @@ class UserService implements UserServiceInterface
     }
 
     /**
-     * @param User $user
+     * @param User   $user
      * @param string $newPassword
+     *
      * @return void
      */
     public function changePassword(User $user, string $newPassword): void

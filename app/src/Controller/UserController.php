@@ -25,13 +25,18 @@ class UserController extends AbstractController
      * @param UserServiceInterface $userService User service interface
      * @param TranslatorInterface  $translator  Translator interface
      */
-    public function __construct(private readonly UserServiceInterface $userService, private readonly TranslatorInterface $translator)
-    {
+    public function __construct(
+        private readonly UserServiceInterface $userService,
+        private readonly TranslatorInterface  $translator
+    ) {
     }
 
     /**
+     * Edit password action.
+     *
      * @param Request $request
-     * @param int $id
+     * @param int     $id
+     *
      * @return Response
      */
     #[Route('/{id}/edit-password', name: 'password_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
@@ -80,8 +85,10 @@ class UserController extends AbstractController
 
     /**
      * Edit email action.
+     *
      * @param Request $request
-     * @param int $id
+     * @param int     $id
+     *
      * @return Response
      */
     #[Route('/{id}/edit-email', name: 'email_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]

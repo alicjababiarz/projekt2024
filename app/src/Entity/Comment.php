@@ -61,6 +61,7 @@ class Comment
 
     /**
      * @return $this
+     * @param string $email
      */
     public function setEmail(string $email): static
     {
@@ -79,6 +80,7 @@ class Comment
 
     /**
      * @return $this
+     * @param string $nick
      */
     public function setNick(string $nick): static
     {
@@ -97,6 +99,7 @@ class Comment
 
     /**
      * @return $this
+     * @param string $content
      */
     public function setContent(string $content): static
     {
@@ -114,6 +117,7 @@ class Comment
     }
 
     /**
+     * @param Element|null $element
      * @return $this
      */
     public function setElement(?Element $element): static

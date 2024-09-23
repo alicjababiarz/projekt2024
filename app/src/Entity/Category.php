@@ -61,6 +61,11 @@ class Category
     #[Gedmo\Slug(fields: ['title'])]
     private ?string $slug;
 
+    /**
+     * Getter for ID.
+     *
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
@@ -127,6 +132,8 @@ class Category
     }
 
     /**
+     * Getter for slug.
+     *
      * @return string|null
      */
     public function getSlug(): ?string
@@ -135,6 +142,8 @@ class Category
     }
 
     /**
+     * Setter for slug.
+     *
      * @param string $slug Slug
      * @return $this
      */

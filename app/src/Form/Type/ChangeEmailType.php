@@ -15,13 +15,16 @@ use App\Entity\User;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Change email form type
+ * Change email form type.
  */
 class ChangeEmailType extends AbstractType
 {
     /**
-     * @param FormBuilderInterface $builder
-     * @param array $options
+     * Build form.
+     *
+     * @param FormBuilderInterface $builder Form builder
+     * @param array                $options Options array
+     *
      * @return void
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -52,7 +55,10 @@ class ChangeEmailType extends AbstractType
     }
 
     /**
-     * @param OptionsResolver $resolver
+     * Configure options.
+     *
+     * @param OptionsResolver $resolver Options resolver
+     *
      * @return void
      */
     public function configureOptions(OptionsResolver $resolver): void

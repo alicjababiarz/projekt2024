@@ -21,8 +21,11 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
     /**
+     * Constructor.
+     *
      * @psalm-param class-string<T> $entityClass
-     * @param ManagerRegistry $registry
+     *
+     * @param ManagerRegistry $registry Manager registry
      */
     public function __construct(ManagerRegistry $registry)
     {
@@ -32,8 +35,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
      *
-     * @param User $user
-     * @param string $newHashedPassword
+     * @param PasswordAuthenticatedUserInterface $user              User entity
+     * @param string                             $newHashedPassword New hashed password
+     *
+     * @return void
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
@@ -47,8 +52,13 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     }
 
     /**
+     * Save user.
+     *
+     * @param User $user User entity
+     *
+     * @return void
+     *
      * @throws ORMException
-     * @param User $user
      */
     public function save(User $user): void
     {

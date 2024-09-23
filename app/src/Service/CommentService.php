@@ -18,11 +18,14 @@ use Knp\Component\Pager\PaginatorInterface;
 class CommentService implements CommentServiceInterface
 {
     public const PAGINATOR_ITEMS_PER_PAGE = 10;
+
     private CommentRepository $commentRepository;
 
     /**
-     * @param CommentRepository $commentRepository
-     * @param PaginatorInterface $paginator
+     * Constructor.
+     *
+     * @param CommentRepository    $commentRepository  Comment repository
+     * @param PaginatorInterface   $paginator          Paginator
      */
     public function __construct(CommentRepository $commentRepository, private readonly PaginatorInterface $paginator)
     {
@@ -30,7 +33,10 @@ class CommentService implements CommentServiceInterface
     }
 
     /**
-     * @param Comment $comment
+     * Save entity.
+     *
+     * @param Comment $comment  Comment entity
+     *
      * @return void
      */
     public function save(Comment $comment): void
@@ -39,7 +45,10 @@ class CommentService implements CommentServiceInterface
     }
 
     /**
-     * @param Comment $comment
+     * Remove entity.
+     *
+     * @param Comment $comment  Comment entity
+     *
      * @return void
      */
     public function remove(Comment $comment): void
@@ -49,7 +58,9 @@ class CommentService implements CommentServiceInterface
     }
 
     /**
-     * @return array
+     * Find all comments.
+     *
+     * @return array  Array of comments
      */
     public function findAll(): array
     {
@@ -57,9 +68,12 @@ class CommentService implements CommentServiceInterface
     }
 
     /**
-     * @param int $page
-     * @param Element $element
-     * @return mixed
+     * Get paginated list.
+     *
+     * @param int     $page     Page number
+     * @param Element $element  Element entity
+     *
+     * @return PaginationInterface  Paginated list of comments
      */
     public function getPaginatedList(int $page, Element $element): PaginationInterface
     {
