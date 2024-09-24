@@ -16,26 +16,26 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * ChangePassword Controller.
+ * User Controller.
  */
 #[Route('/user')]
 class UserController extends AbstractController
 {
     /**
+     * User service interface
+     *
      * @param UserServiceInterface $userService User service interface
      * @param TranslatorInterface  $translator  Translator interface
      */
-    public function __construct(
-        private readonly UserServiceInterface $userService,
-        private readonly TranslatorInterface  $translator
-    ) {
+    public function __construct(private readonly UserServiceInterface $userService, private readonly TranslatorInterface $translator)
+    {
     }
 
     /**
      * Edit password action.
      *
-     * @param Request $request
-     * @param int     $id
+     * @param Request $request Request instance
+     * @param int     $id      User ID
      *
      * @return Response
      */
@@ -86,8 +86,8 @@ class UserController extends AbstractController
     /**
      * Edit email action.
      *
-     * @param Request $request
-     * @param int     $id
+     * @param Request $request Request instance
+     * @param int     $id      User ID
      *
      * @return Response
      */

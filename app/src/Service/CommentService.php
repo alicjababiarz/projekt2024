@@ -24,8 +24,8 @@ class CommentService implements CommentServiceInterface
     /**
      * Constructor.
      *
-     * @param CommentRepository    $commentRepository  Comment repository
-     * @param PaginatorInterface   $paginator          Paginator
+     * @param CommentRepository  $commentRepository Comment repository
+     * @param PaginatorInterface $paginator         Paginator
      */
     public function __construct(CommentRepository $commentRepository, private readonly PaginatorInterface $paginator)
     {
@@ -35,9 +35,7 @@ class CommentService implements CommentServiceInterface
     /**
      * Save entity.
      *
-     * @param Comment $comment  Comment entity
-     *
-     * @return void
+     * @param Comment $comment Comment entity
      */
     public function save(Comment $comment): void
     {
@@ -47,9 +45,7 @@ class CommentService implements CommentServiceInterface
     /**
      * Remove entity.
      *
-     * @param Comment $comment  Comment entity
-     *
-     * @return void
+     * @param Comment $comment Comment entity
      */
     public function remove(Comment $comment): void
     {
@@ -60,7 +56,7 @@ class CommentService implements CommentServiceInterface
     /**
      * Find all comments.
      *
-     * @return array  Array of comments
+     * @return array Array of comments
      */
     public function findAll(): array
     {
@@ -70,10 +66,10 @@ class CommentService implements CommentServiceInterface
     /**
      * Get paginated list.
      *
-     * @param int     $page     Page number
-     * @param Element $element  Element entity
+     * @param int     $page    Page number
+     * @param Element $element Element entity
      *
-     * @return PaginationInterface  Paginated list of comments
+     * @return PaginationInterface Paginated list of comments
      */
     public function getPaginatedList(int $page, Element $element): PaginationInterface
     {

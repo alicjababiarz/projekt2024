@@ -33,21 +33,18 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Constructor.
      *
-     * @param CategoryRepository  $categoryRepository  Category repository
-     * @param PaginatorInterface  $paginator           Paginator
-     * @param ElementRepository   $elementRepository   Element repository
+     * @param CategoryRepository $categoryRepository Category repository
+     * @param PaginatorInterface $paginator          Paginator
+     * @param ElementRepository  $elementRepository  Element repository
      */
-    public function __construct(
-        private readonly CategoryRepository $categoryRepository,
-        private readonly PaginatorInterface $paginator,
-        private readonly ElementRepository $elementRepository
-    ) {
+    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly PaginatorInterface $paginator, private readonly ElementRepository $elementRepository)
+    {
     }
 
     /**
      * Get paginated list.
      *
-     * @param int $page  Page number
+     * @param int $page Page number
      *
      * @return PaginationInterface<string, mixed> Paginated list
      */
@@ -63,7 +60,7 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Save entity.
      *
-     * @param Category $category  Category entity
+     * @param Category $category Category entity
      *
      * @throws ORMException
      */
@@ -75,7 +72,7 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Delete entity.
      *
-     * @param Category $category  Category entity
+     * @param Category $category Category entity
      *
      * @throws ORMException
      */
@@ -87,9 +84,9 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Can Category be deleted?
      *
-     * @param Category $category  Category entity
+     * @param Category $category Category entity
      *
-     * @return bool  Result
+     * @return bool Result
      */
     public function canBeDeleted(Category $category): bool
     {

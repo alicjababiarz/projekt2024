@@ -37,8 +37,6 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
      *
      * @param PasswordAuthenticatedUserInterface $user              User entity
      * @param string                             $newHashedPassword New hashed password
-     *
-     * @return void
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
@@ -55,8 +53,6 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
      * Save user.
      *
      * @param User $user User entity
-     *
-     * @return void
      *
      * @throws ORMException
      */

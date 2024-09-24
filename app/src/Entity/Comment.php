@@ -44,6 +44,8 @@ class Comment
     private ?Element $element = null;
 
     /**
+     * Get the ID of the comment.
+     *
      * @return int|null
      */
     public function getId(): ?int
@@ -52,6 +54,8 @@ class Comment
     }
 
     /**
+     * Get the email of the comment author.
+     *
      * @return string|null
      */
     public function getEmail(): ?string
@@ -60,8 +64,11 @@ class Comment
     }
 
     /**
-     * @return $this
+     * Set the email of the comment author.
+     *
      * @param string $email
+     *
+     * @return $this
      */
     public function setEmail(string $email): static
     {
@@ -71,6 +78,8 @@ class Comment
     }
 
     /**
+     * Get the nickname of the comment author.
+     *
      * @return string|null
      */
     public function getNick(): ?string
@@ -79,8 +88,11 @@ class Comment
     }
 
     /**
-     * @return $this
+     * Set the nickname of the comment author.
+     *
      * @param string $nick
+     *
+     * @return $this
      */
     public function setNick(string $nick): static
     {
@@ -90,6 +102,8 @@ class Comment
     }
 
     /**
+     * Get the content of the comment.
+     *
      * @return string|null
      */
     public function getContent(): ?string
@@ -98,8 +112,11 @@ class Comment
     }
 
     /**
-     * @return $this
+     * Set the content of the comment.
+     *
      * @param string $content
+     *
+     * @return $this
      */
     public function setContent(string $content): static
     {
@@ -109,6 +126,8 @@ class Comment
     }
 
     /**
+     * Get the element associated with the comment.
+     *
      * @return Element|null
      */
     public function getElement(): ?Element
@@ -117,7 +136,10 @@ class Comment
     }
 
     /**
+     * Set the element associated with the comment.
+     *
      * @param Element|null $element
+     *
      * @return $this
      */
     public function setElement(?Element $element): static

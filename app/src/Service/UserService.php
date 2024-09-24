@@ -18,13 +18,11 @@ class UserService implements UserServiceInterface
     public UserPasswordHasherInterface $passwordHasher;
 
     /**
-     * @param EntityManagerInterface    $entityManager    Entity manager
-     * @param UserPasswordHasherInterface $passwordHasher   Password hasher
+     * @param EntityManagerInterface      $entityManager  Entity manager
+     * @param UserPasswordHasherInterface $passwordHasher Password hasher
      */
-    public function __construct(
-        private readonly EntityManagerInterface $entityManager,
-        UserPasswordHasherInterface $passwordHasher
-    ) {
+    public function __construct(private readonly EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher)
+    {
         $this->passwordHasher = $passwordHasher;
     }
 

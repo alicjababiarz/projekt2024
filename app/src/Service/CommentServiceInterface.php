@@ -18,35 +18,31 @@ interface CommentServiceInterface
     /**
      * Save entity.
      *
-     * @param Comment $comment  Comment entity
-     *
-     * @return void
+     * @param Comment $comment Comment entity
      */
     public function save(Comment $comment): void;
 
     /**
      * Remove entity.
      *
-     * @param Comment $comment  Comment entity
-     *
-     * @return void
+     * @param Comment $comment Comment entity
      */
     public function remove(Comment $comment): void;
 
     /**
      * Find all comments.
      *
-     * @return array  Array of comments
+     * @return array Array of comments
      */
     public function findAll(): array;
 
     /**
      * Get paginated list.
      *
-     * @param int     $page     Page number
-     * @param Element $element  Element entity
+     * @param int     $page    Page number
+     * @param Element $element Element entity
      *
-     * @return PaginationInterface  Paginated list of comments
+     * @return PaginationInterface Paginated list of comments
      */
     public function getPaginatedList(int $page, Element $element): PaginationInterface;
 }

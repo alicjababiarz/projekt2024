@@ -24,8 +24,6 @@ class ChangeEmailType extends AbstractType
      *
      * @param FormBuilderInterface $builder Form builder
      * @param array                $options Options array
-     *
-     * @return void
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -58,8 +56,6 @@ class ChangeEmailType extends AbstractType
      * Configure options.
      *
      * @param OptionsResolver $resolver Options resolver
-     *
-     * @return void
      */
     public function configureOptions(OptionsResolver $resolver): void
     {

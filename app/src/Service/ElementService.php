@@ -33,10 +33,8 @@ class ElementService implements ElementServiceInterface
      * @param ElementRepository  $elementRepository Element repository
      * @param PaginatorInterface $paginator         Paginator
      */
-    public function __construct(
-        private readonly ElementRepository $elementRepository,
-        private readonly PaginatorInterface $paginator
-    ) {
+    public function __construct(private readonly ElementRepository $elementRepository, private readonly PaginatorInterface $paginator)
+    {
     }
 
     /**

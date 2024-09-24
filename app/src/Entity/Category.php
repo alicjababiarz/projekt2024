@@ -63,8 +63,7 @@ class Category
 
     /**
      * Getter for ID.
-     *
-     * @return int|null
+     * @return int|null $id
      */
     public function getId(): ?int
     {
@@ -133,8 +132,7 @@ class Category
 
     /**
      * Getter for slug.
-     *
-     * @return string|null
+     * @return string|null $slug
      */
     public function getSlug(): ?string
     {
@@ -145,6 +143,7 @@ class Category
      * Setter for slug.
      *
      * @param string $slug Slug
+     *
      * @return $this
      */
     public function setSlug(string $slug): static

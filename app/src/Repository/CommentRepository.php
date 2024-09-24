@@ -31,8 +31,6 @@ class CommentRepository extends ServiceEntityRepository
      * Save comment.
      *
      * @param Comment $comment Comment entity
-     *
-     * @return void
      */
     public function save(Comment $comment): void
     {
@@ -44,8 +42,6 @@ class CommentRepository extends ServiceEntityRepository
      * Remove comment.
      *
      * @param Comment $comment Comment entity
-     *
-     * @return void
      */
     public function remove(Comment $comment): void
     {
@@ -55,15 +51,13 @@ class CommentRepository extends ServiceEntityRepository
 
     /**
      * Flush entity manager.
-     *
-     * @return void
      */
     public function flush(): void
     {
         $this->_em->flush();
     }
 
-    /**
+    /*
      * Example method to find by a field (commented out).
      *
      * @return void Returns an array of Comment objects
@@ -81,7 +75,7 @@ class CommentRepository extends ServiceEntityRepository
     }
     */
 
-    /**
+    /*
      * Example method to find one by a field (commented out).
      *
      * @return Comment|null

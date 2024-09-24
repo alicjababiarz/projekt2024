@@ -146,6 +146,7 @@ class Element
 
     /**
      * @param Category|null $category
+     *
      * @return $this
      */
     public function setCategory(?Category $category): static
