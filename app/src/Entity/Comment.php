@@ -46,7 +46,7 @@ class Comment
     /**
      * Get the ID of the comment.
      *
-     * @return int|null
+     * @return int|null Id
      */
     public function getId(): ?int
     {
@@ -56,7 +56,7 @@ class Comment
     /**
      * Get the email of the comment author.
      *
-     * @return string|null
+     * @return string|null Email
      */
     public function getEmail(): ?string
     {
@@ -66,7 +66,7 @@ class Comment
     /**
      * Set the email of the comment author.
      *
-     * @param string $email
+     * @param string $email Email
      *
      * @return $this
      */
@@ -80,7 +80,7 @@ class Comment
     /**
      * Get the nickname of the comment author.
      *
-     * @return string|null
+     * @return string|null Nick
      */
     public function getNick(): ?string
     {
@@ -90,7 +90,7 @@ class Comment
     /**
      * Set the nickname of the comment author.
      *
-     * @param string $nick
+     * @param string $nick Nick
      *
      * @return $this
      */
@@ -104,7 +104,7 @@ class Comment
     /**
      * Get the content of the comment.
      *
-     * @return string|null
+     * @return string|null Content
      */
     public function getContent(): ?string
     {
@@ -114,7 +114,7 @@ class Comment
     /**
      * Set the content of the comment.
      *
-     * @param string $content
+     * @param string $content Content
      *
      * @return $this
      */
@@ -128,7 +128,7 @@ class Comment
     /**
      * Get the element associated with the comment.
      *
-     * @return Element|null
+     * @return Element|null Element
      */
     public function getElement(): ?Element
     {
@@ -138,7 +138,7 @@ class Comment
     /**
      * Set the element associated with the comment.
      *
-     * @param Element|null $element
+     * @param Element|null $element Element
      *
      * @return $this
      */

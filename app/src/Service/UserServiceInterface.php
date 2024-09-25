@@ -1,5 +1,4 @@
 <?php
-
 /**
  * User service interface.
  */
@@ -14,32 +13,32 @@ use App\Entity\User;
 interface UserServiceInterface
 {
     /**
-     * @param int $id
+     * Find user by ID.
      *
-     * @return User|null
+     * @param int $id ID of the user
      */
     public function findUserById(int $id): ?User;
 
     /**
-     * @param User $user
+     * Saves the user entity.
      *
-     * @return void
+     * @param User $user Save user
      */
     public function saveUser(User $user): void;
 
     /**
-     * @param User   $user
-     * @param string $hashedPassword
+     * Upgrades the password.
      *
-     * @return void
+     * @param User   $user           User entity
+     * @param string $hashedPassword Set hashed password
      */
     public function upgradePassword(User $user, string $hashedPassword): void;
 
     /**
-     * @param User   $user
-     * @param string $newPassword
+     * Changes the user's password.
      *
-     * @return void
+     * @param User   $user        User entity
+     * @param string $newPassword Set new password
      */
     public function changePassword(User $user, string $newPassword): void;
 }

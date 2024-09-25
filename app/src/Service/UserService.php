@@ -27,9 +27,9 @@ class UserService implements UserServiceInterface
     }
 
     /**
-     * @param int $id
+     * @param int $id Id
      *
-     * @return User|null
+     * @return User|null User
      */
     public function findUserById(int $id): ?User
     {
@@ -37,9 +37,7 @@ class UserService implements UserServiceInterface
     }
 
     /**
-     * @param User $user
-     *
-     * @return void
+     * @param User $user User
      */
     public function saveUser(User $user): void
     {
@@ -48,10 +46,8 @@ class UserService implements UserServiceInterface
     }
 
     /**
-     * @param User   $user
-     * @param string $hashedPassword
-     *
-     * @return void
+     * @param User   $user           User
+     * @param string $hashedPassword Hashed Password
      */
     public function upgradePassword(User $user, string $hashedPassword): void
     {
@@ -60,10 +56,8 @@ class UserService implements UserServiceInterface
     }
 
     /**
-     * @param User   $user
-     * @param string $newPassword
-     *
-     * @return void
+     * @param User   $user        User
+     * @param string $newPassword New Password
      */
     public function changePassword(User $user, string $newPassword): void
     {

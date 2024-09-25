@@ -137,7 +137,7 @@ class Element
     }
 
     /**
-     * @return Category|null
+     * @return Category|null Category
      */
     public function getCategory(): ?Category
     {
@@ -145,7 +145,7 @@ class Element
     }
 
     /**
-     * @param Category|null $category
+     * @param Category|null $category Category
      *
      * @return $this
      */

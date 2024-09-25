@@ -22,7 +22,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class UserController extends AbstractController
 {
     /**
-     * User service interface
+     * User service interface.
      *
      * @param UserServiceInterface $userService User service interface
      * @param TranslatorInterface  $translator  Translator interface
@@ -37,7 +37,7 @@ class UserController extends AbstractController
      * @param Request $request Request instance
      * @param int     $id      User ID
      *
-     * @return Response
+     * @return Response HTTP Response
      */
     #[Route('/{id}/edit-password', name: 'password_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
     #[IsGranted('IS_AUTHENTICATED_FULLY')]
@@ -89,7 +89,7 @@ class UserController extends AbstractController
      * @param Request $request Request instance
      * @param int     $id      User ID
      *
-     * @return Response
+     * @return Response HTTP Response
      */
     #[Route('/{id}/edit-email', name: 'email_edit', requirements: ['id' => '\d+'], methods: ['GET', 'PUT'])]
     #[IsGranted('IS_AUTHENTICATED_FULLY')]

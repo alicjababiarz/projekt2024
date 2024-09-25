@@ -63,6 +63,7 @@ class Category
 
     /**
      * Getter for ID.
+     *
      * @return int|null $id
      */
     public function getId(): ?int
@@ -132,6 +133,7 @@ class Category
 
     /**
      * Getter for slug.
+     *
      * @return string|null $slug
      */
     public function getSlug(): ?string
