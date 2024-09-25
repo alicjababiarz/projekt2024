@@ -278,6 +278,22 @@
                                                                     <source>label.none</source>
                                                                     <target>None</target>
                                                                     </trans-unit>
+        <trans-unit id="label.new_password">
+                                                                            <source>label.new_password</source>
+                                                                            <target>New password</target>
+                                                                            </trans-unit>
+        <trans-unit id="label.repeat_new_password">
+                                                                                    <source>label.repeat_new_password</source>
+                                                                                    <target>Repeat new password</target>
+                                                                                    </trans-unit>
+        <trans-unit id="label.new_email">
+                <source>label.new_email</source>
+                <target>New email address</target>
+                </trans-unit>
+        <trans-unit id="label.repeat_new_email">
+                        <source>label.repeat_new_email</source>
+                        <target>Repeat new email address</target>
+                        </trans-unit>
     </body>
   </file>
 </xliff>

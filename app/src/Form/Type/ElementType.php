@@ -35,13 +35,7 @@ class ElementType extends AbstractType
                 'required' => true,
                 'attr' => ['max_length' => 64],
                 'constraints' => [
-                    new Assert\NotBlank([
-                        'message' => 'message.title_not_blank',
-                    ]),
-                    new Assert\Length([
-                        'max' => 64,
-                        'maxMessage' => 'message.title_max_length',
-                    ]),
+                    new Assert\NotBlank(),
                 ],
             ]
         )
@@ -57,9 +51,7 @@ class ElementType extends AbstractType
                     'placeholder' => 'label.none',
                     'required' => true,
                     'constraints' => [
-                        new Assert\NotNull([
-                            'message' => 'message.category_not_null',
-                        ]),
+                        new Assert\NotNull(),
                     ],
                 ]
             );

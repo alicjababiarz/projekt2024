@@ -35,16 +35,7 @@ class CommentType extends AbstractType
                 'required' => true,
                 'attr' => ['max_length' => 64],
                 'constraints' => [
-                    new Assert\NotBlank([
-                        'message' => 'message.email_not_blank',
-                    ]),
-                    new Assert\Email([
-                        'message' => 'message.invalid_email_format',
-                    ]),
-                    new Assert\Length([
-                        'max' => 64,
-                        'maxMessage' => 'message.email_length',
-                    ]),
+                    new Assert\NotBlank(),
                 ],
             ]
         )
@@ -56,13 +47,7 @@ class CommentType extends AbstractType
                     'required' => true,
                     'attr' => ['max_length' => 64],
                     'constraints' => [
-                        new Assert\NotBlank([
-                            'message' => 'message.nick_not_blank',
-                        ]),
-                        new Assert\Length([
-                            'max' => 64,
-                            'maxMessage' => 'message.nick_length',
-                        ]),
+                        new Assert\NotBlank(),
                     ],
                 ]
             )
@@ -74,13 +59,7 @@ class CommentType extends AbstractType
                     'required' => true,
                     'attr' => ['max_length' => 255],
                     'constraints' => [
-                        new Assert\NotBlank([
-                            'message' => 'message.comment_content_not_blank',
-                        ]),
-                        new Assert\Length([
-                            'max' => 255,
-                            'maxMessage' => 'message.comment_content_length',
-                        ]),
+                        new Assert\NotBlank(),
                     ],
                 ]
             )
@@ -96,9 +75,7 @@ class CommentType extends AbstractType
                     'placeholder' => 'label.select_element',
                     'required' => true,
                     'constraints' => [
-                        new Assert\NotNull([
-                            'message' => 'message.element_not_null',
-                        ]),
+                        new Assert\NotNull(),
                     ],
                 ]
             );
